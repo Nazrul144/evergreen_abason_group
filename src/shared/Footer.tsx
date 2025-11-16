@@ -76,7 +76,7 @@ const Footer = () => {
         relative mt-6
         hover:text-green-600 dark:hover:text-green-400
         after:absolute after:left-0 after:-bottom-[2px]
-        after:h-[2px] after:w-0 after:bg-green-600 dark:after:bg-green-400
+        after:h-[1px] after:w-0 after:bg-green-600 dark:after:bg-green-400
         after:transition-all after:duration-300
         hover:after:w-full
       "
@@ -86,22 +86,57 @@ const Footer = () => {
   ))}
 </div>
 
-        <hr className="mt-6 border-gray-300 dark:border-gray-700" />
+        <hr className="mt-12 border-gray-300 dark:border-gray-700" />
         {/* ================= COPYRIGHT AREA ================= */}
-        <div className="mt-16 flex flex-wrap justify-between items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+        <div className="mt-10 flex flex-wrap justify-between items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
           <p>©2025 Upartner. All rights reserved</p>
 
           <div className="flex flex-wrap gap-6">
-            <a href="#" className="hover:text-green-600 dark:hover:text-green-400">Facebook</a>
-            <a href="#" className="hover:text-green-600 dark:hover:text-green-400">LinkedIn</a>
-            <a href="#" className="hover:text-green-600 dark:hover:text-green-400">Instagram</a>
+            <a href="#"  className="
+        relative
+        hover:text-green-600 dark:hover:text-green-400
+        after:absolute after:left-0 after:-bottom-[2px]
+        after:h-[1px] after:w-0 after:bg-green-600 dark:after:bg-green-400
+        after:transition-all after:duration-300
+        hover:after:w-full
+      ">Facebook</a>
+            <a href="#"  className="
+        relative 
+        hover:text-green-600 dark:hover:text-green-400
+        after:absolute after:left-0 after:-bottom-[2px]
+        after:h-[1px] after:w-0 after:bg-green-600 dark:after:bg-green-400
+        after:transition-all after:duration-300
+        hover:after:w-full
+      ">LinkedIn</a>
+            <a href="#"  className="
+        relative 
+        hover:text-green-600 dark:hover:text-green-400
+        after:absolute after:left-0 after:-bottom-[2px]
+        after:h-[1px] after:w-0 after:bg-green-600 dark:after:bg-green-400
+        after:transition-all after:duration-300
+        hover:after:w-full
+      ">Instagram</a>
 
             <span className="hidden sm:block border-r border-gray-300 dark:border-gray-600 mx-1" />
 
-            <a href="#" className="hover:text-green-600 dark:hover:text-green-400">
+            <a href="#"  className="
+        relative 
+        hover:text-green-600 dark:hover:text-green-400
+        after:absolute after:left-0 after:-bottom-[2px]
+        after:h-[1px] after:w-0 after:bg-green-600 dark:after:bg-green-400
+        after:transition-all after:duration-300
+        hover:after:w-full
+      ">
               Terms and Conditions
             </a>
-            <a href="#" className="hover:text-green-600 dark:hover:text-green-400">
+            <a href="#"  className="
+        relative 
+        hover:text-green-600 dark:hover:text-green-400
+        after:absolute after:left-0 after:-bottom-[2px]
+        after:h-[1px] after:w-0 after:bg-green-600 dark:after:bg-green-400
+        after:transition-all after:duration-300
+        hover:after:w-full
+      ">
               Privacy Policy
             </a>
           </div>
