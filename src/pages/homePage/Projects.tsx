@@ -1,7 +1,8 @@
 "use client";
+import { getAllProjectsData } from "@/lib/api";
 import { Card } from "antd";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
 
@@ -9,11 +10,26 @@ const images = Array(10).fill("/demo_girl.jpg"); // 10 SAME IMAGES
 
 export default function Projects() {
   const [index, setIndex] = useState(0);
+  const [projects, setProjects] = useState([])
 
   const nextCard = () => setIndex((prev) => (prev + 1) % images.length);
-  const prevCard = () =>
-    setIndex((prev) => (prev - 1 + images.length) % images.length);
+  const prevCard = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
+
+    //Data Fetching:
+    useEffect(()=>{
+      const fetchAllProjects = async()=>{
+        try {
+          const res = await getAllProjectsData();
+          setProjects(res)
+        } catch (error) {
+            console.log(error);
+        }
+      }
+      fetchAllProjects()
+    },[])
+
+ 
   return (
     <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900">
       <div className="flex items-center space-x-2">
@@ -54,7 +70,7 @@ export default function Projects() {
       <Card
         hoverable={false}
         style={{ width: 260, borderRadius: 0, overflow: "hidden" }}
-        bodyStyle={{ padding: 0 }}
+        styles={{ body: { padding: 0 } }}
         cover={
           <div className="relative group">
             {/* IMAGE */}
@@ -99,12 +115,8 @@ export default function Projects() {
     absolute bottom-0 right-0 flex items-center overflow-hidden group
   "
             >
-              <button className="expand-text bg-white dark:bg-gray-800 dark:text-gray-300 cursor-pointer">
-                View Project
-              </button>
-              <button className="expand-btn bg-white dark:bg-gray-800 dark:text-white">
-                +
-              </button>
+              <button className="expand-text bg-white dark:bg-gray-800 dark:text-gray-300 cursor-pointer">View Project</button>
+              <button className="expand-btn bg-white dark:bg-gray-800 dark:text-white">+</button>
             </div>
           </div>
         }

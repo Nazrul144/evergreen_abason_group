@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer className="w-full border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        {/* ================= TOP SECTION ================= */}
+      
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start relative">
-          {/* LOGO + CONTACT BLOCK */}
+    
           <div className="flex flex-col items-center text-center space-y-3 col-span-1">
             <Image
               src="/Navbar_Logo/logo.png"
@@ -15,17 +15,6 @@ const Footer = () => {
               height={60}
               alt="Evergreen Abason Group"
             />
-
-            {/* FIXED → CENTERED BRAND NAME */}
-            {/* <span className="uppercase text-lg leading-tight font-bold">
-              <span className="text-[#ED1C24]">E</span>
-              <span className="text-[#743237]">vergreen</span>&nbsp;
-              <span className="text-[#ED1C24]">A</span>
-              <span className="text-[#743237]">bason</span>&nbsp;
-              <span className="text-[#ED1C24]">G</span>
-              <span className="text-[#743237]">roup</span>
-            </span> */}
-
             <span className="uppercase text-lg leading-tight font-bold whitespace-nowrap">
               {"Evergreen Abason Group".split("").map((char, i) => (
                 <span
