@@ -3,6 +3,7 @@ import { Card } from "antd";
 import Image from "next/image";
 import { useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { GoArrowUpRight } from "react-icons/go";
 
 const images = Array(10).fill("/demo_girl.jpg"); // 10 SAME IMAGES
 
@@ -25,8 +26,28 @@ export default function Projects() {
         insight, and less chaos.
       </h1>
 
-      <button className="flex items-center cursor-pointer mb-6">
-        <h3 className="text-[#4A5565] dark:text-gray-400">View all projects</h3>
+      <button className="flex items-center gap-1 cursor-pointer mb-6 group">
+        <span
+          className="
+      flex items-center gap-2 
+      text-[#4A5565] dark:text-gray-400 
+      group-hover:text-green-500 
+      relative
+      after:content-[''] 
+      after:absolute 
+      after:left-0 
+      after:bottom-0 
+      after:w-0 
+      after:h-[1.5px] 
+      after:bg-green-500
+      after:transition-all 
+      after:duration-300
+      group-hover:after:w-full
+    "
+        >
+          View all projects
+          <GoArrowUpRight className="transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </span>
       </button>
 
       {/* CARD */}
