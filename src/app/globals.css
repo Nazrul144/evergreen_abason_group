@@ -20,94 +20,6 @@
 }
 
 
-/* bounce animation */
-/* @keyframes bounce {
-  0%, 60%, 100% {
-    transform: scale(1); 
-  }
-  30% {
-    transform: scale(1.3); 
-  }
-}
-
-.animate-bounce {
-  animation: bounce 1.5s ease-in-out infinite;
-  display: inline-block;
-} */
-
-
-/* Fade and slide animation */
-@keyframes fade-slide {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0.5;
-    transform: translateY(-5px);
-  }
-}
-
-.animate-fade-slide {
-  animation: fade-slide 2s ease-in-out infinite;
-  display: inline-block;
-}
-
-
-/* Color shifting animation */
-@keyframes color-flow {
-  0% {
-    color: #fff;
-  }
-  25% {
-    color: #4ade80; /* green */
-  }
-  50% {
-    color: #60a5fa; /* blue */
-  }
-  75% {
-    color: #f472b6; /* pink */
-  }
-  100% {
-    color: #fff;
-  }
-}
-
-.animate-color-flow {
-  animation: color-flow 2s linear infinite;
-  display: inline-block;
-}
-
-
-
-/* Rotate and fade animation */
-@keyframes rotate-fade {
-  0% {
-    opacity: 0;
-    transform: rotate(-15deg);
-  }
-  50% {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-  100% {
-    opacity: 0.5;
-    transform: rotate(5deg);
-  }
-}
-
-.animate-rotate-fade {
-  animation: rotate-fade 1.8s ease-in-out infinite;
-  display: inline-block;
-}
-
-
-
-
 
 /* Bright color-shift animation with shadow for contrast */
 @keyframes color-flow-bright {
@@ -121,6 +33,62 @@
 .animate-color-flow {
   animation: color-flow-bright 2s linear infinite;
   display: inline-block;
+}
+
+
+/* Smooth Image Zoom */
+.zoom-on-hover {
+  transition: transform 1.8s ease;
+}
+.group:hover .zoom-on-hover {
+  transform: scale(1.5);
+}
+
+
+/* WRAPPER REQUIRED */
+.expand-group {
+  position: relative;
+  overflow: hidden;
+}
+
+/* PLUS BUTTON */
+.expand-btn {
+  width: 48px;
+  height: 48px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+/* SMOOTH LABEL SLIDING */
+.expand-text {
+  height: 48px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: translateX(140%); 
+  opacity: 0;
+
+  /* Smoother + slower animation */
+  transition:
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s ease-out;
+  transition-delay: 0.1s;
+  z-index: 5;
+}
+
+/* ON HOVER, SLIDE SMOOTHLY */
+.group:hover .expand-text {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 

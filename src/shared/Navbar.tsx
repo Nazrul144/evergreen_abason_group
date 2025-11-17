@@ -31,7 +31,6 @@ const navigationLinks = [
 export default function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [origin, setOrigin] = useState("left");
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -169,9 +168,9 @@ export default function Navbar() {
               onClose={() => setOpen(false)}
               open={open}
               classNames={{
-                base: "bg-transparent",
+                content: "bg-transparent", // fixes error
                 wrapper: "bg-[#0A0F1C] dark:bg-[#0A0F1C]",
-                backdrop: "bg-black/70",
+                mask: "bg-black/70",
               }}
             >
               {/* FIX: Force dark theme inside drawer */}

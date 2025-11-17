@@ -37,7 +37,7 @@ const Hero = () => {
 
             <div className="mt-4 flex gap-4 sm:mt-6">
               <Link
-                className="group inline-block rounded border border-gray-200 dark:border-gray-500 px-5 py-3 font-medium text-white shadow-sm dark:text-gray-900 dark:bg-white transition-colors"
+                className="group inline-block rounded border border-gray-200 dark:border-gray-500 px-5 py-3 font-medium text-white shadow-sm  dark:bg-transparent dark:text-white transition-colors"
                 href="#"
               >
                 <span className="relative">
