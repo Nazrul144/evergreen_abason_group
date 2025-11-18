@@ -15,9 +15,9 @@ export default function Projects() {
   const nextCard = () => setIndex((prev) => (prev + 1) % projects.length);
   const prevCard = () => setIndex((prev) => (prev - 1 + projects.length) % projects.length);
 
- const {projects} = useContext(ProjectContext)
+ const {projects, loading} = useContext(ProjectContext)!
 
-  if (!projects.length) return  <div className="flex items-center gap-4"> <Spinner /> </div>
+  if (loading) return  <div className="flex items-center gap-4 justify-center"><Spinner /> </div>
 
   const visibleCards = [
     projects[index % projects.length],

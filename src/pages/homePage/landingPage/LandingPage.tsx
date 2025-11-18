@@ -1,7 +1,11 @@
-import React from 'react'
+
 import Hero from '../Hero'
 import Categories from '../Categories'
 import Projects from '../Projects'
+import OurSectors from '../OurSectors'
+import Sustainability from '../Sustainability'
+import ContactBanner from '../ContactBanner'
+
 
 const LandingPage = () => {
   return (
@@ -9,6 +13,9 @@ const LandingPage = () => {
       <Hero/>
       <Categories/>
       <Projects/>
+      <OurSectors/>
+      <Sustainability/>
+      <ContactBanner/>
     </div>
   )
 }
