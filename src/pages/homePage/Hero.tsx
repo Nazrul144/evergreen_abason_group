@@ -10,8 +10,8 @@ const Hero = () => {
   return (
     <div>
       <section
-        className="relative bg-cover bg-center bg-no-repeat lg:grid h-[700px] lg:place-content-center"
-        style={{ backgroundImage: "url('Hero_Image/banner.jpg')" }}
+        className="relative bg-cover bg-center bg-no-repeat lg:grid h-[900px] lg:place-content-center"
+        style={{ backgroundImage: "url('Hero_Image/banner.png')" }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50 dark:bg-black/60"></div>
