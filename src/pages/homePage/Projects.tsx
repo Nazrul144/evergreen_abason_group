@@ -11,7 +11,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 export default function Projects() {
   const [index, setIndex] = useState(0);
-  const [hoveredCard, setHoveredCard] = useState(null); // 🔁 Hover tracking
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const nextCard = () => setIndex((prev) => (prev + 1) % projects.length);
   const prevCard = () => setIndex((prev) => (prev - 1 + projects.length) % projects.length);
 

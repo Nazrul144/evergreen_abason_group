@@ -1,4 +1,4 @@
-
+"use client"
 import Hero from '../Hero'
 import Categories from '../Categories'
 import Projects from '../Projects'

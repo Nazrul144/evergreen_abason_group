@@ -14,11 +14,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Evergreen Abason Group" || "Home",
-  description:
+
+export async function generateMetadata(): Promise<Metadata> {
+  const title = "Evergreen Abason Group"; 
+
+  return {
+    title: title || "Home",
+    description:
     "Evergreen Abason Group is a leading real estate and development company dedicated to building sustainable, modern, and affordable living spaces. With a focus on quality craftsmanship and customer satisfaction, we strive to create communities that inspire and thrive.",
-};
+  };
+}
+
 
 export default function RootLayout({
   children,
