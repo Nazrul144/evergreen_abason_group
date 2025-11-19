@@ -11,7 +11,7 @@ const ContactBanner = () => {
 
       <div className="absolute inset-0 flex items-center px-6 md:px-16 lg:px-24">
         <div className="max-w-lg space-y-6">
-          <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight dark:text-gray-300">
             We&rsquo;d love to hear <br /> from you
           </h2>
 

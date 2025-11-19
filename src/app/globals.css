@@ -125,6 +125,18 @@
 }
 
 
+/*Tab color customize*/
+.custom-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #16a34a !important;
+}
+
+.custom-tabs .ant-tabs-tab:hover .ant-tabs-tab-btn {
+  color: #16a34a !important;
+}
+
+.custom-tabs .ant-tabs-ink-bar {
+  background-color: #16a34a !important;
+}
 
 
 
