@@ -1,3 +1,5 @@
+import ProjectDetails from "@/pages/allProjects/projectDetails/ProjectDetails";
+
 export const metadata = {
     title: "Project Details | Evergreen Abason Group",
     description:
@@ -12,7 +14,7 @@ export const metadata = {
   
     return (
       <div>
-        <h1>Project Details</h1>
+        <ProjectDetails/>
         <p>
           id: {id}
         </p>

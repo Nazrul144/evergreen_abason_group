@@ -149,6 +149,7 @@ export default function Projects() {
             </div>
 
             <div className="absolute bottom-[148px] right-0 flex items-center overflow-hidden group/view">
+              <Link  href={`/project/${project.id}`}>
               <button
                 className="
                   bg-white dark:bg-gray-900 dark:text-gray-300 
@@ -161,6 +162,7 @@ export default function Projects() {
               >
                 View Project
               </button>
+              </Link>
               <button
                 className="
                   bg-white dark:bg-gray-900 text-black dark:text-white
