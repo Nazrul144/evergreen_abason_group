@@ -14,7 +14,7 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const [hovered, setHovered] = useState(null);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
     <section className="w-full bg-black text-white py-20 dark:bg-gray-900 dark:border-t border-gray-700">
