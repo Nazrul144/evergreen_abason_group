@@ -1,9 +1,12 @@
 import React from 'react'
+import NewsSection from './NewsSectionHero'
+import WorkTogetherBanner from './WorkTogetherBanner'
 
 const News = () => {
   return (
     <div>
-      <h1>News</h1>
+      <NewsSection/>
+      <WorkTogetherBanner/>
     </div>
   )
 }

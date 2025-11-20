@@ -1,8 +1,11 @@
+import News from "@/pages/newsPage/News"
 
 
 const NewsPage = () => {
   return (
-    <div>NewsPage</div>
+    <div>
+      <News/>
+    </div>
   )
 }
 

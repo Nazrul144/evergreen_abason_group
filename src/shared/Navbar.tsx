@@ -2,15 +2,8 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { NavigationMenu, NavigationMenuList } from "@/components/ui/navigation-menu";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Link from "next/link";
 import { Search, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -42,27 +35,13 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Popover>
               <PopoverTrigger asChild>
-                <Button
-                  className="group size-9 md:hidden dark:text-gray-200"
-                  variant="ghost"
-                  size="icon"
-                >
-                  <svg
-                    width={20}
-                    height={20}
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="currentColor"
-                    fill="none"
-                  >
+                <Button className="group size-9 md:hidden dark:text-gray-200" variant="ghost" size="icon">
+                  <svg width={20} height={20} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none">
                     <path
                       d="M4 12H20"
                       className="origin-center -translate-y-[7px] transition-all group-aria-expanded:rotate-[315deg] group-aria-expanded:translate-y-0"
                     />
-                    <path
-                      d="M4 12H20"
-                      className="origin-center transition-all group-aria-expanded:rotate-45"
-                    />
+                    <path d="M4 12H20" className="origin-center transition-all group-aria-expanded:rotate-45" />
                     <path
                       d="M4 12H20"
                       className="origin-center translate-y-[7px] transition-all group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
@@ -71,18 +50,13 @@ export default function Navbar() {
                 </Button>
               </PopoverTrigger>
 
-              <PopoverContent
-                align="start"
-                className="w-40 p-2 md:hidden dark:bg-gray-800 dark:text-gray-200"
-              >
+              <PopoverContent align="start" className="w-40 p-2 md:hidden dark:bg-gray-800 dark:text-gray-200">
                 <NavigationMenu className="w-full">
                   <NavigationMenuList className="flex-col gap-1">
                     {navigationLinks?.map((navigationLink) => (
                       <Link
                         className={`text-sm font-semibold relative after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full ${
-                          pathName === navigationLink.path
-                            ? "text-black dark:text-white after:w-full"
-                            : "dark:text-gray-300"
+                          pathName === navigationLink.path ? "text-black dark:text-white after:w-full" : "dark:text-gray-300"
                         }`}
                         href={navigationLink.path}
                         key={navigationLink.path}
@@ -95,24 +69,13 @@ export default function Navbar() {
               </PopoverContent>
             </Popover>
 
-            <Link
-              href="/"
-              className="flex items-center gap-2 font-semibold tracking-wide"
-            >
-              <Image
-                src="/Navbar_Logo/logo.png"
-                alt="logo"
-                width={40}
-                height={40}
-                className="w-auto h-10"
-              />
+            <Link href="/" className="flex items-center gap-2 font-semibold tracking-wide">
+              <Image src="/Navbar_Logo/logo.png" alt="logo" width={40} height={40} className="w-auto h-10" />
               <span className="uppercase text-lg leading-tight font-bold dark:text-gray-100">
                 {"Evergreen Abason Group".split("").map((char, i) => (
                   <span
                     key={i}
-                    className={`inline-block animate-color-flow ${
-                      char === " " ? "mr-1" : ""
-                    }`}
+                    className={`inline-block animate-color-flow ${char === " " ? "mr-1" : ""}`}
                     style={{ animationDelay: `${i * 0.1}s` }}
                   >
                     {char}
@@ -174,7 +137,7 @@ export default function Navbar() {
               }}
             >
               {/* FIX: Force dark theme inside drawer */}
-              <div className="drawer-content dark:bg-[#0A0F1C] bg-[#0A0F1C] dark:text-gray-200 text-gray-100 h-full">
+              <div className="drawer-content dark:bg-[#0A0F1C] dark:text-gray-300 h-full">
                 <div className="flex flex-col h-full">
                   <div className="w-full pt-6">
                     <Image
@@ -187,11 +150,9 @@ export default function Navbar() {
                   </div>
 
                   <div className="px-6 py-6">
-                    <h1 className="text-green-600 dark:text-green-500 text-4xl text-center mb-4 font-semibold">
-                      OFFICE
-                    </h1>
+                    <h1 className="text-green-600 dark:text-green-500 text-4xl text-center mb-4 font-semibold">OFFICE</h1>
 
-                    <address className="not-italic text-gray-300 dark:text-gray-300 text-lg leading-relaxed space-y-1 text-center">
+                    <address className="not-italic dark:text-gray-300 text-lg leading-relaxed space-y-1 text-center">
                       <p>Gartner Architects 498</p>
                       <p>Seventh Ave</p>
                       <p>20th Floor</p>
@@ -207,14 +168,14 @@ export default function Navbar() {
                   <hr className="my-2 border-gray-700" />
 
                   <div className="px-6 text-center mb-4">
-                    <p className="text-xl font-medium text-gray-200 mb-3">
-                      Got a project in mind?
-                    </p>
-                    <Button className="w-full py-6 text-xl rounded-none bg-green-600 text-white hover:bg-green-700 dark:hover:bg-green-500 transition flex justify-center">
-                      <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] cursor-pointer after:bg-white dark:after:bg-gray-200 after:w-full after:scale-x-0 after:origin-[var(--origin)] after:transition-transform after:duration-500 hover:after:scale-x-100">
-                        Let&apos;s Talk
-                      </span>
-                    </Button>
+                    <p className="text-xl font-medium dark:text-gray-300 mb-3">Got a project in mind?</p>
+                    <Link href="/contact">
+                      <Button className="w-full py-6 text-xl rounded-none bg-green-600 text-white hover:bg-green-700 dark:hover:bg-green-500 transition flex justify-center">
+                        <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] cursor-pointer after:bg-white dark:after:bg-gray-200 after:w-full after:scale-x-0 after:origin-[var(--origin)] after:transition-transform after:duration-500 hover:after:scale-x-100">
+                          Let&apos;s Talk
+                        </span>
+                      </Button>
+                    </Link>
                   </div>
 
                   <hr className="mb-4 border-gray-700 mt-4" />

@@ -23,7 +23,7 @@ const ContactBanner = () => {
               w-fit
             "
           >
-            <Link href={"#"}
+            <Link href={"/contact"}
               className="
                 relative
                 after:content-[''] after:absolute after:left-0 after:-bottom-1

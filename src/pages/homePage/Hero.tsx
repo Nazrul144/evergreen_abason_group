@@ -10,11 +10,11 @@ const Hero = () => {
   return (
     <div>
       <section
-        className="relative bg-cover bg-center bg-no-repeat lg:grid h-[900px] lg:place-content-center"
+        className="relative bg-cover bg-center bg-no-repeat lg:grid h-[800px] lg:place-content-center"
         style={{ backgroundImage: "url('Hero_Image/banner.png')" }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 dark:bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/20 dark:bg-black/60"></div>
 
         <div className="relative mx-auto lg:w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
           <div className="lg:max-w-prose text-left lg:mt-0 mt-32">
