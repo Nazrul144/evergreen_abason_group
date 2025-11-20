@@ -59,7 +59,7 @@ const NewsSection: React.FC = () => {
             </p>
 
             <Link
-              href="#"
+              href="/story"
               className="inline-block mt-8 font-semibold text-sm 
   text-transparent bg-clip-text bg-gradient-to-r
   from-green-500 to-emerald-700 hover:opacity-80 transition"

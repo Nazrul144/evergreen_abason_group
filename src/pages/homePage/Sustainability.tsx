@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Sustainability = () => {
   return (
@@ -36,33 +37,41 @@ const Sustainability = () => {
 
       {/* RIGHT — Text */}
       <div className="w-full md:w-1/2 mt-24 md:mt-0">
-        <p className="text-sm uppercase text-gray-500 dark:text-gray-400 tracking-wide mb-3">Our way</p>
-
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">Sustainability</h2>
-
-        <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed">
-          Our Sustainable Construction Advisors (SCAs) provide sustainable construction expertise to our buildings, civil and
-          industrial project teams. The SCAs work collaboratively with clients to develop cost-effective strategies to reduce the
-          overall environmental impact of their projects.
+        <p className="text-sm uppercase text-gray-500 dark:text-gray-400 tracking-wide mb-3">
+          Our way
         </p>
 
-        <button
-          className="
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">
+          Sustainability
+        </h2>
+
+        <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed">
+          Our Sustainable Construction Advisors (SCAs) provide sustainable
+          construction expertise to our buildings, civil and industrial project
+          teams. The SCAs work collaboratively with clients to develop
+          cost-effective strategies to reduce the overall environmental impact
+          of their projects.
+        </p>
+
+        <Link href="/sustainability">
+          <button
+            className="
     px-6 py-3 bg-green-600 text-white uppercase tracking-wide
     hover:bg-green-700 relative group transition rounded-sm
   "
-        >
-          <span
-            className="
+          >
+            <span
+              className="
       relative
       after:content-[''] after:absolute after:left-0 after:-bottom-1
       after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300
       group-hover:after:w-full
     "
-          >
-            Learn More
-          </span>
-        </button>
+            >
+              Learn More
+            </span>
+          </button>
+        </Link>
       </div>
     </section>
   );
