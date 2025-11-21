@@ -38,7 +38,6 @@ const AllProjectsProvider = ({ children }: ProviderProps) => {
     getAllProjects();
   }, []);
 
-  console.log("Project from context", projects);
 
   return (
     <ProjectContext.Provider value={{ projects, setProjects, loading }}>

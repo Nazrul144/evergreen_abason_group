@@ -1,3 +1,4 @@
+import Services from "@/pages/servicePage/Services";
 
 
 export const metadata = {
@@ -9,7 +10,9 @@ export const metadata = {
 
 const ServicesPage = () => {
   return (
-    <div>ServicesPage</div>
+    <div>
+      <Services/>
+    </div>
   )
 }
 

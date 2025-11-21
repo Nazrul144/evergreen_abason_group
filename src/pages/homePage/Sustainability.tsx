@@ -57,14 +57,14 @@ const Sustainability = () => {
           <button
             className="
     px-6 py-3 bg-green-600 text-white uppercase tracking-wide
-    hover:bg-green-700 relative group transition rounded-sm
+    hover:bg-green-700 relative group transition rounded-sm cursor-pointer
   "
           >
             <span
               className="
       relative
       after:content-[''] after:absolute after:left-0 after:-bottom-1
-      after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300
+      after:h-[1px] after:w-0 after:bg-green-500 after:transition-all after:duration-300
       group-hover:after:w-full
     "
             >

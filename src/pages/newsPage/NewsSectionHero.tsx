@@ -97,7 +97,7 @@ const NewsSection: React.FC = () => {
               className="w-full h-48 object-cover rounded-lg mb-4"
             />
 
-            <Link href="#" className="font-semibold text-gray-900 dark:text-gray-300">
+            <Link href={`/news/${news.id}`} className="font-semibold text-gray-900 dark:text-gray-300">
               {news.title}
             </Link>
 

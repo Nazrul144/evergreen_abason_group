@@ -18,9 +18,14 @@ const ContactBanner = () => {
           {/* Button */}
           <button
             className="
-              bg-green-600 text-white px-8 py-3 rounded-md 
-              hover:bg-green-700 transition relative group 
-              w-fit
+                
+              hover:bg-green-700 relative group 
+              w-fit  px-6 py-3 mt-6 font-bold text-lg 
+  bg-emerald-500 text-white rounded-xl
+  shadow-[3px_3px_0px_rgba(0,0,0,0.35),6px_6px_0px_rgba(0,0,0,0.25)]
+  active:translate-x-[3px] active:translate-y-[3px]
+  active:shadow-[0_0_0_rgba(0,0,0,0.5)]
+  transition-all
             "
           >
             <Link href={"/contact"}

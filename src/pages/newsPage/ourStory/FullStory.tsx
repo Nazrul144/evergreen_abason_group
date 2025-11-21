@@ -6,32 +6,7 @@ import { Leaf, Globe, Building2, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 const FullStory = () => {
-  const sections = [
-    {
-      icon: <Leaf className="w-6 h-6 text-white" />,
-      title: "A Vision for a Sustainable Future",
-      description:
-        "Evergreen Abason Group is redefining the future of sustainable development through visionary engineering and rigorous environmental stewardship. The Winthrop Center demonstrates our commitment to Passive House standards—delivering unmatched energy efficiency, healthier air quality, and dramatically reduced carbon emissions.",
-    },
-    {
-      icon: <Globe className="w-6 h-6 text-white" />,
-      title: "Human-Centered Design with Global Impact",
-      description:
-        "The Winthrop Center places people at the heart of its design. Every space is crafted with thoughtful attention to natural light, ventilation, acoustics, and comfort—promoting well-being, creativity, and productivity.",
-    },
-    {
-      icon: <Building2 className="w-6 h-6 text-white" />,
-      title: "Creating a Greener Built Environment",
-      description:
-        "Achieving up to 70% lower energy usage than conventional towers, the project sets a new benchmark for sustainability through airtight construction, renewable-integrated systems, and high-performance insulation.",
-    },
-    {
-      icon: <Sparkles className="w-6 h-6 text-white" />,
-      title: "Innovation That Inspires the Industry",
-      description:
-        "The Winthrop Center stands as a symbol of innovation—showing how pioneering engineering and thoughtful design can build a brighter, more sustainable future and inspire global change.",
-    },
-  ];
+
 
   return (
     <section className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900 mb-20">
@@ -63,24 +38,23 @@ const FullStory = () => {
           </p>
         </motion.div>
 
-        {/* ---- BANNER IMAGE ---- */}
+      
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative mt-14 w-full h-[350px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl"
+          className="relative mt-14 w-full h-[450px] md:h-[500px] rounded-sm overflow-hidden shadow-xl"
         >
           <Image
-            src="/NewsPage/banner.jpg"
+            src="/NewsPage/story.jpg"
             alt="Story Image"
             fill
             className="object-cover brightness-90 hover:scale-105 transition-all duration-700"
           />
         </motion.div>
 
-        {/* ---- ZIGZAG TIMELINE ---- */}
         <div className="relative mt-20 lg:mt-28">
-          {/* CENTER LINE (desktop only) */}
+      
           <div className="
             hidden lg:block 
             absolute left-1/2 top-0 -translate-x-1/2 
@@ -105,7 +79,7 @@ const FullStory = () => {
                     flex-col
                   `}
                 >
-                  {/* Connector line to center (desktop only) */}
+               
                   <div
                     className={`
                       hidden lg:block absolute top-14 
@@ -116,7 +90,7 @@ const FullStory = () => {
                     `}
                   ></div>
 
-                  {/* Spacing block for zigzag desktop layout */}
+               
                   <div className="hidden lg:block w-1/2"></div>
 
                   {/* CARD */}
@@ -129,7 +103,7 @@ const FullStory = () => {
                       relative z-10
                     "
                   >
-                    {/* Icon + Title */}
+                 
                     <div className="flex items-center gap-4">
                       <div className="
                         w-14 h-14 flex items-center justify-center rounded-full 
@@ -177,3 +151,31 @@ const FullStory = () => {
 };
 
 export default FullStory;
+
+
+const sections = [
+  {
+    icon: <Leaf className="w-6 h-6 text-white" />,
+    title: "A Vision for a Sustainable Future",
+    description:
+      "Evergreen Abason Group is redefining the future of sustainable development through visionary engineering and rigorous environmental stewardship. The Winthrop Center demonstrates our commitment to Passive House standards—delivering unmatched energy efficiency, healthier air quality, and dramatically reduced carbon emissions.",
+  },
+  {
+    icon: <Globe className="w-6 h-6 text-white" />,
+    title: "Human-Centered Design with Global Impact",
+    description:
+      "The Winthrop Center places people at the heart of its design. Every space is crafted with thoughtful attention to natural light, ventilation, acoustics, and comfort—promoting well-being, creativity, and productivity.",
+  },
+  {
+    icon: <Building2 className="w-6 h-6 text-white" />,
+    title: "Creating a Greener Built Environment",
+    description:
+      "Achieving up to 70% lower energy usage than conventional towers, the project sets a new benchmark for sustainability through airtight construction, renewable-integrated systems, and high-performance insulation.",
+  },
+  {
+    icon: <Sparkles className="w-6 h-6 text-white" />,
+    title: "Innovation That Inspires the Industry",
+    description:
+      "The Winthrop Center stands as a symbol of innovation—showing how pioneering engineering and thoughtful design can build a brighter, more sustainable future and inspire global change.",
+  },
+];

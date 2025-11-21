@@ -38,10 +38,14 @@ export default function SafetySection() {
           </div>
 
           {/* Title */}
-          <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-gray-900 dark:text-white">
+          <h2
+            className="text-4xl md:text-5xl font-extrabold leading-tight 
+               text-emerald-500 
+               [text-shadow:_3px_3px_0px_rgb(0,0,0,0.35),_6px_6px_0px_rgb(0,0,0,0.25)]"
+          >
             Safety fast, <br /> Work last.
           </h2>
-
+         
           {/* Description */}
           <p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed max-w-md">
             We want every employee and trade partner to feel that they are part of a common good and cohesive team. We help our
@@ -50,18 +54,12 @@ export default function SafetySection() {
 
           {/* Links */}
           <div className="mt-10 flex items-center gap-8 text-sm font-semibold">
-          <a
-  href="#"
-  className="text-gray-900 dark:text-white font-semibold animate-soft-blink"
->
-  LEARN MORE
-</a>
+            <Link href="#" className="text-gray-900 dark:text-white font-semibold animate-soft-blink">
+              LEARN MORE
+            </Link>
 
             <span className="h-4 w-[1px] bg-gray-400"></span>
-            <Link
-              href="#"
-              className=""
-            >
+            <Link href="#" className="">
               CAREERS AT EVERGREEN ABASON GROUP
             </Link>
           </div>
