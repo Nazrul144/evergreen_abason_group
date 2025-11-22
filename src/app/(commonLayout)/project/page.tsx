@@ -1,4 +1,4 @@
-import AllProjects from '@/pages/allProjects/AllProjects'
+import AllProjects from "@/pages/subPages/allProjects/AllProjects";
 
 export const metadata = {
   title: "Projects | Evergreen Abason Group",
@@ -6,13 +6,12 @@ export const metadata = {
     "Browse all ongoing, upcoming, and completed real estate projects by Evergreen Abason Group. Explore project details, locations, amenities, and development insights.",
 };
 
-
 const ProjectPage = () => {
   return (
     <div>
-      <AllProjects/>
+      <AllProjects />
     </div>
-  )
-}
+  );
+};
 
-export default ProjectPage
+export default ProjectPage;

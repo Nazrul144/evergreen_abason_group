@@ -1,12 +1,11 @@
-import LandingPage from '@/pages/homePage/landingPage/LandingPage'
-
+import LandingPage from "@/pages/mainPages/homePage/landingPage/LandingPage";
 
 const Home = () => {
   return (
     <div>
-      <LandingPage/>
+      <LandingPage />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

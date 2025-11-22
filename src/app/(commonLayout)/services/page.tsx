@@ -1,5 +1,4 @@
-import Services from "@/pages/servicePage/Services";
-
+import Services from "@/pages/mainPages/servicePage/Services";
 
 export const metadata = {
   title: "Services | Evergreen Abason Group",
@@ -7,13 +6,12 @@ export const metadata = {
     "Discover the range of real estate and construction services offered by Evergreen Abason Group, including project development, architectural planning, construction management, and customer consultation.",
 };
 
-
 const ServicesPage = () => {
   return (
     <div>
-      <Services/>
+      <Services />
     </div>
-  )
-}
+  );
+};
 
-export default ServicesPage
+export default ServicesPage;

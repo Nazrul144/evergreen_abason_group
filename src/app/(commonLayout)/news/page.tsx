@@ -1,12 +1,11 @@
-import News from "@/pages/newsPage/News"
-
+import News from "@/pages/mainPages/newsPage/News";
 
 const NewsPage = () => {
   return (
     <div>
-      <News/>
+      <News />
     </div>
-  )
-}
+  );
+};
 
-export default NewsPage
+export default NewsPage;

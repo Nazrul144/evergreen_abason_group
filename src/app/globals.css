@@ -1,10 +1,16 @@
+@import 'swiper/css';
+@import 'swiper/css/effect-coverflow';
+@import 'swiper/css/pagination';
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-/* Keyframes for wavy up-down animation */
 
+
+
+/* Keyframes for wavy up-down animation */
 @keyframes wave {
   0%, 60%, 100% {
     transform: translateY(0);
@@ -44,12 +50,6 @@
   transform: scale(1.5);
 }
 /* Smooth Image Zoom animation ends*/
-
-
-
-
-
-
 
 
 /* WRAPPER REQUIRED */
@@ -124,6 +124,22 @@
   object-fit: cover;
 }
 
+.mySwiper {
+  width: 100%;
+  height: 350px;     /* ⭐ এটা না থাকলে coverflow কাজ করবে না */
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.mySwiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px !important;
+  height: 300px !important;
+}
+
+
+
 
 /*Tab color customize*/
 .custom-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
@@ -147,6 +163,31 @@
 
 .animate-soft-blink {
   animation: soft-blink 1.5s ease-in-out infinite;
+}
+
+
+
+/*Swiper slider*/
+.mySwiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.mySwiper .swiper-slide {
+  width: 300px !important;
+  height: 300px !important;
+  background-position: center;
+  background-size: cover;
+}
+
+.mySwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+.expand-group {
+  position: relative;
+  overflow: visible;  
 }
 
 

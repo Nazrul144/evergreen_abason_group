@@ -1,4 +1,4 @@
-import Work from '@/pages/workPage/Work'
+import Work from "@/pages/mainPages/workPage/Work";
 
 export const metadata = {
   title: "Our Work | Evergreen Abason Group",
@@ -6,13 +6,12 @@ export const metadata = {
     "Explore the portfolio of Evergreen Abason Group, showcasing completed and ongoing construction, development, and real estate projects that reflect our commitment to quality and innovation.",
 };
 
-
 const WorkPage = () => {
   return (
     <div>
-        <Work/>
+      <Work />
     </div>
-  )
-}
+  );
+};
 
-export default WorkPage
+export default WorkPage;

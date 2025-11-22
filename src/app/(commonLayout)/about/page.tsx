@@ -1,4 +1,5 @@
-import About from '@/pages/aboutPage/About'
+import About from "@/pages/mainPages/aboutPage/About";
+
 
 export const metadata = {
   title: "About Us | Evergreen Abason Group",

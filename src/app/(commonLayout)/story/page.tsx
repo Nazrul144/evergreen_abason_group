@@ -1,4 +1,4 @@
-import FullStory from "@/pages/newsPage/ourStory/FullStory";
+import FullStory from "@/pages/mainPages/newsPage/ourStory/FullStory";
 
 export const metadata = {
   title: "Our Story – SCE | Evergreen Abason Group",
@@ -18,7 +18,7 @@ export const metadata = {
 const OurStory = () => {
   return (
     <div>
-      <FullStory/>
+      <FullStory />
     </div>
   );
 };

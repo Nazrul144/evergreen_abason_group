@@ -1,4 +1,4 @@
-import Contact from "@/pages/homePage/Contact";
+import Contact from "@/pages/mainPages/homePage/Contact";
 
 export const metadata = {
   title: "Contact Us | Evergreen Abason Group",

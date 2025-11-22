@@ -1,4 +1,4 @@
-import ExploreServices from "@/pages/servicePage/ExploreServices";
+import ExploreServices from "@/pages/mainPages/servicePage/ExploreServices";
 
 export const metadata = {
   title: "Our Services | Evergreen Abason Group",
@@ -19,7 +19,7 @@ export const metadata = {
 const ServicesPage = () => {
   return (
     <div>
-      <ExploreServices/>
+      <ExploreServices />
     </div>
   );
 };

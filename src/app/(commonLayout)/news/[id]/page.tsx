@@ -1,5 +1,5 @@
 import { newsData } from "@/data/newsData";
-import NewsDetails from "@/pages/newsPage/NewsDetails";
+import NewsDetails from "@/pages/mainPages/newsPage/NewsDetails";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,13 +15,10 @@ export const metadata: Metadata = {
   ],
 };
 
-const NewsDetailsPage = async({ params }: { params: { id: string } }) => {
-  
+const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
   const id = Number((await params).id);
 
-console.log("ID IS:", id);  // This prints 2 ✔️
-
-  
+  console.log("ID IS:", id); // This prints 2 ✔️
 
   const news = newsData.find((item) => item.id === id);
 
