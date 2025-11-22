@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="border-b px-4 lg:px-44 md:px-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 relative z-50">
+      <header className="border-b px-4 sticky top-0 lg:px-44 md:px-10 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 relative z-50">
         <div className="flex h-20 items-center justify-between">
           {/* LEFT */}
           <div className="flex items-center gap-3">

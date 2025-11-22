@@ -1,3 +1,4 @@
+import ScrollToTopButton from "@/components/ButtomToTopScrolling/ScrollToTopButton";
 import Footer from "@/shared/Footer";
 import Navbar from "@/shared/Navbar";
 
@@ -9,6 +10,7 @@ const CommonLayout = ({ children }: { children: React.ReactNode }) => {
       {children}
       </div>
       <Footer />
+      <ScrollToTopButton/>
     </div>
   );
 };

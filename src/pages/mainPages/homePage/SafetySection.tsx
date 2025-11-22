@@ -54,12 +54,12 @@ export default function SafetySection() {
 
           {/* Links */}
           <div className="mt-10 flex items-center gap-8 text-sm font-semibold">
-            <Link href="#" className="text-gray-900 dark:text-white font-semibold animate-soft-blink">
+            <Link href="/learn_more" className="text-gray-900 dark:text-white font-semibold animate-soft-blink">
               LEARN MORE
             </Link>
 
             <span className="h-4 w-[1px] bg-gray-400"></span>
-            <Link href="#" className="">
+            <Link href="build_project" className="">
               CAREERS AT EVERGREEN ABASON GROUP
             </Link>
           </div>
