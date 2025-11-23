@@ -7,10 +7,10 @@ import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const services = [
-  { id: "construction", title: "Construction", href: "#", icon: Building },
-  { id: "pre-construction", title: "Pre-Construction", href: "#", icon: ClipboardList },
-  { id: "design-build", title: "Design - Build", href: "#", icon: PenTool },
-  { id: "lump-sum", title: "Lump-Sum Contracting", href: "#", icon: FileSpreadsheet },
+  { id: "construction", title: "Construction", href: "/construction", icon: Building },
+  { id: "pre-construction", title: "Pre-Construction", href: "/pre_build", icon: ClipboardList },
+  { id: "design-build", title: "Design - Build", href: "/design_build", icon: PenTool },
+  { id: "lump-sum", title: "Lump-Sum Contracting", href: "/lumpsum", icon: FileSpreadsheet },
 ];
 
 export default function ServicesSection() {

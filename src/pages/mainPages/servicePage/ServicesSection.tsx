@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ServicesSection = () => {
   return (
-    <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900">
+    <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900 mb-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between">
         <div>
           <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
