@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Sustainability = () => {
   return (
@@ -7,17 +8,27 @@ const Sustainability = () => {
       {/* LEFT — Images */}
       <div className="relative w-full lg:ml-24 md:w-1/2 flex justify-center md:justify-start ">
         {/* Main Image */}
-        <div className="w-60 h-60 sm:w-72 sm:h-72 relative">
+        <motion.div
+          className="w-60 h-60 sm:w-72 sm:h-72 relative"
+          initial={{ y: -100, x: -100, opacity: 0 }}
+          whileInView={{ y: 0, x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
           <Image
             src="/Sustainability/1.png"
             alt="sustainable-image-1"
             fill
             className="object-cover rounded-md shadow-lg dark:shadow-[0_0_15px_rgba(255,255,255,0.15)]"
           />
-        </div>
+        </motion.div>
 
         {/* Overlapping Image */}
-        <div
+        <motion.div
           className="
             w-60 h-60 sm:w-72 sm:h-72 
             absolute 
@@ -25,6 +36,14 @@ const Sustainability = () => {
             sm:left-[-50px] sm:bottom-[-80px] 
             lg:left-[100px] lg:bottom-[-170px]
           "
+          initial={{ x: 100, y: 100, opacity: 0 }}
+          whileInView={{ x: 0, y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <Image
             src="/Sustainability/2.png"
@@ -32,33 +51,45 @@ const Sustainability = () => {
             fill
             className="object-cover rounded-md shadow-xl dark:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* RIGHT — Text */}
-      <div className="w-full md:w-1/2 mt-24 md:mt-0">
-        <p className="text-sm uppercase text-gray-500 dark:text-gray-400 tracking-wide mb-3">
-          Our way
-        </p>
+      <motion.div
+        className="w-full md:w-1/2 mt-24 md:mt-0"
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+      >
+        <p className="text-sm uppercase text-gray-500 dark:text-gray-400 tracking-wide mb-3">Our way</p>
 
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">
-          Sustainability
-        </h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">Sustainability</h2>
 
         <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed">
-          Our Sustainable Construction Advisors (SCAs) provide sustainable
-          construction expertise to our buildings, civil and industrial project
-          teams. The SCAs work collaboratively with clients to develop
-          cost-effective strategies to reduce the overall environmental impact
-          of their projects.
+          Our Sustainable Construction Advisors (SCAs) provide sustainable construction expertise to our buildings, civil and
+          industrial project teams. The SCAs work collaboratively with clients to develop cost-effective strategies to reduce the
+          overall environmental impact of their projects.
         </p>
 
         <Link href="/sustainability">
-          <button
+          <motion.button
             className="
     px-6 py-3 bg-green-600 text-white uppercase tracking-wide
     hover:bg-green-700 relative group transition rounded-sm cursor-pointer
   "
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <span
               className="
@@ -70,9 +101,9 @@ const Sustainability = () => {
             >
               Learn More
             </span>
-          </button>
+          </motion.button>
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };

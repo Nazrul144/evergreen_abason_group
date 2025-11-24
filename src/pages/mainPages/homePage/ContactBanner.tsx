@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const ContactBanner = () => {
   return (
@@ -7,16 +9,35 @@ const ContactBanner = () => {
       {/* Background Image */}
       <Image src="/ContactBanner/banner.jpg" alt="Contact Banner" fill className="object-cover" />
 
-      <div className="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
+      <motion.div
+        className="absolute inset-0 bg-black/60 dark:bg-black/70"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+      ></motion.div>
 
       <div className="absolute inset-0 flex items-center px-6 md:px-16 lg:px-24">
         <div className="max-w-lg space-y-6">
-          <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight dark:text-gray-300">
+          <motion.h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight dark:text-gray-300"
+           initial={{ x: -100, opacity: 0 }}
+           whileInView={{ x: 0, opacity: 1 }}
+           transition={{
+             delay: 0.2,
+             type: "keyframes",
+             stiffness: 60,
+             duration: 1,
+           }}
+          >
             We&rsquo;d love to hear <br /> from you
-          </h2>
+          </motion.h2>
 
           {/* Button */}
-          <button
+          <motion.button
             className="
                 
               hover:bg-green-700 relative group 
@@ -27,8 +48,17 @@ const ContactBanner = () => {
   active:shadow-[0_0_0_rgba(0,0,0,0.5)]
   transition-all
             "
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
-            <Link href={"/contact"}
+            <Link
+              href={"/contact"}
               className="
                 relative
                 after:content-[''] after:absolute after:left-0 after:-bottom-1
@@ -36,10 +66,9 @@ const ContactBanner = () => {
                 after:duration-300 group-hover:after:w-full
               "
             >
-              BUILD  A  PROJECT  WITH  US
-
+              BUILD A PROJECT WITH US
             </Link>
-          </button>
+          </motion.button>
         </div>
       </div>
     </section>

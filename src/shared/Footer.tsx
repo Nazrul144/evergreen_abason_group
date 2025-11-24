@@ -1,27 +1,29 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <motion.footer
+      className="w-full border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        delay: 0.2,
+        type: "keyframes",
+        stiffness: 60,
+        duration: 1,
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 py-12">
-      
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start relative">
-    
           <div className="flex flex-col items-center text-center space-y-3 col-span-1">
-            <Image
-              src="/Navbar_Logo/logo.png"
-              width={60}
-              height={60}
-              alt="Evergreen Abason Group"
-            />
+            <Image src="/Navbar_Logo/logo.png" width={60} height={60} alt="Evergreen Abason Group" />
             <span className="uppercase text-lg leading-tight font-bold whitespace-nowrap">
               {"Evergreen Abason Group".split("").map((char, i) => (
                 <span
                   key={i}
-                  className={`inline-block animate-color-flow ${
-                    char === " " ? "mr-1" : ""
-                  }`}
+                  className={`inline-block animate-color-flow ${char === " " ? "mr-1" : ""}`}
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
                   {char}
@@ -30,9 +32,7 @@ const Footer = () => {
             </span>
 
             <p className="text-lg font-medium lg:mt-16">212.804.6800</p>
-            <p className="text-lg underline underline-offset-2 lg:mb-8">
-              info@konstruktion.com
-            </p>
+            <p className="text-lg underline underline-offset-2 lg:mb-8">info@konstruktion.com</p>
           </div>
 
           {/* ================= CITY BLOCKS ================= */}
@@ -59,27 +59,20 @@ const Footer = () => {
             },
           ].map((item, i) => (
             <div key={i} className="space-y-1 mt-2 ml-4">
-              <h3 className="font-semibold text-xl tracking-wide mt-2 mb-2 ">
-                {item.city}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">
-                {item.line1}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">
-                {item.line2}
-              </p>
+              <h3 className="font-semibold text-xl tracking-wide mt-2 mb-2 ">{item.city}</h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">{item.line1}</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">{item.line2}</p>
             </div>
           ))}
         </div>
 
         {/* ================= NAV LINKS ================= */}
         <div className="flex flex-wrap gap-10 text-sm font-medium tracking-wide">
-          {["PROJECTS", "HISTORY", "VISION", "LEADERSHIP", "CAREERS"].map(
-            (x) => (
-              <a
-                key={x}
-                href="#"
-                className="
+          {["PROJECTS", "HISTORY", "VISION", "LEADERSHIP", "CAREERS"].map((x) => (
+            <a
+              key={x}
+              href="#"
+              className="
         relative mt-6
         hover:text-green-600 dark:hover:text-green-400
         after:absolute after:left-0 after:-bottom-[2px]
@@ -87,11 +80,10 @@ const Footer = () => {
         after:transition-all after:duration-300
         hover:after:w-full
       "
-              >
-                {x}
-              </a>
-            )
-          )}
+            >
+              {x}
+            </a>
+          ))}
         </div>
 
         <hr className="mt-12 border-gray-300 dark:border-gray-700" />
@@ -171,7 +163,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useContext, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const context = useContext(ProjectContext);
@@ -20,11 +21,9 @@ export default function Projects() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   // 🔥 Define slider functions AFTER projects exist
-  const nextCard = () =>
-    setIndex((prev) => (prev + 1) % projects.length);
+  const nextCard = () => setIndex((prev) => (prev + 1) % projects.length);
 
-  const prevCard = () =>
-    setIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  const prevCard = () => setIndex((prev) => (prev - 1 + projects.length) % projects.length);
 
   if (loading)
     return (
@@ -46,18 +45,39 @@ export default function Projects() {
     <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900">
       {/* Heading */}
       <div className="flex items-center space-x-2">
-        <h3 className="text-[#6A7282] dark:text-gray-300">Projects</h3>
+        <motion.h3
+          className="text-[#6A7282] dark:text-gray-300"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
+          Projects
+        </motion.h3>
         <span className="w-12 h-[1px] bg-green-500"></span>
       </div>
 
-      <h1 className="text-[#0A0A0A] dark:text-gray-100 text-5xl mt-6 mb-6">
+      <motion.h1
+        className="text-[#0A0A0A] dark:text-gray-100 text-5xl mt-6 mb-6"
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+      >
         Delivering our clients more <br /> project clarity, greater <br />
         insight, and less chaos.
-      </h1>
+      </motion.h1>
 
-      <Link
-        href="/project"
-        className="flex items-center gap-1 cursor-pointer mb-6 group"
+      <Link href="/project" className="flex items-center gap-1 cursor-pointer mb-6 group"
+      
       >
         <span
           className="
@@ -106,7 +126,16 @@ export default function Projects() {
             }}
           >
             {/* Image */}
-            <div className="relative group w-full h-[500px] overflow-hidden">
+            <motion.div className="relative group w-full h-[500px] overflow-hidden"
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
+            >
               <Image
                 draggable={false}
                 alt={project.title}
@@ -146,12 +175,12 @@ export default function Projects() {
                   )}
                 </>
               )}
-            </div>
+            </motion.div>
 
             <div className="absolute bottom-[148px] right-0 flex items-center overflow-hidden group/view">
-              <Link  href={`/project/${project.id}`}>
-              <button
-                className="
+              <Link href={`/project/${project.id}`}>
+                <button
+                  className="
                   bg-white dark:bg-gray-900 dark:text-gray-300 
                   px-4 py-2 text-sm
                   translate-x-full opacity-0
@@ -159,9 +188,9 @@ export default function Projects() {
                   group-hover/view:translate-x-0 group-hover/view:opacity-100
                   h-11 cursor-pointer
                 "
-              >
-                View Project
-              </button>
+                >
+                  View Project
+                </button>
               </Link>
               <button
                 className="
@@ -203,9 +232,7 @@ export default function Projects() {
                     hover:after:w-full
                   "
                 >
-                  {project.title.length > 20
-                    ? project.title.substring(0, 20) + "..."
-                    : project.title}
+                  {project.title.length > 20 ? project.title.substring(0, 20) + "..." : project.title}
                 </Link>
               </div>
             </div>

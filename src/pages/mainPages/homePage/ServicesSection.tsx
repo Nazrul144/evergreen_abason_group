@@ -19,9 +19,17 @@ export default function ServicesSection() {
   return (
     <section className="w-full bg-black text-white py-20 dark:bg-gray-900 dark:border-t border-gray-700">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-24">
-        
         {/* LEFT SIDE */}
-        <div>
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
           <p className="text-sm tracking-wide text-gray-300 mb-2">
             Services <span className="text-green-400">—</span>
           </p>
@@ -29,7 +37,7 @@ export default function ServicesSection() {
             Providing exceptional <br /> construction services <br />
             and insight from the <br /> start.
           </h2>
-        </div>
+        </motion.div>
 
         {/* RIGHT SIDE */}
         <div className="space-y-10">
@@ -37,7 +45,18 @@ export default function ServicesSection() {
             const Icon = item.icon;
 
             return (
-              <div key={item.id} className="border-b border-white/10 pb-6">
+              <motion.div
+                key={item.id}
+                className="border-b border-white/10 pb-6"
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  type: "keyframes",
+                  stiffness: 60,
+                  duration: 1,
+                }}
+              >
                 <Link
                   href={item.href}
                   onMouseEnter={() => setHovered(item.id)}
@@ -61,7 +80,6 @@ export default function ServicesSection() {
                   <span className="text-xl relative inline-block">
                     {item.title}
 
-                 
                     <motion.span
                       initial={{ width: 0 }}
                       animate={{
@@ -72,7 +90,6 @@ export default function ServicesSection() {
                     />
                   </span>
 
-          
                   <motion.div
                     initial={{ opacity: 0, x: -5 }}
                     animate={{
@@ -82,10 +99,10 @@ export default function ServicesSection() {
                     transition={{ duration: 0.25 }}
                     className="text-green-400"
                   >
-                    <FaArrowRightLong size={24} className="lg:ml-66"/>
+                    <FaArrowRightLong size={24} className="lg:ml-66" />
                   </motion.div>
                 </Link>
-              </div>
+              </motion.div>
             );
           })}
         </div>
