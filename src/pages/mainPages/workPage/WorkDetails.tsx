@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 interface WorkDetailsProps {
+  id:number
   title: string;
   description: string;
   image: string;
@@ -11,6 +12,7 @@ interface WorkDetailsProps {
 }
 
 const WorkDetails: React.FC<WorkDetailsProps> = ({
+
   title,
   description,
   image,
