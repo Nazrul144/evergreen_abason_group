@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button, Card } from "antd";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const NewsSection: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(6);
@@ -20,7 +21,16 @@ const NewsSection: React.FC = () => {
   return (
     <section className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900">
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between">
+      <motion.div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between"
+       initial={{ x: -100, opacity: 0 }}
+       whileInView={{ y: 0, opacity: 1 }}
+       transition={{
+         delay: 0.2,
+         type: "keyframes",
+         stiffness: 60,
+         duration: 1,
+       }}
+      >
         <div>
           <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
             Insights
@@ -41,10 +51,19 @@ const NewsSection: React.FC = () => {
         <p className="mt-6 md:mt-0 max-w-md text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
           Our people are dedicated to finding solutions to every challenge. That spirit makes for great stories worth sharing.
         </p>
-      </div>
+      </motion.div>
 
     
-      <div className="mt-16 max-w-7xl mx-auto bg-gray-50 dark:bg-gray-900/40 rounded-xl overflow-hidden shadow-md">
+      <motion.div className="mt-16 max-w-7xl mx-auto bg-gray-50 dark:bg-gray-900/40 rounded-xl overflow-hidden shadow-md"
+       initial={{ x: 100, opacity: 0 }}
+       whileInView={{ y: 0, opacity: 1 }}
+       transition={{
+         delay: 0.2,
+         type: "keyframes",
+         stiffness: 60,
+         duration: 1,
+       }}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Text Section */}
           <div className="p-10 lg:p-14">
@@ -73,18 +92,25 @@ const NewsSection: React.FC = () => {
             <Image width={800} height={800} src="/NewsPage/banner.jpg" alt="News Image" className="w-full h-full object-cover" />
           </div>
         </div>
-      </div>
+      </motion.div>
 
     
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+       initial={{ y: 100, opacity: 0 }}
+       whileInView={{ y: 0, opacity: 1 }}
+       transition={{
+         delay: 0.2,
+         type: "keyframes",
+         stiffness: 60,
+         duration: 1,
+       }}
+      >
         {newsData.slice(0, visibleCount).map((news) => (
           <Card
             key={news.id}
             className="
         w-[470px] h-[480px]
-        dark:!bg-gray-900 dark:!border-gray-700
-        !shadow-md dark:!shadow-black/50
-      "
+        dark:bg-gray-900! dark:border-gray-700! shadow-md! dark:shadow-black/50!"
             bodyStyle={{
               padding: "20px",
             }}
@@ -104,7 +130,7 @@ const NewsSection: React.FC = () => {
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{news.shortDescription}</p>
           </Card>
         ))}
-      </div>
+      </motion.div>
       <div className="w-38 mx-auto">
         <Button loading={loading} onClick={handleAllNews} className="mt-8 mb-8 text-lg">
           {loading ? "Loading..." : "View All News"}

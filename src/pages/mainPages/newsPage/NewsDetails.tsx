@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface INewsData {
   id: number;
@@ -16,7 +17,16 @@ const NewsDetails = ({ news }: { news: INewsData }) => {
     <section className="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-300">
       <div className="container flex flex-col lg:flex-row justify-center p-6 mx-auto sm:py-12 lg:py-24 gap-6">
         {/* Image Section - 40% width */}
-        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 lg:w-2/5">
+        <motion.div className="flex items-center justify-center p-6 mt-8 lg:mt-0 lg:w-2/5"
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+        >
           <Image
             src={news.image}
             alt={news.title}
@@ -24,10 +34,18 @@ const NewsDetails = ({ news }: { news: INewsData }) => {
             height={600}
             className="object-cover rounded-xl w-full h-[550px]"
           />
-        </div>
+        </motion.div>
 
         {/* Text Section - 60% width */}
-        <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:w-3/5 lg:text-left">
+        <motion.div className="flex flex-col justify-center p-6 text-center rounded-sm lg:w-3/5 lg:text-left"
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}>
           <h1 className="text-xl font-bold leading-none sm:text-2xl">{news.title}</h1>
 
           <p className="mt-6 mb-8 text-lg text-gray-600 dark:text-gray-300 sm:mb-12 text-justify">
@@ -66,7 +84,7 @@ const NewsDetails = ({ news }: { news: INewsData }) => {
               Home Page
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

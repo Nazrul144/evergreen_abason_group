@@ -1,7 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import { CheckCircle, Lightbulb, Repeat, Globe, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Feature {
   id: number;
@@ -54,34 +54,74 @@ const ImageContentSection = () => {
       <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-10">
         {/* Left Image Area */}
         <div className="lg:w-1/2 lg:sticky lg:top-24 flex flex-col gap-6">
-          <div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64">
+          <motion.div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+          >
             <Image
               src="/Learn_More/image2.jpg"
               alt="Demo 1"
               fill
               className="object-cover rounded-xl shadow-lg"
             />
-          </div>
-          <div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64">
+          </motion.div>
+
+
+          <motion.div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.6,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+          >
             <Image
               src="/Learn_More/image3.jpg"
               alt="Demo 2"
               fill
               className="object-cover rounded-xl shadow-lg"
             />
-          </div>
-          <div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64">
+          </motion.div>
+
+
+          <motion.div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.8,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+          >
             <Image
               src="/Learn_More/image4.jpg"
               alt="Demo 3"
               fill
               className="object-cover rounded-xl shadow-lg"
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Content Area */}
-        <div className="lg:w-1/2 flex flex-col gap-12">
+        <motion.div className="lg:w-1/2 flex flex-col gap-12"
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+        >
           {features.map((feature) => (
             <div
               key={feature.id}
@@ -98,7 +138,7 @@ const ImageContentSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

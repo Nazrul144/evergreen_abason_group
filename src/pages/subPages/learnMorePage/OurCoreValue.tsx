@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import { Dancing_Script } from "next/font/google";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const dancing = Dancing_Script({
   subsets: ["latin"],
@@ -23,10 +24,20 @@ const OurCoreValue = () => {
   return (
     <div className="lg:px-44 md:px-10  dark:bg-gray-900 py-16">
       <div className="lg:flex lg:justify-between mb-16">
-        <div className="lg:w-[50%]">
+        <motion.div
+          className="lg:w-[50%]"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
           <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
             Our Core Values
-            <span className="h-[1px] w-10 bg-green-500 mt-1"></span>
+            <span className="h-px w-10 bg-green-500 mt-1"></span>
           </p>
 
           <h2
@@ -38,36 +49,65 @@ const OurCoreValue = () => {
           >
             Passion. Integrity. Hard work. Professionalism. Caring.
           </h2>
-        </div>
-        <div className="lg:w-[50%] mt-4">
+        </motion.div>
+
+        <motion.div
+          className="lg:w-[50%] mt-4"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
           <p className="text-sm">
             These core values have been with us since the beginning, and they&apos;ve infused who we are and how we build. Nothing
             brings us more excitement than transforming the skyline — and we do it by setting our standards high, striving for the
             best, building trust, and lifting up the people around us.
           </p>
-        </div>
+        </motion.div>
       </div>
-      <div>
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+      >
         <Image src="/Learn_More/value.jpg" width={800} height={600} alt="Image" className="object-cover w-full h-[550] mb-16" />
-      </div>
-   
+      </motion.div>
+
       <div>
-       
-        <div className="flex">
+        <motion.div
+          className="flex"
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
           <h1
             className={`
     ${dancing.className}
     text-center font-bold text-4xl relative inline-block mx-auto
-    bg-gradient-to-r from-orange-400 via-rose-500 to-red-500
+    bg-linear-to-r from-orange-400 via-rose-500 to-red-500
     text-transparent bg-clip-text
   `}
           >
             Meet Our Team
-            <span className="block mx-auto w-40 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent mt-3 relative">
+            <span className="block mx-auto w-40 h-1 bg-linear-to-r from-transparent via-orange-500 to-transparent mt-3 relative">
               <span className="absolute left-1/2 -top-2 -translate-x-1/2 w-3 h-3 rotate-45 bg-orange-500"></span>
             </span>
           </h1>
-        </div>
+        </motion.div>
 
         <Swiper
           effect="coverflow"

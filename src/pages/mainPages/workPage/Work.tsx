@@ -1,9 +1,8 @@
 "use client";
-
 import { Tabs, TabsProps } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 interface Project {
   id: string;
   title: string;
@@ -99,7 +98,18 @@ const Work = () => {
           .filter((project) => category === "All" || project.category === category)
           .map((project) => (
             <Link key={project.id} href={`/work/${project.id}`}>
-              <div key={project.id} className="border rounded p-4 dark:bg-gray-800">
+              <motion.div
+                key={project.id}
+                className="border rounded p-4 dark:bg-gray-800"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  type: "keyframes",
+                  stiffness: 60,
+                  duration: 1,
+                }}
+              >
                 <Image
                   width={500}
                   height={500}
@@ -109,7 +119,7 @@ const Work = () => {
                 />
                 <h3 className="mt-2 font-semibold text-gray-900 dark:text-gray-300">{project.title}</h3>
                 <p className="text-gray-500 dark:text-gray-300 mt-1">{project.description}</p>
-              </div>
+              </motion.div>
             </Link>
           ))}
       </div>
@@ -123,21 +133,63 @@ const Work = () => {
   return (
     <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900">
       {/* Heading */}
-      <div className="flex items-center space-x-2">
+      <motion.div
+        className="flex items-center space-x-2"
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+      >
         <h3 className="text-[#6A7282] dark:text-gray-300">Our Work</h3>
         <span className="w-12 h-[1px] bg-green-500"></span>
-      </div>
+      </motion.div>
       <div>
-        <h1 className="text-2xl lg:text-4xl text-[#1b2027] font-semibold mt-4 mb-4 dark:text-gray-300">Projects</h1>
-        <h1 className="text-xl text-[#4A5565] dark:text-gray-300">
+        <motion.h1
+          className="text-2xl lg:text-4xl text-[#1b2027] font-semibold mt-4 mb-4 dark:text-gray-300"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.4,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
+          Projects
+        </motion.h1>
+        <motion.h1
+          className="text-xl text-[#4A5565] dark:text-gray-300"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.6,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
           Building the future of the construction industry, one project at a time.
-        </h1>
+        </motion.h1>
       </div>
 
       {/* Tabs */}
-      <div className="mt-8">
+      <motion.div
+        className="mt-8"
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.4,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+      >
         <Tabs className="custom-tabs" defaultActiveKey="1" items={items} onChange={onChange} />
-      </div>
+      </motion.div>
     </div>
   );
 };

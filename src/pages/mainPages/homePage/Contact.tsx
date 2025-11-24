@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,6 +13,7 @@ import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 
 export const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -70,7 +64,7 @@ const Contact = () => {
           Swal.fire({
             title: "Message has been sent successfully!",
             text: "Click ok to close!",
-            icon: "success"
+            icon: "success",
           });
           form.reset();
         },
@@ -82,11 +76,19 @@ const Contact = () => {
 
   return (
     <div className="lg:px-44 md:px-10 py-16 dark:bg-gray-900">
-      <h1
-        className={`${playfair.className} text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-green-500 via-teal-400 to-blue-500 bg-clip-text text-transparent`}
+      <motion.h1
+        className={`${playfair.className} text-4xl font-extrabold text-center mb-10 bg-linear-to-r from-green-500 via-teal-400 to-blue-500 bg-clip-text text-transparent`}
+        initial={{ opacity: 0 }}
+        whileInView={{  opacity: 1 }}
+        transition={{
+          delay: 0.4,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
       >
         Contact Us
-      </h1>
+      </motion.h1>
 
       <div
         className="
@@ -97,7 +99,15 @@ const Contact = () => {
         "
       >
         <Form {...form}>
-          <form
+          <motion.form
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
             ref={formRef}
             onSubmit={form.handleSubmit(sendEmail)}
             className="space-y-10"
@@ -119,9 +129,12 @@ const Contact = () => {
                         className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 p-3 rounded-md focus:ring-2 focus:ring-teal-400"
                       >
                         <option value="">Select</option>
-                        <option value="High">High</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Low">Low</option>
+                        <option value="Product">Product Inquiry</option>
+                        <option value="Service">Service Inquiry</option>
+                        <option value="Pricing">Pricing Inquiry</option>
+                        <option value="Support">Support / Technical Inquiry</option>
+                        <option value="Feedback">Feedback / Suggestion</option>
+                        <option value="Complaint">Complaint</option>
                       </select>
                     </FormControl>
                     <FormMessage />
@@ -144,9 +157,13 @@ const Contact = () => {
                         className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 p-3 rounded-md focus:ring-2 focus:ring-teal-400"
                       >
                         <option value="">Select</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
+                        <option value="A">Dhaka</option>
+                        <option value="B">Barishal</option>
+                        <option value="C">Chittagong</option>
+                        <option value="C">Rangpur</option>
+                        <option value="C">Rajshahi</option>
+                        <option value="C">Khulna</option>
+                        <option value="C">Sylhet</option>
                       </select>
                     </FormControl>
                     <FormMessage />
@@ -162,9 +179,7 @@ const Contact = () => {
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="dark:text-gray-200">
-                      First Name
-                    </FormLabel>
+                    <FormLabel className="dark:text-gray-200">First Name</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
@@ -183,9 +198,7 @@ const Contact = () => {
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="dark:text-gray-200">
-                      Last Name
-                    </FormLabel>
+                    <FormLabel className="dark:text-gray-200">Last Name</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
@@ -253,9 +266,7 @@ const Contact = () => {
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="dark:text-gray-200">
-                    Description
-                  </FormLabel>
+                  <FormLabel className="dark:text-gray-200">Description</FormLabel>
                   <FormControl>
                     <Textarea
                       {...field}
@@ -271,15 +282,25 @@ const Contact = () => {
             />
 
             {/* Submit Button */}
-            <div className="flex justify-center">
+            <motion.div
+              className="flex justify-center"
+              initial={{  opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                type: "keyframes",
+                stiffness: 60,
+                duration: 1,
+              }}
+            >
               <Button
                 type="submit"
                 className="px-10 py-3 text-lg bg-gradient-to-r from-green-500 via-teal-400 to-blue-500 text-white shadow-md rounded-xl hover:opacity-90 transition cursor-pointer"
               >
                 Submit
               </Button>
-            </div>
-          </form>
+            </motion.div>
+          </motion.form>
         </Form>
       </div>
     </div>

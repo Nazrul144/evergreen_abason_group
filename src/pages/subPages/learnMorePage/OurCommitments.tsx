@@ -1,4 +1,6 @@
+"use client";
 import { ClipboardCheck, Leaf, User } from "lucide-react";
+import { motion } from "framer-motion";
 
 const OurCommitments = () => {
   const features = [
@@ -28,10 +30,19 @@ const OurCommitments = () => {
   return (
     <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900 ">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between">
-        <div>
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+        >
           <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
             Our Commitments
-            <span className="h-[1px] w-10 bg-green-500"></span>
+            <span className="h-px w-10 bg-green-500 mt-1"></span>
           </p>
 
           <h2
@@ -43,16 +54,27 @@ const OurCommitments = () => {
           >
             We know that every decision <br /> has an impact
           </h2>
-        </div>
+        </motion.div>
         <section className="bg-white dark:bg-gray-900 dark:text-gray-300 py-16">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {features.map((feature) => (
-                <div key={feature.id} className="flex flex-col items-center text-center gap-4">
+                <motion.div
+                  key={feature.id}
+                  className="flex flex-col items-center text-center gap-4"
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{
+                    delay: 0.2,
+                    type: "keyframes",
+                    stiffness: 60,
+                    duration: 1,
+                  }}
+                >
                   <div className="mb-2">{feature.icon}</div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">{feature.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

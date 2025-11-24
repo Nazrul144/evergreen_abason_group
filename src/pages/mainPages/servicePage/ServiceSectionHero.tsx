@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type PieChartProps = {
   label: string;
@@ -128,32 +129,59 @@ const ServiceSectionCombined: React.FC = () => {
       {/* HERO */}
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-          <div>
+          <motion.div 
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+          >
             <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
               Services
-              <span className="h-px w-10 bg-green-500 inline-block" />
+              <span className="h-px w-10 bg-green-500 inline-block mt-1" />
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-600">
+            <h2 className="text-4xl md:text-5xl font-bold mt-3 text-transparent bg-clip-text bg-linear-to-r from-emerald-400 via-sky-400 to-blue-600">
               Construction
             </h2>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="rounded-sm overflow-hidden shadow-md">
+        <motion.div className="rounded-sm overflow-hidden shadow-md"
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+        >
           <Image
             src="/Service_Images/service.jpg"
             alt="Service Image"
             width={1600}
             height={800}
-            className="w-full h-[420px] object-cover"
+            className="w-full h-[520px] object-cover"
           />
-        </div>
+        </motion.div>
 
         {/* DETAILS */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* LEFT IMAGES */}
-          <div className="grid grid-cols-2 gap-4">
+          <motion.div className="grid grid-cols-2 gap-4"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+          >
             <Image
               src="/Service_Images/construction1.jpg"
               alt="Construction 1"
@@ -168,8 +196,18 @@ const ServiceSectionCombined: React.FC = () => {
               height={600}
               className="rounded-xl object-cover h-64 w-full"
             />
-          </div>
-          <div>
+          </motion.div>
+
+          <motion.div 
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
+          >
             <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-600">
               Evergreen Abason Service Quality
             </h3>
@@ -184,7 +222,8 @@ const ServiceSectionCombined: React.FC = () => {
               <PieChart label="Satisfaction" target={95} color="sky" />
               <PieChart label="Safety" target={99} color="purple" />
             </div>
-          </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

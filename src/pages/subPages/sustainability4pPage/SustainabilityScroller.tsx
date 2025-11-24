@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 interface SustainabilityItem {
   title: string;
   description: string;
@@ -30,7 +30,16 @@ export default function SustainabilityScroller() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12">
 
         {/* Sticky Image */}
-        <div className="relative h-[450px] lg:h-[700px] sticky top-24">
+        <motion.div className="relative h-[450px] lg:h-[700px] sticky top-24" 
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
+        >
           <Image
             src="/Sustainability/scrolling.jpg"
             alt="Sustainability"
@@ -39,10 +48,19 @@ export default function SustainabilityScroller() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
           />
-        </div>
+        </motion.div>
 
         {/* Scroll Content */}
-        <div className="space-y-24">
+        <motion.div className="space-y-24"
+         initial={{ x: 100, opacity: 0 }}
+         whileInView={{ x: 0, opacity: 1 }}
+         transition={{
+           delay: 0.2,
+           type: "keyframes",
+           stiffness: 60,
+           duration: 1,
+         }}
+        >
           {items.map((item, index) => (
             <div key={index} className="space-y-4">
               <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100">
@@ -53,7 +71,7 @@ export default function SustainabilityScroller() {
               </p>
             </div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

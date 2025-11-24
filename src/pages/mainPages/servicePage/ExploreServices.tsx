@@ -80,14 +80,14 @@ const ExploreServices = () => {
         <div>
           <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
             Our Services
-            <span className="h-[1px] w-10 bg-green-500"></span>
+            <span className="h-px w-10 bg-green-500 mt-1"></span>
           </p>
 
           <h2
             className="
               text-5xl md:text-3xl font-bold mt-3
               text-transparent bg-clip-text
-              bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-600
+              bg-linear-to-r from-emerald-400 via-sky-400 to-blue-600
             "
           >
             Let&apos;s Explore our services
@@ -112,7 +112,7 @@ const ExploreServices = () => {
             alt="Service Image"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
         </div>
 
 
@@ -141,7 +141,7 @@ const ExploreServices = () => {
 
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed text-justify">{service.description}</p>
 
-              <div className="h-[1px] w-full bg-gray-200 dark:bg-gray-700 mt-4"></div>
+              <div className="h-px w-full bg-gray-200 dark:bg-gray-700 mt-4"></div>
             </div>
           ))}
         </div>

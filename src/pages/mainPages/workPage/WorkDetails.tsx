@@ -1,8 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 interface WorkDetailsProps {
   title: string;
   description: string;
@@ -22,7 +21,15 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-300 px-4 md:px-10 lg:px-40 py-10">
       <div className="flex flex-col lg:flex-row gap-10 items-center">
         {/* Image */}
-        <div className="w-full lg:w-1/2 rounded-lg overflow-hidden shadow-lg">
+        <motion.div className="w-full lg:w-1/2 rounded-lg overflow-hidden shadow-lg"
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}>
           <Image
             src={image}
             alt={title}
@@ -30,10 +37,19 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({
             height={600}
             className="w-full h-auto object-cover rounded-lg"
           />
-        </div>
+        </motion.div>
 
         {/* Content */}
-        <div className="w-full lg:w-1/2 flex flex-col gap-6">
+        <motion.div className="w-full lg:w-1/2 flex flex-col gap-6"
+         initial={{ x: 100, opacity: 0 }}
+         whileInView={{ y: 0, opacity: 1 }}
+         transition={{
+           delay: 0.2,
+           type: "keyframes",
+           stiffness: 60,
+           duration: 1,
+         }}
+        >
           <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
           <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">{description}</p>
 
@@ -56,7 +72,7 @@ const WorkDetails: React.FC<WorkDetailsProps> = ({
               </Link>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
