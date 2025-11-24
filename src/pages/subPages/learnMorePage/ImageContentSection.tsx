@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { CheckCircle, Lightbulb, Repeat, Globe, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import { JSX } from "react";
 
 interface Feature {
   id: number;

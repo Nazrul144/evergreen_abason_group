@@ -1,5 +1,5 @@
 import { newsData } from "@/data/newsData";
-import NewsDetails from "@/pages/mainPages/newsPage/NewsDetails";
+import NewsDetails, { INewsData } from "@/pages/mainPages/newsPage/NewsDetails";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,11 +16,9 @@ export const metadata: Metadata = {
 };
 
 const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
-  const id = Number((await params).id);
+  const id = Number(params.id);
 
-  console.log("ID IS:", id); // This prints 2 ✔️
-
-  const news = newsData.find((item) => item.id === id);
+  const news: INewsData | undefined = newsData.find((item) => item.id === id);
 
   if (!news) {
     return <div className="text-center py-20 text-red-500">News not found!</div>;
