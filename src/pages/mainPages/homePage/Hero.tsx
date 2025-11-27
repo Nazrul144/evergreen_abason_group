@@ -11,9 +11,9 @@ const Hero = () => {
   return (
     <div>
       <motion.section
-        className="relative bg-cover bg-center bg-no-repeat lg:grid h-[800px] lg:place-content-center"
+        className="relative bg-cover bg-center bg-no-repeat lg:grid h-[800px] lg:place-content-center overflow-hidden"
         style={{ backgroundImage: "url('Hero_Image/banner.png')" }}
-        initial={{  opacity: 0 }}
+        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
           delay: 0.2,
@@ -26,21 +26,28 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/20 dark:bg-black/60"></div>
 
         <div className="relative mx-auto lg:w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-          <motion.div className="lg:max-w-prose text-left lg:mt-0 mt-32"
-           initial={{ x: -100, opacity: 0 }}
-           whileInView={{ x: 0, opacity: 1 }}
-           transition={{
-             delay: 0.2,
-             type: "keyframes",
-             stiffness: 60,
-             duration: 1,
-           }}
+          <motion.div
+            className="lg:max-w-prose text-left lg:mt-0 mt-32"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
-            <h1 className={`text-4xl sm:text-8xl font-semibold text-white drop-shadow-xl ${inter.className}`}>
+            <h1
+              className={`text-2xl lg:text-4xl sm:text-8xl font-semibold text-white drop-shadow-xl ${inter.className}`}
+            >
               <span className="whitespace-nowrap">Build. Invest.</span> <br />
               <span className="text-white drop-shadow-lg inline-block">
                 {"Succeed.".split("").map((char, i) => (
-                  <span key={i} className="inline-block animate-wave" style={{ animationDelay: `${i * 0.1}s` }}>
+                  <span
+                    key={i}
+                    className="inline-block animate-wave"
+                    style={{ animationDelay: `${i * 0.1}s` }}
+                  >
                     {char}
                   </span>
                 ))}
@@ -59,7 +66,7 @@ const Hero = () => {
               }}
             >
               <Link
-                className="group inline-block rounded border border-gray-200 dark:border-gray-500 px-5 py-3 font-medium text-white shadow-sm  dark:bg-transparent dark:text-white transition-colors"
+                className="group inline-block rounded border border-gray-200 dark:border-gray-500 px-5 py-3 font-medium text-white shadow-sm dark:bg-transparent dark:text-white transition-colors"
                 href="learn_more"
               >
                 <span className="relative">
@@ -72,7 +79,7 @@ const Hero = () => {
         </div>
 
         <motion.div
-          className="absolute bottom-[-1] right-0 bg-white dark:bg-gray-900 p-10 w-full lg:w-[600px]  dark:shadow-black/20"
+          className="absolute bottom-[-1] right-0 bg-white dark:bg-gray-900 p-6 lg:p-10 w-full lg:w-[600px] dark:shadow-black/20"
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{
@@ -82,7 +89,9 @@ const Hero = () => {
             duration: 1,
           }}
         >
-          <h3 className="text-3xl font-semibold text-gray-900 dark:text-gray-100">Let&apos;s work</h3>
+          <h3 className="text-3xl font-semibold text-gray-900 dark:text-gray-100">
+            Let&apos;s work
+          </h3>
           <h3 className="text-gray-800 dark:text-gray-300">together</h3>
           <div className="mt-4">
             <span className="block w-10 h-[1px] bg-green-500"></span>

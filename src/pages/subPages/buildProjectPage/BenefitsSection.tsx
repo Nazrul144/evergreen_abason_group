@@ -22,7 +22,7 @@ const BenefitsSection = () => {
         "Because the value of family can never be overlooked. To help defray the cost of adoption, Evergreen Abason Group provides Adoption Assistance reimbursement: up to $5,000 per child.",
     },
     {
-      icon: <FaBrain size={30} />, // replaced FaSpiral with FaBrain
+      icon: <FaBrain size={30} />,
       title: "Mental Wellness",
       description:
         "We offer safety, support, and the tools to help manage stress through the Live Well program.",
@@ -42,17 +42,17 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900 mb-20">
+    <section className="overflow-x-hidden lg:px-44 md:px-10 px-4 lg:mt-20 dark:bg-gray-900 mb-20">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-green-500 text-sm font-semibold mb-2">Perks</h2>
-        <h1 className="text-4xl md:text-5xl font-bold mb-12">Benefits</h1>
+        <h2 className="text-green-500 text-sm sm:text-base font-semibold mb-2">Perks</h2>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-12">Benefits</h1>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, index) => (
-            <div key={index} className="flex flex-col items-start gap-4">
+            <div key={index} className="flex flex-col items-start gap-3 sm:gap-4">
               <div className="text-green-500">{benefit.icon}</div>
-              <h3 className="text-xl font-semibold">{benefit.title}</h3>
-              <p className="text-sm">{benefit.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold">{benefit.title}</h3>
+              <p className="text-sm sm:text-base leading-relaxed">{benefit.description}</p>
             </div>
           ))}
         </div>

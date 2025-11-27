@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 export default function Projects() {
   const context = useContext(ProjectContext);
 
-  // 🔥 SAFETY CHECK — prevents Vercel build crash
+  // SAFETY CHECK — prevents Vercel build crash
   if (!context) return null;
 
   const { projects, loading } = context;
@@ -20,9 +20,8 @@ export default function Projects() {
   const [index, setIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  // 🔥 Define slider functions AFTER projects exist
+  // Slider functions
   const nextCard = () => setIndex((prev) => (prev + 1) % projects.length);
-
   const prevCard = () => setIndex((prev) => (prev - 1 + projects.length) % projects.length);
 
   if (loading)
@@ -32,7 +31,7 @@ export default function Projects() {
       </div>
     );
 
-  // 🔥 Prevent crash when projects array is empty
+  // Prevent crash when projects array is empty
   if (!projects || projects.length === 0) return null;
 
   const visibleCards = [
@@ -49,36 +48,24 @@ export default function Projects() {
           className="text-[#6A7282] dark:text-gray-300"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "keyframes",
-            stiffness: 60,
-            duration: 1,
-          }}
+          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
         >
           Projects
         </motion.h3>
-        <span className="w-12 h-[1px] bg-green-500"></span>
+        <span className="w-12 h-px bg-green-500"></span>
       </div>
 
       <motion.h1
-        className="text-[#0A0A0A] dark:text-gray-100 text-5xl mt-6 mb-6"
+        className="text-[#0A0A0A] dark:text-gray-100 text-2xl lg:text-5xl mt-6 mb-6 font-bold"
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{
-          delay: 0.2,
-          type: "keyframes",
-          stiffness: 60,
-          duration: 1,
-        }}
+        transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
       >
         Delivering our clients more <br /> project clarity, greater <br />
         insight, and less chaos.
       </motion.h1>
 
-      <Link href="/project" className="flex items-center gap-1 cursor-pointer mb-6 group"
-      
-      >
+      <Link href="/project" className="flex items-center gap-1 cursor-pointer mb-6 group">
         <span
           className="
             flex items-center gap-2 
@@ -103,141 +90,135 @@ export default function Projects() {
       </Link>
 
       {/* Slider */}
-      <div className="lg:flex items-center justify-between gap-6 overflow-hidden ">
-        {visibleCards.map((project, i) => (
-          <Card
-            hoverable={false}
-            key={project?.id ?? i}
-            onMouseEnter={() => setHoveredCard(i)}
-            onMouseLeave={() => setHoveredCard(null)}
-            className="dark:bg-gray-900"
-            style={{
-              width: 560,
-              height: 650,
-              borderRadius: 0,
-              overflow: "hidden",
-              backgroundColor: "var(--card-bg)",
-            }}
-            styles={{
-              body: {
-                padding: 0,
+      <div className="lg:overflow-visible overflow-hidden">
+        <div className="flex gap-6 lg:gap-6 overflow-x-auto lg:overflow-visible scroll-smooth px-2 lg:px-0">
+          {visibleCards.map((project, i) => (
+            <Card
+              hoverable={false}
+              key={project?.id ?? i}
+              onMouseEnter={() => setHoveredCard(i)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className="dark:bg-gray-900 flex-shrink-0"
+              style={{
+                width: "100%",
+                maxWidth: 560,
+                height: 650,
+                borderRadius: 0,
+                overflow: "hidden",
                 backgroundColor: "var(--card-bg)",
-              },
-            }}
-          >
-            {/* Image */}
-            <motion.div className="relative group w-full h-[500px] overflow-hidden"
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{
-              delay: 0.2,
-              type: "keyframes",
-              stiffness: 60,
-              duration: 1,
-            }}
+              }}
+              bodyStyle={{ padding: 0, backgroundColor: "var(--card-bg)" }}
             >
-              <Image
-                draggable={false}
-                alt={project.title}
-                src={project.image || "/demo_girl.jpg"}
-                width={600}
-                height={400}
-                className="w-full object-cover transition-all duration-500 group-hover:scale-110"
-              />
+              {/* Image */}
+              <motion.div
+                className="relative group w-full h-[500px] overflow-hidden"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+              >
+                <Image
+                  draggable={false}
+                  alt={project.title}
+                  src={project.image || "/demo_girl.jpg"}
+                  width={600}
+                  height={400}
+                  className="w-full object-cover transition-all duration-500 group-hover:scale-110"
+                />
 
-              {hoveredCard !== null && i !== 1 && (
-                <>
-                  {i === 2 && (
-                    <button
-                      onClick={prevCard}
-                      className="
-                        absolute left-0 top-1/2 translate-x-84
-                        opacity-100 transition duration-300
-                        bg-white/80 dark:bg-gray-700/80 
-                        w-10 h-10 flex items-center justify-center cursor-pointer
-                      "
-                    >
-                      <FiArrowRight className="text-4xl" />
-                    </button>
-                  )}
-                  {i === 0 && (
-                    <button
-                      onClick={nextCard}
-                      className="
-                        absolute right-0 top-1/2 -translate-x-84
-                        opacity-100 transition duration-300
-                        bg-white/80 dark:bg-gray-700/80 
-                        w-10 h-10 flex items-center justify-center cursor-pointer
-                      "
-                    >
-                      <FiArrowLeft className="text-4xl" />
-                    </button>
-                  )}
-                </>
-              )}
-            </motion.div>
+                {hoveredCard !== null && i !== 1 && (
+                  <>
+                    {i === 2 && (
+                      <button
+                        onClick={prevCard}
+                        className="
+                          absolute left-0 top-1/2 translate-x-96
+                          opacity-100 transition duration-300
+                          bg-white/80 dark:bg-gray-700/80 
+                          w-10 h-10 flex items-center justify-center cursor-pointer
+                        "
+                      >
+                        <FiArrowRight className="text-4xl" />
+                      </button>
+                    )}
+                    {i === 0 && (
+                      <button
+                        onClick={nextCard}
+                        className="
+                          absolute right-0 top-1/2 -translate-x-96
+                          opacity-100 transition duration-300
+                          bg-white/80 dark:bg-gray-700/80 
+                          w-10 h-10 flex items-center justify-center cursor-pointer
+                        "
+                      >
+                        <FiArrowLeft className="text-4xl" />
+                      </button>
+                    )}
+                  </>
+                )}
+              </motion.div>
 
-            <div className="absolute bottom-[148px] right-0 flex items-center overflow-hidden group/view">
-              <Link href={`/project/${project.id}`}>
+              <div className="absolute bottom-[148px] right-0 flex items-center overflow-hidden group/view">
+                <Link href={`/project/${project.id}`}>
+                  <button
+                    className="
+                      bg-white dark:bg-gray-900 dark:text-gray-300 
+                      px-4 py-2 text-sm
+                      translate-x-full opacity-0
+                      transition-all duration-500
+                      group-hover/view:translate-x-0 group-hover/view:opacity-100
+                      h-11 cursor-pointer
+                    "
+                  >
+                    View Project
+                  </button>
+                </Link>
                 <button
                   className="
-                  bg-white dark:bg-gray-900 dark:text-gray-300 
-                  px-4 py-2 text-sm
-                  translate-x-full opacity-0
-                  transition-all duration-500
-                  group-hover/view:translate-x-0 group-hover/view:opacity-100
-                  h-11 cursor-pointer
-                "
+                    bg-white dark:bg-gray-900 text-black dark:text-white
+                    font-light text-sm px-4 py-2 h-11 dark:border-gray-700
+                  "
                 >
-                  View Project
+                  +
                 </button>
-              </Link>
-              <button
-                className="
-                  bg-white dark:bg-gray-900 text-black dark:text-white
-                  font-light text-sm px-4 py-2 h-11 dark:border-gray-700
-                "
-              >
-                +
-              </button>
-            </div>
-
-            {/* Card footer */}
-            <div className="px-5 py-6 dark:bg-gray-900">
-              <div>
-                <Link
-                  href={`/project`}
-                  className="
-                    text-xs !text-gray-600 relative inline-block mb-1 
-                    dark:!text-gray-300
-                    after:content-[''] after:absolute after:left-0 after:bottom-0 
-                    after:h-[1.5px] after:w-0 after:bg-green-500 
-                    after:transition-all after:duration-300 
-                    hover:after:w-full
-                  "
-                >
-                  Projects
-                </Link>
               </div>
 
-              <div>
-                <Link
-                  href={`/project/${project.id}`}
-                  className="
-                    text-2xl !text-gray-600 relative inline-block mb-1
-                    dark:!text-gray-300
-                    after:content-[''] after:absolute after:left-0 after:bottom-0 
-                    after:h-px after:w-0 after:bg-green-500 
-                    after:transition-all after:duration-300 
-                    hover:after:w-full
-                  "
-                >
-                  {project.title.length > 20 ? project.title.substring(0, 20) + "..." : project.title}
-                </Link>
+              {/* Card footer */}
+              <div className="px-5 py-6 dark:bg-gray-900">
+                <div>
+                  <Link
+                    href={`/project`}
+                    className="
+                      text-xs !text-gray-600 relative inline-block mb-1 
+                      dark:!text-gray-300
+                      after:content-[''] after:absolute after:left-0 after:bottom-0 
+                      after:h-[1.5px] after:w-0 after:bg-green-500 
+                      after:transition-all after:duration-300 
+                      hover:after:w-full
+                    "
+                  >
+                    Projects
+                  </Link>
+                </div>
+
+                <div>
+                  <Link
+                    href={`/project/${project.id}`}
+                    className="
+                      text-2xl !text-gray-600 relative inline-block mb-1
+                      dark:!text-gray-300
+                      after:content-[''] after:absolute after:left-0 after:bottom-0 
+                      after:h-px after:w-0 after:bg-green-500 
+                      after:transition-all after:duration-300 
+                      hover:after:w-full
+                    "
+                  >
+                    {project.title.length > 20 ? project.title.substring(0, 20) + "..." : project.title}
+                  </Link>
+                </div>
               </div>
-            </div>
-          </Card>
-        ))}
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );

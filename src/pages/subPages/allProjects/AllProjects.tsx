@@ -13,27 +13,22 @@ const AllProjects = () => {
 
   const { projects, loading } = context;
 
-  const [index, setIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-
-  // NEW: Load more handling
   const [showAll, setShowAll] = useState(false);
 
   if (loading)
     return (
-      <div className="flex items-center gap-4 justify-center min-h-screen">
+      <div className="flex items-center justify-center gap-4 min-h-screen">
         <Spinner />
       </div>
     );
 
   if (!projects || projects.length === 0) return null;
 
-  // NEW: Show 9 initially
   const displayedProjects = showAll ? projects : projects.slice(0, 9);
 
   return (
-    <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900">
-      {/* Grid instead of slider */}
+    <div className="overflow-x-hidden lg:px-44 md:px-10 px-4 lg:mt-20 dark:bg-gray-900">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayedProjects.map((project, i) => (
           <Card
@@ -44,32 +39,29 @@ const AllProjects = () => {
             className="dark:bg-gray-900"
             style={{
               width: "100%",
-              height: 650,
+              height: "auto",
               borderRadius: 0,
               overflow: "hidden",
               backgroundColor: "var(--card-bg)",
             }}
-            styles={{
-              body: {
-                padding: 0,
-                backgroundColor: "var(--card-bg)",
-              },
+            bodyStyle={{
+              padding: 0,
+              backgroundColor: "var(--card-bg)",
             }}
           >
             {/* Image */}
-            <div className="relative group w-full h-[500px] overflow-hidden">
+            <div className="relative group w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] overflow-hidden">
               <Image
                 draggable={false}
                 alt={project.title}
                 src={project.image || "/demo_girl.jpg"}
-                width={600}
-                height={400}
-                className="w-full object-cover transition-all duration-500 group-hover:scale-110"
+                fill
+                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
               />
             </div>
 
             {/* Hover Buttons */}
-            <div className="absolute bottom-[148px] right-0 flex items-center overflow-hidden group/view">
+            <div className="absolute bottom-[80px] right-0 flex items-center overflow-hidden group/view">
               <button
                 className="
                   bg-white dark:bg-gray-900 dark:text-gray-300 
@@ -77,7 +69,7 @@ const AllProjects = () => {
                   translate-x-full opacity-0
                   transition-all duration-500
                   group-hover/view:translate-x-0 group-hover/view:opacity-100
-                  h-11 cursor-pointer
+                  h-10 sm:h-11 cursor-pointer
                 "
               >
                 View Project
@@ -85,7 +77,7 @@ const AllProjects = () => {
               <button
                 className="
                   bg-white dark:bg-gray-900 text-black dark:text-white
-                  font-light text-sm px-4 py-2 h-11 dark:border-gray-700
+                  font-light text-sm px-4 py-2 h-10 sm:h-11 dark:border-gray-700
                 "
               >
                 +
@@ -93,12 +85,12 @@ const AllProjects = () => {
             </div>
 
             {/* Card footer */}
-            <div className="px-5 py-6 dark:bg-gray-900">
+            <div className="px-4 sm:px-5 py-4 sm:py-6 dark:bg-gray-900">
               <div>
                 <Link
                   href={`/project/${project.id}`}
                   className="
-                    text-xs !text-gray-600 relative inline-block mb-1 
+                    text-xs sm:text-sm !text-gray-600 relative inline-block mb-1 
                     dark:!text-gray-300
                     after:content-[''] after:absolute after:left-0 after:bottom-0 
                     after:h-[1.5px] after:w-0 after:bg-green-500 
@@ -114,7 +106,7 @@ const AllProjects = () => {
                 <Link
                   href={`/project/${project.id}`}
                   className="
-                    text-2xl !text-gray-600 relative inline-block mb-1
+                    text-lg sm:text-2xl !text-gray-600 relative inline-block mb-1
                     dark:!text-gray-300
                     after:content-[''] after:absolute after:left-0 after:bottom-0 
                     after:h-px after:w-0 after:bg-green-500 
@@ -134,12 +126,12 @@ const AllProjects = () => {
 
       {/* Load More Button */}
       {!showAll && projects.length > 9 && (
-        <div className="flex justify-center mt-10 mb-20">
+        <div className="flex justify-center mt-8 mb-12">
           <button
             onClick={() => setShowAll(true)}
             className="px-6 py-2 border border-green-500 rounded-md
-    transition-all duration-300 
-    hover:text-green-700 hover:shadow-[0_0_18px_rgba(34,197,94,0.75)] font-bold cursor-pointer"
+              transition-all duration-300 
+              hover:text-green-700 hover:shadow-[0_0_18px_rgba(34,197,94,0.75)] font-bold cursor-pointer"
           >
             LOAD MORE
           </button>

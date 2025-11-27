@@ -21,7 +21,7 @@ const WorkTogetherBanner: FC = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4">
-        <motion.h2 className="text-white text-4xl lg:text-6xl leading-tight font-semibold mb-10"
+        <motion.h2 className="text-white text-2xl lg:text-6xl leading-tight font-semibold mb-10"
          initial={{ y: 100, opacity: 0 }}
          whileInView={{ y: 0, opacity: 1 }}
          transition={{

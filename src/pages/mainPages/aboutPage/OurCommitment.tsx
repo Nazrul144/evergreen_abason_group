@@ -24,7 +24,7 @@ const OurCommitment = () => {
             </h3>
             <span className="w-12 h-px bg-green-500 mt-1"></span>
           </div>
-          <h3 className="text-[#0A0A0A] dark:text-gray-300 text-3xl mt-2">
+          <h3 className="text-[#0A0A0A] dark:text-gray-300 font-bold text-2xl lg:text-3xl mt-2">
             We are committed to New York <br /> City
           </h3>
         </motion.div>

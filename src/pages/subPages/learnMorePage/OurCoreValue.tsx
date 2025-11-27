@@ -22,31 +22,21 @@ const team = [
 const OurCoreValue = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div className="lg:px-44 md:px-10  dark:bg-gray-900 py-16">
-      <div className="lg:flex lg:justify-between mb-16">
+    <div className="overflow-x-hidden lg:px-44 md:px-10 px-4 dark:bg-gray-900 py-16">
+      {/* Header */}
+      <div className="lg:flex lg:justify-between mb-10 lg:mb-16 flex-col lg:flex-row gap-6">
         <motion.div
           className="lg:w-[50%]"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "keyframes",
-            stiffness: 60,
-            duration: 1,
-          }}
+          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
         >
-          <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
+          <p className="text-xs sm:text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
             Our Core Values
             <span className="h-px w-10 bg-green-500 mt-1"></span>
           </p>
 
-          <h2
-            className="
-              lg:text-4xl md:text-4xl font-bold mt-3
-              text-transparent bg-clip-text
-              bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-600
-            "
-          >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-3 text-transparent bg-clip-text bg-linear-to-r from-emerald-400 via-sky-400 to-blue-600">
             Passion. Integrity. Hard work. Professionalism. Caring.
           </h2>
         </motion.div>
@@ -55,56 +45,45 @@ const OurCoreValue = () => {
           className="lg:w-[50%] mt-4"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "keyframes",
-            stiffness: 60,
-            duration: 1,
-          }}
+          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
         >
-          <p className="text-sm">
+          <p className="text-sm sm:text-base leading-relaxed">
             These core values have been with us since the beginning, and they&apos;ve infused who we are and how we build. Nothing
             brings us more excitement than transforming the skyline — and we do it by setting our standards high, striving for the
             best, building trust, and lifting up the people around us.
           </p>
         </motion.div>
       </div>
+
+      {/* Image */}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{
-          delay: 0.2,
-          type: "keyframes",
-          stiffness: 60,
-          duration: 1,
-        }}
+        transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
       >
-        <Image src="/Learn_More/value.jpg" width={800} height={600} alt="Image" className="object-cover w-full h-[550] mb-16" />
+        <Image
+          src="/Learn_More/value.jpg"
+          width={1200}
+          height={800}
+          alt="Image"
+          className="object-cover w-full h-[250px] sm:h-[400px] md:h-[550px] mb-16 rounded-lg"
+        />
       </motion.div>
 
+      {/* Team Section */}
       <div>
         <motion.div
-          className="flex"
+          className="flex justify-center mb-10"
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "keyframes",
-            stiffness: 60,
-            duration: 1,
-          }}
+          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
         >
           <h1
-            className={`
-    ${dancing.className}
-    text-center font-bold text-4xl relative inline-block mx-auto
-    bg-linear-to-r from-orange-400 via-rose-500 to-red-500
-    text-transparent bg-clip-text
-  `}
+            className={`${dancing.className} text-center font-bold text-2xl sm:text-3xl md:text-4xl inline-block text-transparent bg-clip-text bg-linear-to-r from-orange-400 via-rose-500 to-red-500`}
           >
             Meet Our Team
-            <span className="block mx-auto w-40 h-1 bg-linear-to-r from-transparent via-orange-500 to-transparent mt-3 relative">
-              <span className="absolute left-1/2 -top-2 -translate-x-1/2 w-3 h-3 rotate-45 bg-orange-500"></span>
+            <span className="block mx-auto w-24 sm:w-40 h-1 bg-linear-to-r from-transparent via-orange-500 to-transparent mt-3 relative">
+              <span className="absolute left-1/2 -top-2 -translate-x-1/2 w-2 h-2 rotate-45 bg-orange-500"></span>
             </span>
           </h1>
         </motion.div>
@@ -114,29 +93,28 @@ const OurCoreValue = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView="auto"
-          autoplay={{
-            delay: 2000,
-          }}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
+          autoplay={{ delay: 2000 }}
+          coverflowEffect={{ rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true }}
           pagination={{ clickable: true }}
           modules={[EffectCoverflow, Pagination, Autoplay]}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // ← important
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="mySwiper"
         >
           {team.map((person, index) => (
-            <SwiperSlide key={index}>
-              <Image src={person.img} width={400} height={500} alt={person.name} />
+            <SwiperSlide key={index} className="w-[200px] sm:w-[250px] md:w-[300px]">
+              <Image
+                src={person.img}
+                width={400}
+                height={500}
+                alt={person.name}
+                className="rounded-xl object-cover w-full h-[250px] sm:h-[300px] md:h-[400px]"
+              />
             </SwiperSlide>
           ))}
         </Swiper>
+
         {/* Dynamic Name */}
-        <h2 className="text-center text-xl font-semibold mt-5">{team[activeIndex].name}</h2>
+        <h2 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mt-5">{team[activeIndex].name}</h2>
       </div>
     </div>
   );

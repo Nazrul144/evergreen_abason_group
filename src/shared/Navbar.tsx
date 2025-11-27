@@ -26,6 +26,8 @@ export default function Navbar() {
   const [searchText, setSearchText] = useState("");
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
 
   return (
     <>
@@ -33,18 +35,18 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           {/* LEFT */}
           <div className="flex items-center gap-3">
-            <Popover>
+            <Popover open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <PopoverTrigger asChild>
                 <Button className="group size-9 md:hidden dark:text-gray-200" variant="ghost" size="icon">
                   <svg width={20} height={20} viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none">
                     <path
                       d="M4 12H20"
-                      className="origin-center -translate-y-[7px] transition-all group-aria-expanded:rotate-[315deg] group-aria-expanded:translate-y-0"
+                      className="origin-center -translate-y-[7px] transition-all group-aria-expanded:rotate-315 group-aria-expanded:translate-y-0"
                     />
                     <path d="M4 12H20" className="origin-center transition-all group-aria-expanded:rotate-45" />
                     <path
                       d="M4 12H20"
-                      className="origin-center translate-y-[7px] transition-all group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
+                      className="origin-center translate-y-[7px] transition-all group-aria-expanded:translate-y-0 group-aria-expanded:rotate-135"
                     />
                   </svg>
                 </Button>
@@ -55,7 +57,8 @@ export default function Navbar() {
                   <NavigationMenuList className="flex-col gap-1">
                     {navigationLinks?.map((navigationLink) => (
                       <Link
-                        className={`text-sm font-semibold relative after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full ${
+                      onClick={() => setMobileMenuOpen(false)}
+                        className={`text-sm font-semibold relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full ${
                           pathName === navigationLink.path ? "text-black dark:text-white after:w-full" : "dark:text-gray-300"
                         }`}
                         href={navigationLink.path}
@@ -71,7 +74,7 @@ export default function Navbar() {
 
             <Link href="/" className="flex items-center gap-2 font-semibold tracking-wide">
               <Image src="/Navbar_Logo/logo.png" alt="logo" width={40} height={40} className="w-auto h-10" />
-              <span className="uppercase text-lg leading-tight font-bold dark:text-gray-100">
+              <span className="uppercase lg:text-lg leading-tight font-bold dark:text-gray-100 text-[10px]">
                 {"Evergreen Abason Group".split("").map((char, i) => (
                   <span
                     key={i}
@@ -90,7 +93,7 @@ export default function Navbar() {
             <NavigationMenuList className="flex gap-8">
               {navigationLinks?.map((navigationLink) => (
                 <Link
-                  className={`text-sm font-semibold relative after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full ${
+                  className={`text-sm font-semibold relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-green-600 after:transition-all after:duration-300 hover:after:w-full ${
                     pathName === navigationLink.path
                       ? "text-black dark:text-white after:w-full"
                       : "text-gray-800 dark:text-gray-300"
@@ -110,7 +113,7 @@ export default function Navbar() {
             <button onClick={() => setShowSearch(true)}>
               <Search size={18} />
             </button>
-            <span className="block h-5 w-[1px] bg-gray-300 dark:bg-gray-700"></span>
+            <span className="block h-5 w-px bg-gray-300 dark:bg-gray-700"></span>
 
             <Button
               variant="ghost"
@@ -119,7 +122,7 @@ export default function Navbar() {
             >
               <span className="flex gap-2 items-center">
                 <PiCirclesFourFill className="text-red-800 dark:text-red-500" />
-                <span className="relative after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 after:bg-[#00A651] after:transition-all after:duration-300 group-hover:after:w-full dark:text-gray-300">
+                <span className="relative after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-[#00A651] after:transition-all after:duration-300 group-hover:after:w-full dark:text-gray-300">
                   GET IN TOUCH
                 </span>
               </span>
@@ -144,7 +147,7 @@ export default function Navbar() {
                       src="/Navbar_Logo/sidebar/sidebar_logo.png"
                       width={800}
                       height={600}
-                      alt="Konstruktion Logo"
+                      alt="Evergreen_Logo"
                       className="mx-auto"
                     />
                   </div>
@@ -171,7 +174,7 @@ export default function Navbar() {
                     <p className="text-xl font-medium dark:text-gray-300 mb-3">Got a project in mind?</p>
                     <Link href="/contact">
                       <Button className="w-full py-6 text-xl rounded-none bg-green-600 text-white hover:bg-green-700 dark:hover:bg-green-500 transition flex justify-center">
-                        <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] cursor-pointer after:bg-white dark:after:bg-gray-200 after:w-full after:scale-x-0 after:origin-[var(--origin)] after:transition-transform after:duration-500 hover:after:scale-x-100">
+                        <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 cursor-pointer after:bg-white dark:after:bg-gray-200 after:w-full after:scale-x-0 after:origin-(--origin) after:transition-transform after:duration-500 hover:after:scale-x-100">
                           Let&apos;s Talk
                         </span>
                       </Button>

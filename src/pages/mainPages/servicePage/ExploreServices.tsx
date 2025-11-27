@@ -85,7 +85,7 @@ const ExploreServices = () => {
 
           <h2
             className="
-              text-5xl md:text-3xl font-bold mt-3
+              text-2xl lg:text-5xl md:text-3xl font-bold mt-3
               text-transparent bg-clip-text
               bg-linear-to-r from-emerald-400 via-sky-400 to-blue-600
             "
@@ -116,11 +116,11 @@ const ExploreServices = () => {
         </div>
 
 
-        <div className="p-10 lg:p-14 space-y-16 max-h-screen overflow-y-auto">
+        <div className="lg:p-14 space-y-16 max-h-screen overflow-y-auto mt-4 lg:mt-0">
 
         
           <div>
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
+            <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
               Building Sustainable & Modern Living Spaces for the Future
             </h3>
 
@@ -149,7 +149,7 @@ const ExploreServices = () => {
 
     
       <div className="max-w-7xl mx-auto mt-20">
-        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Our Specialized Service Categories</h3>
+        <h3 className=" lg:text-3xl font-bold text-gray-900 dark:text-white mb-6">Our Specialized Service Categories</h3>
 
         <div className="flex gap-4 flex-wrap">
           {services.map((s) => {
@@ -193,7 +193,7 @@ const ExploreServices = () => {
         </div>
 
         <div>
-          <h3 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
+          <h3 className="lg:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-600">
             Excellence in Every Sector We Build
           </h3>
 

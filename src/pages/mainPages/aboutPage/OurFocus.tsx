@@ -36,7 +36,7 @@ const OurFocus = () => {
         </div>
 
         <motion.h3
-          className="text-3xl md:text-5xl font-semibold mt-4 leading-tight"
+          className="lg:text-3xl md:text-5xl font-semibold mt-4 leading-tight"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{
@@ -83,7 +83,7 @@ const OurFocus = () => {
             </div>
 
             <motion.h1
-              className="text-3xl md:text-4xl mb-6 leading-snug"
+              className="lg:text-3xl font-semibold md:text-4xl mb-6 leading-snug"
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{
@@ -124,7 +124,7 @@ const OurFocus = () => {
             }}
           >
             <div>
-              <p className="text-lg text-[#4A5565] dark:text-gray-400 text-justify leading-relaxed">
+              <p className="text-lg text-[#4A5565] dark:text-gray-400 lg:text-justify leading-relaxed">
                 We achieve this success without ever compromising our values: by providing quality construction practices,
                 effective communication, and a deep understanding of the building environment. Our long history in New York City
                 and the U.S. puts area insiders in its charged agencies and negotiations with care and to 400,000 square feet law

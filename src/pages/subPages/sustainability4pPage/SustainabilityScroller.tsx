@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 interface SustainabilityItem {
   title: string;
   description: string;
@@ -26,47 +27,39 @@ const items: SustainabilityItem[] = [
 
 export default function SustainabilityScroller() {
   return (
-    <section className="w-full bg-white dark:bg-gray-900 py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12">
+    <section className="w-full bg-white dark:bg-gray-900 py-12 sm:py-16 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid lg:grid-cols-2 gap-12">
 
-        {/* Sticky Image */}
-        <motion.div className="relative h-[450px] lg:h-[700px] sticky top-24" 
-        initial={{ x: -100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{
-          delay: 0.2,
-          type: "keyframes",
-          stiffness: 60,
-          duration: 1,
-        }}
+        {/* Sticky Image (desktop) / stacked on mobile */}
+        <motion.div
+          className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[700px] lg:sticky lg:top-24 rounded-xl overflow-hidden"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
         >
           <Image
             src="/Sustainability/scrolling.jpg"
             alt="Sustainability"
             fill
-            className="object-cover rounded-xl brightness-90"
+            className="object-cover brightness-90"
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
           />
         </motion.div>
 
-        {/* Scroll Content */}
-        <motion.div className="space-y-24"
-         initial={{ x: 100, opacity: 0 }}
-         whileInView={{ x: 0, opacity: 1 }}
-         transition={{
-           delay: 0.2,
-           type: "keyframes",
-           stiffness: 60,
-           duration: 1,
-         }}
+        {/* Scrollable Content */}
+        <motion.div
+          className="space-y-12 sm:space-y-16"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
         >
           {items.map((item, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-900 dark:text-gray-100">
                 {item.title}
               </h2>
-              <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 text-justify">
+              <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300 text-justify">
                 {item.description}
               </p>
             </div>

@@ -23,7 +23,7 @@ const OurMission = () => {
           <span className="w-12 h-px bg-green-500"></span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mt-6 dark:text-gray-300">
+        <h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold leading-tight mt-6 dark:text-gray-300">
           We never stop <br /> thinking about <br /> reshaping the future
         </h1>
       </motion.div>

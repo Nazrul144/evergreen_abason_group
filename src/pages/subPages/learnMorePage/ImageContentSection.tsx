@@ -24,7 +24,9 @@ const features: Feature[] = [
     title: "Innovative",
     description:
       "Our teams consistently explore innovative construction techniques, smart materials, and next-gen engineering solutions to deliver state-of-the-art projects.",
-    icon: <Lightbulb className="w-6 h-6 text-emerald-500 dark:text-emerald-400" />,
+    icon: (
+      <Lightbulb className="w-6 h-6 text-emerald-500 dark:text-emerald-400" />
+    ),
   },
   {
     id: 3,
@@ -38,7 +40,9 @@ const features: Feature[] = [
     title: "Sustainable Excellence",
     description:
       "Our commitment to eco-friendly materials, renewable energy, and low-carbon techniques ensures every project meets global sustainability standards.",
-    icon: <CheckCircle className="w-6 h-6 text-emerald-500 dark:text-emerald-400" />,
+    icon: (
+      <CheckCircle className="w-6 h-6 text-emerald-500 dark:text-emerald-400" />
+    ),
   },
   {
     id: 5,
@@ -51,19 +55,24 @@ const features: Feature[] = [
 
 const ImageContentSection = () => {
   return (
-    <section className="relative bg-white dark:bg-gray-900 dark:text-gray-300 py-16">
-      <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-10">
-        {/* Left Image Area */}
+    <section className="relative bg-white dark:bg-gray-900 dark:text-gray-300 py-14 overflow-x-hidden">
+      {/* Mobile padding fix */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-10">
+        
+        {/* Left Image Column */}
         <div className="lg:w-1/2 lg:sticky lg:top-24 flex flex-col gap-6">
-          <motion.div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64"
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            type: "keyframes",
-            stiffness: 60,
-            duration: 1,
-          }}
+          
+          {/* Image 1 */}
+          <motion.div
+            className="relative w-full h-40 sm:h-52 md:h-64 lg:h-56 xl:h-64"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <Image
               src="/Learn_More/image2.jpg"
@@ -73,16 +82,17 @@ const ImageContentSection = () => {
             />
           </motion.div>
 
-
-          <motion.div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64"
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.6,
-            type: "keyframes",
-            stiffness: 60,
-            duration: 1,
-          }}
+          {/* Image 2 */}
+          <motion.div
+            className="relative w-full h-40 sm:h-52 md:h-64 lg:h-56 xl:h-64"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.6,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <Image
               src="/Learn_More/image3.jpg"
@@ -92,16 +102,17 @@ const ImageContentSection = () => {
             />
           </motion.div>
 
-
-          <motion.div className="relative w-full h-48 sm:h-60 md:h-72 lg:h-56 xl:h-64"
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.8,
-            type: "keyframes",
-            stiffness: 60,
-            duration: 1,
-          }}
+          {/* Image 3 */}
+          <motion.div
+            className="relative w-full h-40 sm:h-52 md:h-64 lg:h-56 xl:h-64"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.8,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <Image
               src="/Learn_More/image4.jpg"
@@ -112,27 +123,30 @@ const ImageContentSection = () => {
           </motion.div>
         </div>
 
-        {/* Right Content Area */}
-        <motion.div className="lg:w-1/2 flex flex-col gap-12"
-        initial={{ x: 100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{
-          delay: 0.2,
-          type: "keyframes",
-          stiffness: 60,
-          duration: 1,
-        }}
+        {/* Right Content */}
+        <motion.div
+          className="lg:w-1/2 flex flex-col gap-10"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           {features.map((feature) => (
             <div
               key={feature.id}
               className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start"
             >
-              <div className="flex-shrink-0">{feature.icon}</div>
+              <div className="shrink-0">{feature.icon}</div>
+
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
                   {feature.title}
                 </h3>
+
                 <p className="mt-2 text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
                   {feature.description}
                 </p>

@@ -1,11 +1,10 @@
-
-import NewsSection from './NewsSectionHero'
+import NewsSectionHero from './NewsSectionHero'
 import WorkTogetherBanner from './WorkTogetherBanner'
 
 const News = () => {
   return (
     <div>
-      <NewsSection/>
+      <NewsSectionHero/>
       <WorkTogetherBanner/>
     </div>
   )

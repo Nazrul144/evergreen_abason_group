@@ -9,12 +9,12 @@ const inter = Inter({
 
 const Categories = () => {
   return (
-    <div className="mt-20 lg:px-44 md:px-10 dark:bg-gray-900">
+    <div className="mt-20 lg:px-44 md:px-10 px-4 dark:bg-gray-900 overflow-hidden">
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 mt-10">
         {highlights.map((item, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center text-center space-y-4 max-w-sm mx-auto"
+            className="flex flex-col items-center text-center space-y-4 max-w-full sm:max-w-sm mx-auto break-words"
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{
@@ -24,12 +24,18 @@ const Categories = () => {
               duration: 1,
             }}
           >
-            <div className="p-4 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">{item.icon}</div>
+            <div className="p-4 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
+              {item.icon}
+            </div>
 
-            <h4 className={`text-lg font-semibold text-[#6A7282] dark:text-gray-100 ${inter.className}`}>{item.title}</h4>
+            <h4 className={`text-lg font-semibold text-[#6A7282] dark:text-gray-100 ${inter.className}`}>
+              {item.title}
+            </h4>
             <div className="w-10 h-[0.25px] bg-green-500 rounded-full" />
 
-            <p className="text-[#6A7282] dark:text-gray-300 leading-relaxed">{item.text}</p>
+            <p className="text-[#6A7282] dark:text-gray-300 leading-relaxed break-words">
+              {item.text}
+            </p>
           </motion.div>
         ))}
       </div>

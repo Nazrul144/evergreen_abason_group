@@ -47,39 +47,42 @@ const OurCommitments = () => {
 
           <h2
             className="
-              text-5xl md:text-4xl font-bold mt-3
+              text-2xl lg:text-5xl md:text-4xl font-bold mt-3
               text-transparent bg-clip-text
-              bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-600
+              bg-linear-to-r from-emerald-400 via-sky-400 to-blue-600
             "
           >
             We know that every decision <br /> has an impact
           </h2>
         </motion.div>
-        <section className="bg-white dark:bg-gray-900 dark:text-gray-300 py-16">
-          <div className="container mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {features.map((feature) => (
-                <motion.div
-                  key={feature.id}
-                  className="flex flex-col items-center text-center gap-4"
-                  initial={{ y: 100, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{
-                    delay: 0.2,
-                    type: "keyframes",
-                    stiffness: 60,
-                    duration: 1,
-                  }}
-                >
-                  <div className="mb-2">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
       </div>
+
+      <section className="bg-white dark:bg-gray-900 dark:text-gray-300 py-16">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {features.map((feature) => (
+              <motion.div
+                key={feature.id}
+                className="flex flex-col items-center text-center gap-4"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  type: "keyframes",
+                  stiffness: 60,
+                  duration: 1,
+                }}
+              >
+                <div className="mb-2">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

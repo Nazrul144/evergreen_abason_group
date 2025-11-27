@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const NewsSection: React.FC = () => {
+const NewsSectionHero: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [loading, setLoading] = useState(false);
 
@@ -19,30 +19,32 @@ const NewsSection: React.FC = () => {
   };
 
   return (
-    <section className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900">
+    <section className="lg:px-44 md:px-10 px-4 lg:mt-20 dark:bg-gray-900 overflow-x-hidden max-w-full">
 
-      <motion.div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between"
-       initial={{ x: -100, opacity: 0 }}
-       whileInView={{ y: 0, opacity: 1 }}
-       transition={{
-         delay: 0.2,
-         type: "keyframes",
-         stiffness: 60,
-         duration: 1,
-       }}
+      {/* Top Header */}
+      <motion.div
+        className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between overflow-x-hidden"
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "spring",
+          stiffness: 60,
+          duration: 1,
+        }}
       >
         <div>
           <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
             Insights
-            <span className="h-[1px] w-10 bg-green-500"></span>
+            <span className="h-px w-10 bg-green-500"></span>
           </p>
 
           <h2
             className="
-    text-5xl md:text-6xl font-bold mt-3
-    text-transparent bg-clip-text
-    bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-600
-  "
+              text-4xl sm:text-5xl md:text-6xl font-bold mt-3
+              text-transparent bg-clip-text
+              bg-linear-to-r from-emerald-400 via-sky-400 to-blue-600
+            "
           >
             News
           </h2>
@@ -53,21 +55,23 @@ const NewsSection: React.FC = () => {
         </p>
       </motion.div>
 
-    
-      <motion.div className="mt-16 max-w-7xl mx-auto bg-gray-50 dark:bg-gray-900/40 rounded-xl overflow-hidden shadow-md"
-       initial={{ x: 100, opacity: 0 }}
-       whileInView={{ y: 0, opacity: 1 }}
-       transition={{
-         delay: 0.2,
-         type: "keyframes",
-         stiffness: 60,
-         duration: 1,
-       }}
+      {/* Featured Story */}
+      <motion.div
+        className="mt-16 max-w-7xl mx-auto bg-gray-50 dark:bg-gray-900/40 rounded-xl overflow-hidden shadow-md"
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "spring",
+          stiffness: 60,
+          duration: 1,
+        }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2">
+          
           {/* Left Text Section */}
-          <div className="p-10 lg:p-14">
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
+          <div className=" lg:p-14">
+            <h3 className="lg:text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
               Winthrop Center Will Be One of the World’s Largest Passive House Buildings
             </h3>
 
@@ -79,9 +83,11 @@ const NewsSection: React.FC = () => {
 
             <Link
               href="/story"
-              className="inline-block mt-8 font-semibold text-sm 
-  text-transparent bg-clip-text bg-gradient-to-r
-  from-green-500 to-emerald-700 hover:opacity-80 transition"
+              className="
+                inline-block mt-8 font-semibold text-sm 
+                text-transparent bg-clip-text bg-linear-to-r
+                from-green-500 to-emerald-700 hover:opacity-80 transition
+              "
             >
               READ FULL STORY →
             </Link>
@@ -89,28 +95,36 @@ const NewsSection: React.FC = () => {
 
           {/* Image Section */}
           <div className="relative h-[350px] lg:h-full">
-            <Image width={800} height={800} src="/NewsPage/banner.jpg" alt="News Image" className="w-full h-full object-cover" />
+            <Image
+              width={800}
+              height={800}
+              src="/NewsPage/banner.jpg"
+              alt="News Image"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </motion.div>
 
-    
-      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
-       initial={{ y: 100, opacity: 0 }}
-       whileInView={{ y: 0, opacity: 1 }}
-       transition={{
-         delay: 0.2,
-         type: "keyframes",
-         stiffness: 60,
-         duration: 1,
-       }}
+      {/* Cards Grid */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 overflow-x-hidden"
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "spring",
+          stiffness: 60,
+          duration: 1,
+        }}
       >
         {newsData.slice(0, visibleCount).map((news) => (
           <Card
             key={news.id}
             className="
-        w-[470px] h-[480px]
-        dark:bg-gray-900! dark:border-gray-700! shadow-md! dark:shadow-black/50!"
+              w-full h-[480px]
+              dark:bg-gray-900 dark:border-gray-700 shadow-md dark:shadow-black/50
+            "
             bodyStyle={{
               padding: "20px",
             }}
@@ -127,20 +141,26 @@ const NewsSection: React.FC = () => {
               {news.title}
             </Link>
 
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{news.shortDescription}</p>
+            <p className="text-[10px] text-gray-600 dark:text-gray-400 mt-2">{news.shortDescription}</p>
           </Card>
         ))}
       </motion.div>
+
+      {/* Button */}
       <div className="w-38 mx-auto">
         <Button loading={loading} onClick={handleAllNews} className="mt-8 mb-8 text-lg">
           {loading ? "Loading..." : "View All News"}
         </Button>
       </div>
+
     </section>
   );
 };
 
-export default NewsSection;
+export default NewsSectionHero;
+
+
+
 
 export const newsData = [
   {
