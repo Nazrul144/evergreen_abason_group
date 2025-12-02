@@ -65,7 +65,7 @@ export default function Projects() {
         insight, and less chaos.
       </motion.h1>
 
-      <Link href="/project" className="flex items-center gap-1 cursor-pointer mb-6 group">
+      <Link href="/work" className="flex items-center gap-1 cursor-pointer mb-6 group">
         <span
           className="
             flex items-center gap-2 
@@ -98,7 +98,7 @@ export default function Projects() {
               key={project?.id ?? i}
               onMouseEnter={() => setHoveredCard(i)}
               onMouseLeave={() => setHoveredCard(null)}
-              className="dark:bg-gray-900 flex-shrink-0"
+              className="dark:bg-gray-900 shrink-0"
               style={{
                 width: "100%",
                 maxWidth: 560,
@@ -131,7 +131,7 @@ export default function Projects() {
                       <button
                         onClick={prevCard}
                         className="
-                          absolute left-0 top-1/2 translate-x-96
+                          absolute left-0 top-1/2 translate-x-[515px]
                           opacity-100 transition duration-300
                           bg-white/80 dark:bg-gray-700/80 
                           w-10 h-10 flex items-center justify-center cursor-pointer
@@ -144,7 +144,7 @@ export default function Projects() {
                       <button
                         onClick={nextCard}
                         className="
-                          absolute right-0 top-1/2 -translate-x-96
+                          absolute right-0 top-1/2 -translate-x-[515px]
                           opacity-100 transition duration-300
                           bg-white/80 dark:bg-gray-700/80 
                           w-10 h-10 flex items-center justify-center cursor-pointer
@@ -188,8 +188,8 @@ export default function Projects() {
                   <Link
                     href={`/project`}
                     className="
-                      text-xs !text-gray-600 relative inline-block mb-1 
-                      dark:!text-gray-300
+                      text-xs text-gray-600! relative inline-block mb-1 
+                      dark:text-gray-300!
                       after:content-[''] after:absolute after:left-0 after:bottom-0 
                       after:h-[1.5px] after:w-0 after:bg-green-500 
                       after:transition-all after:duration-300 
@@ -204,8 +204,8 @@ export default function Projects() {
                   <Link
                     href={`/project/${project.id}`}
                     className="
-                      text-2xl !text-gray-600 relative inline-block mb-1
-                      dark:!text-gray-300
+                      text-2xl text-gray-600! relative inline-block mb-1
+                      dark:text-gray-300!
                       after:content-[''] after:absolute after:left-0 after:bottom-0 
                       after:h-px after:w-0 after:bg-green-500 
                       after:transition-all after:duration-300 

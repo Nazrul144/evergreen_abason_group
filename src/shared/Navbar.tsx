@@ -75,7 +75,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2 font-semibold tracking-wide">
               <Image src="/Navbar_Logo/logo.png" alt="logo" width={40} height={40} className="w-auto h-10" />
               <span className="uppercase lg:text-lg leading-tight font-bold dark:text-gray-100 text-[10px]">
-                {"Evergreen Abason Group".split("").map((char, i) => (
+                {"Evergreen".split("").map((char, i) => (
                   <span
                     key={i}
                     className={`inline-block animate-color-flow ${char === " " ? "mr-1" : ""}`}
@@ -153,17 +153,17 @@ export default function Navbar() {
                   </div>
 
                   <div className="px-6 py-6">
-                    <h1 className="text-green-600 dark:text-green-500 text-4xl text-center mb-4 font-semibold">OFFICE</h1>
-
+                    <h1 className="text-green-600 dark:text-green-500 text-4xl text-center mb-4 font-semibold">Head Office</h1>
                     <address className="not-italic dark:text-gray-300 text-lg leading-relaxed space-y-1 text-center">
-                      <p>Gartner Architects 498</p>
-                      <p>Seventh Ave</p>
-                      <p>20th Floor</p>
-                      <p>New York, NY 10018</p>
-                      <p>📞 212.267.2060</p>
+                      <p>4 Darus Salam Road</p>
+                      <p>Mirpur Tower</p>
+                      <p>Level-8, Mirpur-1</p>
+                      <p>Dhaka-1216</p>
+                      <p>📞 +8801950 572876</p>
+                      <p>📞 +8801725 279476</p>
+                      <p>📞 +8801712 189909</p>
                       <p className="flex items-center justify-center gap-2">
-                        <MdEmail className="text-xl text-gray-300 dark:text-gray-300" />
-                        info@konstruktion.com
+                        <MdEmail className="text-xl text-gray-500 dark:text-gray-300" />infe@evergreenabason.com
                       </p>
                     </address>
                   </div>

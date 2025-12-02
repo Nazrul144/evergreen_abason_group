@@ -131,7 +131,7 @@ const Work = () => {
   };
 
   return (
-    <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900">
+    <div className="lg:px-44 md:px-10 lg:mt-20 dark:bg-gray-900 ">
       {/* Heading */}
       <motion.div
         className="flex items-center space-x-2"
@@ -145,7 +145,7 @@ const Work = () => {
         }}
       >
         <h3 className="text-[#6A7282] dark:text-gray-300">Our Work</h3>
-        <span className="w-12 h-[1px] bg-green-500"></span>
+        <span className="w-12 h-px bg-green-500"></span>
       </motion.div>
       <div>
         <motion.h1

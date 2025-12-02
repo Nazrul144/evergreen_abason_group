@@ -51,38 +51,41 @@ const AllProjects = () => {
           >
             {/* Image */}
             <div className="relative group w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] overflow-hidden">
-              <Image
-                draggable={false}
-                alt={project.title}
-                src={project.image || "/demo_girl.jpg"}
-                fill
-                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
-              />
+            <Image
+                  draggable={false}
+                  alt={project.title}
+                  src={project.image || "/demo_girl.jpg"}
+                  width={600}
+                  height={400}
+                  className="w-full object-cover transition-all duration-500 group-hover:scale-110"
+                />
             </div>
 
             {/* Hover Buttons */}
-            <div className="absolute bottom-[80px] right-0 flex items-center overflow-hidden group/view">
-              <button
-                className="
-                  bg-white dark:bg-gray-900 dark:text-gray-300 
-                  px-4 py-2 text-sm
-                  translate-x-full opacity-0
-                  transition-all duration-500
-                  group-hover/view:translate-x-0 group-hover/view:opacity-100
-                  h-10 sm:h-11 cursor-pointer
-                "
-              >
-                View Project
-              </button>
-              <button
-                className="
-                  bg-white dark:bg-gray-900 text-black dark:text-white
-                  font-light text-sm px-4 py-2 h-10 sm:h-11 dark:border-gray-700
-                "
-              >
-                +
-              </button>
-            </div>
+            <div className="absolute bottom-[135px] right-0 flex items-center overflow-hidden group/view">
+                <Link href={`/project/${project.id}`}>
+                  <button
+                    className="
+                      bg-white dark:bg-gray-900 dark:text-gray-300 
+                      px-4 py-2 text-sm
+                      translate-x-full opacity-0
+                      transition-all duration-500
+                      group-hover/view:translate-x-0 group-hover/view:opacity-100
+                      h-11 cursor-pointer
+                    "
+                  >
+                    View Project
+                  </button>
+                </Link>
+                <button
+                  className="
+                    bg-white dark:bg-gray-900 text-black dark:text-white
+                    font-light text-sm px-4 py-2 h-11 dark:border-gray-700
+                  "
+                >
+                  +
+                </button>
+              </div>
 
             {/* Card footer */}
             <div className="px-4 sm:px-5 py-4 sm:py-6 dark:bg-gray-900">
@@ -90,8 +93,8 @@ const AllProjects = () => {
                 <Link
                   href={`/project/${project.id}`}
                   className="
-                    text-xs sm:text-sm !text-gray-600 relative inline-block mb-1 
-                    dark:!text-gray-300
+                    text-xs sm:text-sm text-gray-600! relative inline-block mb-1 
+                    dark:text-gray-300!
                     after:content-[''] after:absolute after:left-0 after:bottom-0 
                     after:h-[1.5px] after:w-0 after:bg-green-500 
                     after:transition-all after:duration-300 
@@ -106,8 +109,8 @@ const AllProjects = () => {
                 <Link
                   href={`/project/${project.id}`}
                   className="
-                    text-lg sm:text-2xl !text-gray-600 relative inline-block mb-1
-                    dark:!text-gray-300
+                    text-lg sm:text-2xl text-gray-600! relative inline-block mb-1
+                    dark:text-gray-300!
                     after:content-[''] after:absolute after:left-0 after:bottom-0 
                     after:h-px after:w-0 after:bg-green-500 
                     after:transition-all after:duration-300 

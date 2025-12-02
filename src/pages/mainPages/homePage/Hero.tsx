@@ -71,7 +71,7 @@ const Hero = () => {
               >
                 <span className="relative">
                   Learn More
-                  <span className="absolute left-0 -bottom-1 block h-[1px] w-0 bg-green-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 block h-px w-0 bg-green-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 </span>
               </Link>
             </motion.div>
@@ -94,7 +94,7 @@ const Hero = () => {
           </h3>
           <h3 className="text-gray-800 dark:text-gray-300">together</h3>
           <div className="mt-4">
-            <span className="block w-10 h-[1px] bg-green-500"></span>
+            <span className="block w-10 h-px bg-green-500"></span>
           </div>
 
           <Link
@@ -103,7 +103,7 @@ const Hero = () => {
           >
             <span className="relative">
               Contact us
-              <span className="absolute left-0 -bottom-1 block h-[1px] w-0 bg-green-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 block h-px w-0 bg-green-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
             </span>
           </Link>
         </motion.div>
