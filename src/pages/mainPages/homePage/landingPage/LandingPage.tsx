@@ -8,12 +8,14 @@ import ContactBanner from '../ContactBanner'
 import ServicesSection from '../ServicesSection'
 import BuildingForTheBest from '../BuildingForTheBest'
 import SafetySection from '../SafetySection'
+import PropertyFeatures from '../PropertyFeatures'
 
 
 const LandingPage = () => {
   return (
     <div>
       <Hero/>
+      <PropertyFeatures/>
       <Categories/>
       <Projects/>
       <OurSectors/>

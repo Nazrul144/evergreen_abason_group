@@ -75,7 +75,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2 font-semibold tracking-wide">
               <Image src="/Navbar_Logo/logo.png" alt="logo" width={40} height={40} className="w-auto h-10" />
               <span className="uppercase lg:text-lg leading-tight font-bold dark:text-gray-100 text-[10px]">
-                {"Evergreen".split("").map((char, i) => (
+                {"Evergreen Abason Group".split("").map((char, i) => (
                   <span
                     key={i}
                     className={`inline-block animate-color-flow ${char === " " ? "mr-1" : ""}`}
