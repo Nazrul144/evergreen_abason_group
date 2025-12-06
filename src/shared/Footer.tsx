@@ -1,17 +1,30 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Footer = () => {
   const cities = [
-    { city: "NEW YORK", line1: "Gartner Architects 498, 2nd Floor", line2: "New York, NY, 10017" },
-    { city: "MIAMI, FL", line1: "Gartner Architects Suite #2700", line2: "2 South Biscayne Boulevard" },
-    { city: "NEW JERSEY", line1: "Riverfront Plaza, Ste. 305", line2: "Jersey City, NJ 07302" },
-    { city: "WASHINGTON DC", line1: "1600 Wilson Blvd, Suite 900", line2: "Washington, DC, 20006" },
+    { city: "Head Office", line1: "4 Darus Salam Road, Mirpur Tower, Level-8", line2: "Mirpur-1, Dhaka-1216" },
+    { city: "Phone", line1: "+8801950 572876", line2: "+8801725 279476", line3: "+8801712 189909" },
+    { city: "Email", line1: "infe@evergreenabason.com"},
+    { city: "Location", line1: "Road-10, Block-C, Section-6, Mirpur, Dhaka (Opposite of Mirpur Bangla School)"},
   ];
 
-  const navLinks = ["PROJECTS", "HISTORY", "VISION", "LEADERSHIP", "CAREERS"];
-  const socialLinks = ["Facebook", "LinkedIn", "Instagram", "Terms and Conditions", "Privacy Policy"];
+  const navLinks = [
+    {title: "PROJECTS", path: "/project"},
+    {title: "STORY", path: "/story"},
+    {title: "VISION", path: "/learn_more"},
+    {title: "CONSTRUCTION", path: "/construction"},
+    {title: "CAREERS", path: "/build_project"},
+  ];
+  const socialLinks = [
+    {title: "Facebook", path: "#"},
+    {title: "LinkedIn", path: "#"},
+    {title: "Instagram", path: "#"},
+    {title: "Terms and Conditions", path: "/term_conditon"},
+    {title: "Privacy Policy", path: "/policy"},
+  ];
 
   return (
     <motion.footer
@@ -36,8 +49,8 @@ const Footer = () => {
                 </span>
               ))}
             </span>
-            <p className="text-lg font-medium lg:mt-16">212.804.6800</p>
-            <p className="text-lg underline underline-offset-2 lg:mb-8">info@konstruktion.com</p>
+            <p className="text-lg font-medium lg:mt-16">+8801950 572876</p>
+            <p className="text-lg underline underline-offset-2 lg:mb-8">infe@evergreenabason.com</p>
           </div>
 
           {/* Cities */}
@@ -46,16 +59,17 @@ const Footer = () => {
               <h3 className="font-semibold text-xl tracking-wide mt-2 mb-2">{item.city}</h3>
               <p className="text-gray-700 dark:text-gray-300 text-sm">{item.line1}</p>
               <p className="text-gray-700 dark:text-gray-300 text-sm">{item.line2}</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">{item.line3}</p>
             </div>
           ))}
         </div>
 
         {/* Nav Links */}
         <div className="flex flex-wrap gap-6 md:gap-10 mt-6 text-sm font-medium tracking-wide">
-          {navLinks.map((x) => (
-            <a
-              key={x}
-              href="#"
+          {navLinks.map((navLink) => (
+            <Link key={navLink.path}
+              
+              href={navLink.path}
               className="relative hover:text-green-600 dark:hover:text-green-400
                 after:absolute after:left-0 after:-bottom-0.5
                 after:h-px after:w-0 after:bg-green-600 dark:after:bg-green-400
@@ -63,8 +77,8 @@ const Footer = () => {
                 hover:after:w-full
               "
             >
-              {x}
-            </a>
+            {navLink.title}
+            </Link>
           ))}
         </div>
 
@@ -75,10 +89,10 @@ const Footer = () => {
           <p>©2025 Upartner. All rights reserved</p>
 
           <div className="flex flex-wrap gap-4 sm:gap-6">
-            {socialLinks.map((x) => (
-              <a
-                key={x}
-                href="#"
+            {socialLinks.map((socialLink) => (
+              <Link
+                key={socialLink.path}
+                href={socialLink.path}
                 className="relative hover:text-green-600 dark:hover:text-green-400
                   after:absolute after:left-0 after:-bottom-0.5
                   after:h-px after:w-0 after:bg-green-600 dark:after:bg-green-400
@@ -86,8 +100,8 @@ const Footer = () => {
                   hover:after:w-full
                 "
               >
-                {x}
-              </a>
+                {socialLink.title}
+              </Link>
             ))}
           </div>
         </div>

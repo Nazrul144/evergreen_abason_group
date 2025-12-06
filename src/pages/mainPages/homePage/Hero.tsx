@@ -38,7 +38,7 @@ const Hero = () => {
             }}
           >
             <h1
-              className={`text-2xl lg:text-4xl sm:text-8xl font-semibold text-white drop-shadow-xl ${inter.className}`}
+              className={`text-2xl lg:text-7xl sm:text-8xl font-semibold text-white drop-shadow-xl ${inter.className}`}
             >
               <span className="whitespace-nowrap">Build. Invest.</span> <br />
               <span className="text-white drop-shadow-lg inline-block">
