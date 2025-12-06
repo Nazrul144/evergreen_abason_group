@@ -1,4 +1,5 @@
-import { Policy } from "@/pages/termsAndConditionAndPolicyPage/Policy"
+import Policy from "@/pages/termsAndConditionAndPolicyPage/Policy"
+
 
 const PolicyPage = () => {
   return (
