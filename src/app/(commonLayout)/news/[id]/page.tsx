@@ -1,28 +1,29 @@
-import { newsData } from "@/data/newsData";
-import NewsDetails, { INewsData } from "@/pages/mainPages/newsPage/NewsDetails";
+import NewsDetails from "@/pages/mainPages/newsPage/NewsDetails";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "News Details | Evergreen Abason Group",
   description:
-    "Read the full details of the latest news, updates, and announcements from Evergreen Abason Group. Stay informed about our construction projects, real estate developments, and company insights.",
+    "Read the full details of the latest news, updates, and announcements from Evergreen Abason Group.",
   keywords: [
     "Evergreen Abason Group news",
     "construction updates",
     "real estate news",
-    "infrastructure development",
     "Bangladesh construction company",
   ],
 };
 
-const NewsDetailsPage = async ({ params }: { params: { id: string } }) => {
-  const id = Number(params.id);
+const NewsDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;  // ← Must await params!
 
-  const news: INewsData | undefined = newsData.find((item) => item.id === id);
+  // Now fetch the news from your Django backend
+  const res = await fetch(`http://10.10.12.53:8001/api/news/${id}`);
 
-  if (!news) {
-    return <div className="text-center py-20 text-red-500">News not found!</div>;
+  if (!res.ok) {
+    return <div className="text-center py-20 text-red-500 text-2xl">News not found!</div>;
   }
+
+  const news = await res.json();
 
   return <NewsDetails news={news} />;
 };

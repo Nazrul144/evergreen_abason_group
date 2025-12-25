@@ -1,13 +1,14 @@
-import NewsSectionHero from './NewsSectionHero'
-import WorkTogetherBanner from './WorkTogetherBanner'
+// News.tsx
+import NewsSectionHero from "./NewsSectionHero";
+import WorkTogetherBanner from "./WorkTogetherBanner";
 
-const News = () => {
+const News = ({ news }: { news: any[] }) => {
   return (
     <div>
-      <NewsSectionHero/>
-      <WorkTogetherBanner/>
+      <NewsSectionHero news={news} />
+      <WorkTogetherBanner />
     </div>
-  )
-}
+  );
+};
 
-export default News
+export default News;

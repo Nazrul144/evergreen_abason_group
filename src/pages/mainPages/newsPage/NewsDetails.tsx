@@ -8,12 +8,12 @@ import { motion } from "framer-motion";
 export interface INewsData {
   id: number;
   title: string;
-  shortDescription: string;
-  image: string;
+  description: string;
+  picture: string;
 }
 
 interface NewsDetailsProps {
-  news: INewsData; 
+  news: INewsData;
 }
 
 const NewsDetails: React.FC<NewsDetailsProps> = ({ news }) => {
@@ -27,14 +27,20 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ news }) => {
           className="flex items-center justify-center p-6 mt-8 lg:mt-0 lg:w-2/5"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <Image
-            src={news.image}
+            src={news.picture}
             alt={news.title}
-            width={600}
+            width={800}
             height={600}
-            className="object-cover rounded-xl w-full h-[550px]"
+            unoptimized
+            className="w-full rounded-lg mb-4"
           />
         </motion.div>
 
@@ -43,11 +49,18 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ news }) => {
           className="flex flex-col justify-center p-6 text-center rounded-sm lg:w-3/5 lg:text-left"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
-          <h1 className="text-xl font-bold leading-none sm:text-2xl">{news.title}</h1>
+          <h1 className="text-xl font-bold leading-none sm:text-2xl">
+            {news.title}
+          </h1>
           <p className="mt-6 mb-8 text-lg text-gray-600 dark:text-gray-300 sm:mb-12 text-justify">
-            {news.shortDescription}
+            {news.description}
           </p>
 
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
