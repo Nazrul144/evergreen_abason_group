@@ -39,7 +39,7 @@ const OurCommitment = () => {
         }}
         >
           <p className="text-[#4A5565] text-sm text-justify">
-            As a commercial construction company, we support New York City&apos;s businessmen today <br /> and require what&apos;s
+            As a commercial construction company, we support New York City&apos;s businessman today <br /> and require what&apos;s
             yet to come tomorrow. At Konstruktion, we help every client sees their <br /> vision come to life.
           </p>
         </motion.div>
