@@ -1,148 +1,207 @@
+"use client";
+
 import WhatsAppButton from "@/components/WhatsappButton/WhatsAppButton";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { SiWhatsapp } from "react-icons/si";
 
-const ProjectDetails = () => {
+export interface ExtraPhoto {
+  id: number;
+  image: string;
+}
+
+export interface Project {
+  id: number;
+  category: number;
+  category_name: string;
+  title: string;
+  description: string;
+  builder_name: string;
+  location: string;
+  land_size: string;
+  total_flat: number;
+  status: string;
+  profile_picture: string;
+  cover_photo: string;
+  extra_photos: ExtraPhoto[];
+}
+
+interface ProjectDetailsProps {
+  work: Project; // Renamed from 'work' to match your prop name
+}
+
+const ProjectDetails: React.FC<ProjectDetailsProps> = ({ work }) => {
+  if (!work) {
+    return (
+      <div className="text-center py-20 text-red-500 text-2xl">
+        Project not found
+      </div>
+    );
+  }
+
+  console.log("Project Details:", work);
+
   return (
     <div className="overflow-x-hidden dark:bg-gray-900">
-      {/* Banner */}
-      <Image
-        src="/DetailsPage/1.jpg"
-        width={1000}
-        height={1000}
-        alt="detailsPageBanner"
-        className="w-full h-[250px] sm:h-[350px] lg:h-[550px] object-cover"
-      />
+      {/* Banner - Using real cover photo from backend */}
+      <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[550px]">
+        <Image
+          src={work.cover_photo}
+          alt={`${work.title} - Cover`}
+          fill
+          unoptimized // Remove after fixing next.config.js
+          className="object-cover"
+          priority
+        />
+      </div>
 
       {/* Section 1 */}
       <section className="lg:px-44 md:px-10 px-4 lg:mt-20">
         <div className="lg:flex gap-12 flex-col lg:flex-row">
           {/* LEFT */}
           <div className="lg:w-1/2 w-full">
-            <h3 className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl">📐 Land Size: 7.5 katha</h3>
-            <h3 className="text-gray-700 dark:text-gray-300 mt-4 sm:text-xl mb-4">🏢 Total Flats: 27 Units (1,800 sft each)</h3>
-            <h3 className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl">📊 Status: Land share sale ongoing</h3>
-            <div>
-              <div className="flex items-center gap-2 mt-4">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+            <h3 className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl">
+              📐 Land Size: {work.land_size}
+            </h3>
+            <h3 className="text-gray-700 dark:text-gray-300 mt-4 sm:text-xl mb-4">
+              🏢 Total Flats: {work.total_flat} Units
+            </h3>
+            <h3 className="text-gray-700 dark:text-gray-300 text-lg sm:text-xl capitalize">
+              📊 Status: {work.status}
+            </h3>
+
+            <div className="mt-6">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-green-600" />
                 <h3 className="text-gray-400 text-sm sm:text-base">Location</h3>
               </div>
-              <p className="text-base sm:text-lg border-l-2 border-green-500 pl-2 sm:pl-3 mt-1">
-                Road-10, Block-C, Section-6, Mirpur, Dhaka (Opposite of Mirpur Bangla School)
+              <p className="text-base sm:text-lg border-l-2 border-green-500 pl-3 mt-1">
+                {work.location}
               </p>
             </div>
 
-            <div className="mt-8 lg:mt-16 h-[250px] sm:h-[350px] lg:h-[450px] w-full">
+            {/* Profile Picture */}
+            <div className="mt-8 lg:mt-16 h-[250px] sm:h-[350px] lg:h-[450px] w-full rounded-md overflow-hidden">
               <Image
-                src="/DetailsPage/2.jpg"
-                width={400}
-                height={400}
-                alt="DetailsPageImage"
-                className="w-full h-full object-cover rounded-md"
+                src={work.profile_picture}
+                alt={`${work.title} - Profile view`}
+                width={600}
+                height={600}
+                unoptimized
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
 
           {/* RIGHT */}
           <div className="lg:w-1/2 w-full mt-8 lg:mt-0">
-            <h1 className="text-gray-700 dark:text-gray-300 text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
-              One South First <br /> with long title <br /> here and here
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 dark:text-white leading-tight">
+              {work.title}
             </h1>
 
-            <p className="text-justify mt-4 mb-8 text-sm sm:text-base">
-              A premiere address in Toronto&apos; Financial District, 160 Front Street West is a 46-story structural steel-framed
-              commercial office tower designed to add a distinctive silhouette to the City&apos; skyline. Although complex...
+            <p className="text-justify mt-6 mb-8 text-base sm:text-lg text-gray-600 dark:text-gray-300">
+              {work.description}
             </p>
 
-            <div className="mt-8 lg:mt-16 h-[250px] sm:h-[350px] lg:h-[450px] w-full">
+            {/* Cover Photo Again (or secondary image) */}
+            <div className="mt-8 lg:mt-16 h-[250px] sm:h-[350px] lg:h-[450px] w-full rounded-md overflow-hidden">
               <Image
-                src="/DetailsPage/2.jpg"
-                width={400}
-                height={400}
-                alt="DetailsPageImage"
-                className="w-full h-full object-cover rounded-md"
+                src={work.cover_photo}
+                alt={`${work.title} - Main view`}
+                width={600}
+                height={600}
+                unoptimized
+                className="w-full h-full object-cover"
               />
-
-              <p className="text-sm text-gray-500 dark:text-gray-300 mt-2">
-                160 Front Street West is designed to add a distinctive silhouette to the City&apos; skyline.
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-3 italic">
+                {work.title}  A landmark project by {work.builder_name}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2 */}
+      {/* Section 2 - Full Width Description Image */}
       <section className="lg:px-44 md:px-10 px-4 lg:mt-20">
         <div className="mt-8 sm:mt-12">
-          <h3 className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
-            Offering 1.2 million square feet of office space, over 12,000 square feet of retail space and 339 parking stalls, 160
-            Front Street West is slated for completion in late 2023.
+          <h3 className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+            {work.description}
           </h3>
 
-          <div className="mt-4 sm:mt-6 w-full">
-            <div className="relative w-full h-[250px] sm:h-[450px] lg:h-[650px]">
-              <Image src="/DetailsPage/2.jpg" alt="DetailsPageImage" fill className="object-cover rounded-md" />
-            </div>
+          <div className="mt-8 w-full h-[300px] sm:h-[450px] lg:h-[650px] relative rounded-md overflow-hidden">
+            <Image
+              src={work.profile_picture}
+              alt="Project overview"
+              fill
+              unoptimized
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
 
-      {/* Section 3 */}
-      <section className="lg:px-44 md:px-10 px-4 lg:mt-20">
-        <div className="lg:flex gap-8 flex-col lg:flex-row">
-          {/* Image grid */}
-          <div className="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Image
-              src="/DetailsPage/2.jpg"
-              width={400}
-              height={400}
-              alt="img1"
-              className="w-full h-40 sm:h-48 object-cover rounded-md"
-            />
-            <Image
-              src="/DetailsPage/2.jpg"
-              width={400}
-              height={400}
-              alt="img2"
-              className="w-full h-40 sm:h-48 object-cover rounded-md"
-            />
-            <Image
-              src="/DetailsPage/2.jpg"
-              width={400}
-              height={400}
-              alt="img3"
-              className="w-full h-40 sm:h-48 object-cover rounded-md sm:col-span-2"
-            />
+      
+      <section className="lg:px-44 md:px-10 px-4 lg:mt-20 pb-20">
+        <div className="lg:flex gap-12 flex-col lg:flex-row">
+
+          <div className="lg:w-1/2 w-full">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-6">Gallery</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {work.extra_photos.slice(0, 4).map((photo) => (
+                <div key={photo.id} className="h-48 sm:h-64 rounded-md overflow-hidden">
+                  <Image
+                    src={photo.image}
+                    alt="Gallery image"
+                    width={400}
+                    height={400}
+                    unoptimized
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="lg:w-1/2 w-full mt-8 lg:mt-0">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4">Project Highlights</h1>
+          {/* Project Highlights */}
+          <div className="lg:w-1/2 w-full mt-10 lg:mt-0">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-8">Project Highlights</h1>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4 sm:mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-gray-400 text-sm sm:text-base">Builder</h3>
-                <p className="text-base sm:text-lg">Cadillac Fairview</p>
+                <p className="text-lg sm:text-xl font-medium">{work.builder_name}</p>
               </div>
 
               <div>
-                <h3 className="text-gray-400 text-sm sm:text-base">Let&apos;s Contact</h3>
+                <h3 className="text-gray-400 text-sm sm:text-base">Category</h3>
+                <p className="text-lg sm:text-xl font-medium capitalize">{work.category_name}</p>
+              </div>
+
+              <div>
+                <h3 className="text-gray-400 text-sm sm:text-base">Land Size</h3>
+                <p className="text-lg sm:text-xl">{work.land_size}</p>
+              </div>
+
+              <div>
+                <h3 className="text-gray-400 text-sm sm:text-base">Total Units</h3>
+                <p className="text-lg sm:text-xl">{work.total_flat} Flats</p>
+              </div>
+
+              <div className="sm:col-span-2">
+                <h3 className="text-gray-400 text-sm sm:text-base mb-3">Let&apos;s Connect</h3>
                 <WhatsAppButton
                   phone="8801758752528"
-                  message="Hi, I'm interested in One South First project."
-                  className="text-base sm:text-lg italic"
+                  message={`Hi, I'm interested in the "${work.title}" project.`}
+                  className="text-xl sm:text-xl font-medium text-green-600 hover:text-green-700"
                 />
               </div>
 
-              <div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+              <div className="sm:col-span-2">
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin className="w-5 h-5 text-green-600" />
                   <h3 className="text-gray-400 text-sm sm:text-base">Location</h3>
                 </div>
-                <p className="text-base sm:text-lg border-l-2 border-green-500 pl-2 sm:pl-3 mt-1">
-                  Road-10, Block-C, Section-6, Mirpur, Dhaka (Opposite of Mirpur Bangla School)
+                <p className="text-lg border-l-2 border-green-500 pl-3">
+                  {work.location}
                 </p>
               </div>
             </div>

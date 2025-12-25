@@ -5,19 +5,19 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 
-export interface INewsData {
+export interface IworkData {
   id: number;
   title: string;
   description: string;
   picture: string;
 }
 
-interface NewsDetailsProps {
-  news: INewsData;
+interface workDetailsProps {
+  work: IworkData;
 }
 
-const NewsDetails: React.FC<NewsDetailsProps> = ({ news }) => {
-  if (!news) return null;
+const workDetails: React.FC<workDetailsProps> = ({ work }) => {
+  if (!work) return null;
 
   return (
     <section className="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-300">
@@ -35,8 +35,8 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ news }) => {
           }}
         >
           <Image
-            src={news.picture}
-            alt={news.title}
+            src={work.picture}
+            alt={work.title}
             width={800}
             height={600}
             unoptimized
@@ -57,19 +57,19 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ news }) => {
           }}
         >
           <h1 className="text-xl font-bold leading-none sm:text-2xl">
-            {news.title}
+            {work.title}
           </h1>
           <p className="mt-6 mb-8 text-lg text-gray-600 dark:text-gray-300 sm:mb-12 text-justify">
-            {news.description}
+            {work.description}
           </p>
 
           <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
-              href="/news"
+              href="/work"
               className="px-4 py-2 text-sm font-medium rounded-lg border border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 bg-transparent flex items-center gap-1 transition-all duration-300 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400"
             >
               <ArrowLeft size={16} />
-              Back to News
+              Back to work
             </Link>
 
             <Link
@@ -85,4 +85,4 @@ const NewsDetails: React.FC<NewsDetailsProps> = ({ news }) => {
   );
 };
 
-export default NewsDetails;
+export default workDetails;

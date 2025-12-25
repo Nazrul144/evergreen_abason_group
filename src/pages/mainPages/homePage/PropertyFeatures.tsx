@@ -35,7 +35,7 @@ const PropertyFeatures = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-block mb-6 animate-bounce">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-green-400 via-emerald-500 to-teal-500 text-transparent bg-clip-text px-8 py-4 rounded-lg shadow-2xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-linear-to-r from-green-400 via-emerald-500 to-teal-500 text-transparent bg-clip-text px-8 py-4 rounded-lg shadow-xl">
               FEATURES
             </h2>
           </div>

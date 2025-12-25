@@ -44,7 +44,7 @@ type WhatsAppButtonProps = {
         onClick={onClick}
         className={`inline-flex items-center gap-2 ${className}`}
       >
-        <WhatsAppIcon className="w-6 h-6 text-green-500" />
+        <WhatsAppIcon className="w-12 h-12 text-green-500" />
       </a>
     );
   }
