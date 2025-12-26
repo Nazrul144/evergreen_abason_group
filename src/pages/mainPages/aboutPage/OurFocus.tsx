@@ -93,8 +93,9 @@ const OurFocus = () => {
                 duration: 1,
               }}
             >
-              We&apos;re problem-solvers with focus. Project managers with purpose. Team players with one goal in mind: To deliver
-              your project on time, on budget, and on vision.
+              We&apos;re problem-solvers with focus. Project managers with
+              purpose. Team players with one goal in mind: To deliver your
+              project on time, on budget, and on vision.
             </motion.h1>
 
             <motion.div
@@ -108,7 +109,12 @@ const OurFocus = () => {
                 duration: 1,
               }}
             >
-              <Image src="/AboutBanner/image1.jpg" alt="Image" fill className="object-cover" />
+              <Image
+                src="/AboutBanner/image1.jpg"
+                alt="Image"
+                fill
+                className="object-cover"
+              />
             </motion.div>
           </div>
 
@@ -125,15 +131,21 @@ const OurFocus = () => {
           >
             <div>
               <p className="text-lg text-[#4A5565] dark:text-gray-400 lg:text-justify leading-relaxed">
-                We achieve this success without ever compromising our values: by providing quality construction practices,
-                effective communication, and a deep understanding of the building environment. Our long history in New York City
-                and the U.S. puts area insiders in its charged agencies and negotiations with care and to 400,000 square feet law
-                became New York. An established owner representative developer has operated successfully and responsibly.
+                We achieve this success without ever compromising our values: by
+                providing quality construction practices, effective
+                communication, and a deep understanding of the building
+                environment. Our long history in New York City and the U.S. puts
+                area insiders in its charged agencies and negotiations with care
+                and to 400,000 square feet law became New York. An established
+                owner representative developer has operated successfully and
+                responsibly.
               </p>
 
               <p className="text-lg text-[#4A5565] dark:text-gray-400 mt-4 text-justify leading-relaxed">
-                As a commercial construction company, we support New York City&apos;s businessmen today and require what&apos;s
-                yet to come tomorrow. At Konstruktion, we help every client see their vision come to life.
+                As a commercial construction company, we support New York
+                City&apos;s businessmen today and require what&apos;s yet to
+                come tomorrow. At Evergreen Abason Group, we help every client
+                see their vision come to life.
               </p>
 
               <Link
@@ -160,7 +172,12 @@ const OurFocus = () => {
 
             {/* Small Image */}
             <div className="relative w-full h-[350px] md:h-[450px] mt-10 lg:mt-6">
-              <Image src="/AboutBanner/image1.jpg" alt="Image" fill className="object-cover" />
+              <Image
+                src="/AboutBanner/image1.jpg"
+                alt="Image"
+                fill
+                className="object-cover"
+              />
             </div>
           </motion.div>
         </div>

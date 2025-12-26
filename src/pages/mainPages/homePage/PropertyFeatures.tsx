@@ -49,12 +49,13 @@ const PropertyFeatures = () => {
               className="group relative rounded-2xl p-6 bg-gray-50 backdrop-blur-lg border-4 border-white/90 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-3 hover:border-emerald-300/60"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
-                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08), inset 0 2px 8px rgba(255, 255, 255, 0.4)",
+                boxShadow:
+                  "0 8px 32px rgba(0, 0, 0, 0.08), inset 0 2px 8px rgba(255, 255, 255, 0.4)",
               }}
             >
               <div className="flex items-start space-x-4">
                 <div className="shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="w-12 h-12 bg-linear-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     {feature.icon}
                   </div>
                 </div>
@@ -67,30 +68,45 @@ const PropertyFeatures = () => {
 
               {/* Unique decorative glow accent */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-400/10 to-teal-400/10"></div>
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-emerald-400/10 to-teal-400/10"></div>
               </div>
 
               {/* Subtle corner glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-400/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-emerald-400/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           ))}
         </div>
 
         {/* CTA Section */}
-        <div className="text-center space-y-6 rounded-2xl p-8 md:p-12 bg-gray-50 backdrop-blur-lg border-4 border-white/90 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-3 hover:border-emerald-300/60">
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">
-            Book Your Land Share Now
-          </h3>
-          <p className="text-2xl md:text-3xl text-gray-300 font-semibold">&</p>
-          <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-red-400 via-orange-500 to-yellow-500 text-transparent bg-clip-text">
-            Get Honda SP 125cc
-          </h4>
+        <div
+          className="text-center rounded-2xl p-8 md:p-12 min-h-[500px] md:min-h-[600px] relative overflow-hidden border-4 border-white/90 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-3 hover:border-emerald-300/60 flex flex-col justify-center"
+          style={{
+            backgroundImage: `url('/bike/bike2.webp')`,
+            backgroundSize: "cover", 
+            backgroundPosition: "center center", 
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* Dark overlay - covers the FULL card */}
+          <div className="absolute inset-0 bg-black/50"></div>{" "}
+         
+          <div className="relative z-10">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">
+              Book Your Land Share Now
+            </h3>
+            <p className="text-2xl md:text-3xl text-gray-300 font-semibold">
+              &
+            </p>
+            <h4 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-linear-to-r from-red-400 via-orange-500 to-yellow-500 text-transparent bg-clip-text">
+              Get Honda SP 125cc
+            </h4>
 
-          <Link href="/contact">
-            <button className="mt-8 px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-lg rounded-full hover:from-emerald-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50 cursor-pointer">
-              Contact Us Now
-            </button>
-          </Link>
+            <Link href="/contact">
+              <button className="mt-8 px-8 py-4 bg-linear-to-r from-emerald-500 to-teal-600 text-white font-bold text-lg rounded-full hover:from-emerald-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50 cursor-pointer">
+                Contact Us Now
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
