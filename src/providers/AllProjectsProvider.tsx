@@ -2,6 +2,7 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 
 export interface Project {
+  [x: string]: any;
   userId: number;
   id: number;
   title: string;

@@ -17,7 +17,7 @@ interface NewsSectionHeroProps {
   news: NewsItem[];
 }
 
-const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news }) => {
+const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news = [] }) => {  // ← Default to empty array
   const [visibleCount, setVisibleCount] = useState(6);
   const [loading, setLoading] = useState(false);
 
@@ -30,6 +30,9 @@ const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news }) => {
     }, 1200);
   };
 
+  // Safe fallback: use empty array if news is undefined
+  const newsList = news || [];
+
   return (
     <section className="lg:px-44 md:px-10 px-4 lg:mt-20 dark:bg-gray-900 overflow-x-hidden max-w-full">
       {/* Top Header */}
@@ -41,7 +44,6 @@ const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news }) => {
           delay: 0.2,
           type: "spring",
           stiffness: 60,
-          duration: 1,
         }}
       >
         <div>
@@ -50,13 +52,7 @@ const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news }) => {
             <span className="h-px w-10 bg-green-500"></span>
           </p>
 
-          <h2
-            className="
-              text-4xl sm:text-5xl md:text-6xl font-bold mt-3
-              text-transparent bg-clip-text
-              bg-linear-to-r from-emerald-400 via-sky-400 to-blue-600
-            "
-          >
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-sky-400 to-blue-600">
             News
           </h2>
         </div>
@@ -76,14 +72,13 @@ const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news }) => {
           delay: 0.2,
           type: "spring",
           stiffness: 60,
-          duration: 1,
         }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Text Section */}
-          <div className=" lg:p-14">
+          <div className="lg:p-14 p-8">
             <h3 className="lg:text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
-              Winthrop Center Will Be One of the World’s Largest Passive House
+              Winthrop Center Will Be One of the World&apos;s Largest Passive House
               Buildings
             </h3>
 
@@ -97,11 +92,7 @@ const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news }) => {
 
             <Link
               href="/story"
-              className="
-                inline-block mt-8 font-semibold text-sm 
-                text-transparent bg-clip-text bg-linear-to-r
-                from-green-500 to-emerald-700 hover:opacity-80 transition
-              "
+              className="inline-block mt-8 font-semibold text-sm text-transparent bg-clip-text bg-linear-to-r from-green-500 to-emerald-700 hover:opacity-80 transition"
             >
               READ FULL STORY →
             </Link>
@@ -129,32 +120,27 @@ const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news }) => {
           delay: 0.2,
           type: "spring",
           stiffness: 60,
-          duration: 1,
         }}
       >
-        {news.slice(0, visibleCount).map((news) => (
-           <Link href={`/news/${news.id}`} key={news.id}>
+        {newsList.slice(0, visibleCount).map((item) => (
+          <Link href={`/news/${item.id}`} key={item.id}>
             <Card
-              key={news.id}
-              className="
-              w-full h-[480px]
-              dark:bg-gray-900 dark:border-gray-700 shadow-md dark:shadow-black/50
-            "
+              className="w-full h-[480px] dark:bg-gray-900 dark:border-gray-700 shadow-md dark:shadow-black/50"
               styles={{ body: { padding: "20px" } }}
             >
               <Image
-                src={news.picture}
-                alt={news.title}
+                src={item.picture}
+                alt={item.title}
                 width={500}
                 height={600}
-                unoptimized 
+                unoptimized
                 className="w-full h-80 object-cover rounded-lg mb-4"
               />
-              <p className="font-semibold text-xl text-sky-500">{news.title}</p>
-              <p className=" text-gray-600 dark:text-gray-400 mt-2">
-                {news.description.length > 30
-                  ? `${news.description.slice(0, 150)}...`
-                  : news.description}
+              <p className="font-semibold text-xl text-sky-500">{item.title}</p>
+              <p className="text-gray-600 dark:text-gray-400 mt-2">
+                {item.description.length > 150
+                  ? `${item.description.slice(0, 150)}...`
+                  : item.description}
               </p>
             </Card>
           </Link>
@@ -162,22 +148,19 @@ const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news }) => {
       </motion.div>
 
       {/* Button */}
-      <div className="w-38 mx-auto">
-        <Button
-          loading={loading}
-          onClick={handleAllNews}
-          className="mt-8 mb-8 text-lg"
-        >
-          {loading ? "Loading..." : "View All News"}
-        </Button>
-      </div>
+      {newsList.length > 6 && visibleCount < newsList.length && (
+        <div className="text-center">
+          <Button
+            loading={loading}
+            onClick={handleAllNews}
+            className="mt-8 mb-8 text-lg"
+          >
+            {loading ? "Loading..." : "View All News"}
+          </Button>
+        </div>
+      )}
     </section>
   );
 };
 
 export default NewsSectionHero;
-
-
-
-
-

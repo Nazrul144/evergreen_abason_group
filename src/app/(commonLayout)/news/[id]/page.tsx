@@ -1,6 +1,14 @@
 import NewsDetails from "@/pages/mainPages/newsPage/NewsDetails";
 import type { Metadata } from "next";
 
+
+interface NewsItem {
+  id: number;
+  title: string;
+  description: string;
+  picture: string;
+}
+
 export const metadata: Metadata = {
   title: "News Details | Evergreen Abason Group",
   description:
@@ -23,9 +31,10 @@ const NewsDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) 
     return <div className="text-center py-20 text-red-500 text-2xl">News not found!</div>;
   }
 
-  const news = await res.json();
+  const news: NewsItem = await res.json();
 
-  return <NewsDetails news={news} />;
+  
+  return <NewsDetails work={news} />;
 };
 
 export default NewsDetailsPage;
