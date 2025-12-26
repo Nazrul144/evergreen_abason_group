@@ -9,6 +9,22 @@ import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
 import { motion } from "framer-motion";
 
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  cover_photo: string;    
+  profile_picture: string    
+  category_name: string;      
+}
+
+interface WorkProps {
+  works: Project[];
+}
+
+
+
 export default function Projects() {
   const context = useContext(ProjectContext);
 
@@ -107,7 +123,7 @@ export default function Projects() {
                 overflow: "hidden",
                 backgroundColor: "var(--card-bg)",
               }}
-              bodyStyle={{ padding: 0, backgroundColor: "var(--card-bg)" }}
+              styles={{ body: { padding: 0, backgroundColor: "var(--card-bg)" } }}
             >
               {/* Image */}
               <motion.div
@@ -119,9 +135,10 @@ export default function Projects() {
                 <Image
                   draggable={false}
                   alt={project.title}
-                  src={project.image || "/demo_girl.jpg"}
+                  src={project.profile_picture}
                   width={600}
                   height={400}
+                  unoptimized 
                   className="w-full object-cover transition-all duration-500 group-hover:scale-110"
                 />
 

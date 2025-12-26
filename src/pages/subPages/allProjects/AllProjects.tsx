@@ -6,6 +6,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useState } from "react";
 
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  cover_photo: string;
+  profile_picture: string;
+  category_name: string;
+}
+
+interface WorkProps {
+  works: Project[];
+}
+
 const AllProjects = () => {
   const context = useContext(ProjectContext);
 
@@ -25,7 +38,7 @@ const AllProjects = () => {
 
   if (!projects || projects.length === 0) return null;
 
-  const displayedProjects = showAll ? projects : projects.slice(0, 9);
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   return (
     <div className="overflow-x-hidden lg:px-44 md:px-10 px-4 lg:mt-20 dark:bg-gray-900">
@@ -44,28 +57,26 @@ const AllProjects = () => {
               overflow: "hidden",
               backgroundColor: "var(--card-bg)",
             }}
-            bodyStyle={{
-              padding: 0,
-              backgroundColor: "var(--card-bg)",
-            }}
+            styles={{ body: { padding: 0, backgroundColor: "var(--card-bg)" } }}
           >
             {/* Image */}
             <div className="relative group w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] overflow-hidden">
-            <Image
-                  draggable={false}
-                  alt={project.title}
-                  src={project.image || "/demo_girl.jpg"}
-                  width={600}
-                  height={400}
-                  className="w-full object-cover transition-all duration-500 group-hover:scale-110"
-                />
+              <Image
+                draggable={false}
+                alt={project.title}
+                src={project.profile_picture}
+                width={600}
+                height={400}
+                unoptimized
+                className="w-full object-cover transition-all duration-500 group-hover:scale-110"
+              />
             </div>
 
             {/* Hover Buttons */}
             <div className="absolute bottom-[135px] right-0 flex items-center overflow-hidden group/view">
-                <Link href={`/project/${project.id}`}>
-                  <button
-                    className="
+              <Link href={`/project/${project.id}`}>
+                <button
+                  className="
                       bg-white dark:bg-gray-900 dark:text-gray-300 
                       px-4 py-2 text-sm
                       translate-x-full opacity-0
@@ -73,19 +84,19 @@ const AllProjects = () => {
                       group-hover/view:translate-x-0 group-hover/view:opacity-100
                       h-11 cursor-pointer
                     "
-                  >
-                    View Project
-                  </button>
-                </Link>
-                <button
-                  className="
+                >
+                  View Project
+                </button>
+              </Link>
+              <button
+                className="
                     bg-white dark:bg-gray-900 text-black dark:text-white
                     font-light text-sm px-4 py-2 h-11 dark:border-gray-700
                   "
-                >
-                  +
-                </button>
-              </div>
+              >
+                +
+              </button>
+            </div>
 
             {/* Card footer */}
             <div className="px-4 sm:px-5 py-4 sm:py-6 dark:bg-gray-900">
@@ -109,7 +120,7 @@ const AllProjects = () => {
                 <Link
                   href={`/project/${project.id}`}
                   className="
-                    text-lg sm:text-2xl text-gray-600! relative inline-block mb-1
+                    text-lg sm:text-2xl text-gray-600! relative inline-block mb-8
                     dark:text-gray-300!
                     after:content-[''] after:absolute after:left-0 after:bottom-0 
                     after:h-px after:w-0 after:bg-green-500 
@@ -128,7 +139,7 @@ const AllProjects = () => {
       </div>
 
       {/* Load More Button */}
-      {!showAll && projects.length > 9 && (
+      {!showAll && projects.length > 6 && (
         <div className="flex justify-center mt-8 mb-12">
           <button
             onClick={() => setShowAll(true)}
