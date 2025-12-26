@@ -26,7 +26,7 @@ export interface Project {
 }
 
 interface ProjectDetailsProps {
-  work: Project; // Renamed from 'work' to match your prop name
+  work: Project;
 }
 
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ work }) => {
@@ -38,7 +38,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ work }) => {
     );
   }
 
-  console.log("Project Details:", work);
+  // Safe access to extra photos with fallbacks
+  const extraPhotos = work.extra_photos || [];
+  const firstExtra = extraPhotos[0]?.image || work.cover_photo;
+  const secondExtra = extraPhotos[1]?.image || work.profile_picture || work.cover_photo;
 
   return (
     <div className="overflow-x-hidden dark:bg-gray-900">
@@ -48,7 +51,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ work }) => {
           src={work.cover_photo}
           alt={`${work.title} - Cover`}
           fill
-          unoptimized // Remove after fixing next.config.js
+          unoptimized
           className="object-cover"
           priority
         />
@@ -79,7 +82,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ work }) => {
               </p>
             </div>
 
-            {/* Profile Picture */}
+            {/* Profile Picture - Unique */}
             <div className="mt-8 lg:mt-16 h-[250px] sm:h-[350px] lg:h-[450px] w-full rounded-md overflow-hidden">
               <Image
                 src={work.profile_picture}
@@ -102,10 +105,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ work }) => {
               {work.description}
             </p>
 
-            {/* Cover Photo Again (or secondary image) */}
+           
             <div className="mt-8 lg:mt-16 h-[250px] sm:h-[350px] lg:h-[450px] w-full rounded-md overflow-hidden">
               <Image
-                src={work.cover_photo}
+                src={firstExtra}
                 alt={`${work.title} - Main view`}
                 width={600}
                 height={600}
@@ -113,23 +116,24 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ work }) => {
                 className="w-full h-full object-cover"
               />
               <p className="text-sm text-gray-500 dark:text-gray-400 mt-3 italic">
-                {work.title}  A landmark project by {work.builder_name}
+                {work.title} - A landmark project by {work.builder_name}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2 - Full Width Description Image */}
+   
       <section className="lg:px-44 md:px-10 px-4 lg:mt-20">
         <div className="mt-8 sm:mt-12">
           <h3 className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
             {work.description}
           </h3>
 
+       
           <div className="mt-8 w-full h-[300px] sm:h-[450px] lg:h-[650px] relative rounded-md overflow-hidden">
             <Image
-              src={work.profile_picture}
+              src={secondExtra}
               alt="Project overview"
               fill
               unoptimized
@@ -139,10 +143,9 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ work }) => {
         </div>
       </section>
 
-      
+      {/* Gallery & Highlights */}
       <section className="lg:px-44 md:px-10 px-4 lg:mt-20 pb-20">
         <div className="lg:flex gap-12 flex-col lg:flex-row">
-
           <div className="lg:w-1/2 w-full">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6">Gallery</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
