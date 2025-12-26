@@ -29,7 +29,12 @@ const OurCoreValue = () => {
           className="lg:w-[50%]"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <p className="text-xs sm:text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
             Our Core Values
@@ -45,12 +50,19 @@ const OurCoreValue = () => {
           className="lg:w-[50%] mt-4"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <p className="text-sm sm:text-base leading-relaxed">
-            These core values have been with us since the beginning, and they&apos;ve infused who we are and how we build. Nothing
-            brings us more excitement than transforming the skyline — and we do it by setting our standards high, striving for the
-            best, building trust, and lifting up the people around us.
+            These core values have been with us since the beginning, and
+            they&apos;ve infused who we are and how we build. Nothing brings us
+            more excitement than transforming the skyline — and we do it by
+            setting our standards high, striving for the best, building trust,
+            and lifting up the people around us.
           </p>
         </motion.div>
       </div>
@@ -59,7 +71,12 @@ const OurCoreValue = () => {
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
       >
         <Image
           src="/Learn_More/value.jpg"
@@ -76,7 +93,12 @@ const OurCoreValue = () => {
           className="flex justify-center mb-10"
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <h1
             className={`${dancing.className} text-center font-bold text-2xl sm:text-3xl md:text-4xl inline-block text-transparent bg-clip-text bg-linear-to-r from-orange-400 via-rose-500 to-red-500`}
@@ -94,14 +116,23 @@ const OurCoreValue = () => {
           centeredSlides={true}
           slidesPerView="auto"
           autoplay={{ delay: 2000 }}
-          coverflowEffect={{ rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true }}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
           pagination={{ clickable: true }}
           modules={[EffectCoverflow, Pagination, Autoplay]}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="mySwiper"
         >
           {team.map((person, index) => (
-            <SwiperSlide key={index} className="w-[200px] sm:w-[250px] md:w-[300px]">
+            <SwiperSlide
+              key={index}
+              className="w-[200px] sm:w-[250px] md:w-[300px]"
+            >
               <Image
                 src={person.img}
                 width={400}
@@ -114,7 +145,9 @@ const OurCoreValue = () => {
         </Swiper>
 
         {/* Dynamic Name */}
-        <h2 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mt-5">{team[activeIndex].name}</h2>
+        <h2 className="text-center text-lg sm:text-xl md:text-2xl font-semibold mt-5">
+          {team[activeIndex].name}
+        </h2>
       </div>
     </div>
   );

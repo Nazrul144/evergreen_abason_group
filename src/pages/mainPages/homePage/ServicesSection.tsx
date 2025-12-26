@@ -1,16 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building, ClipboardList, PenTool, FileSpreadsheet } from "lucide-react";
+import {
+  Building,
+  ClipboardList,
+  PenTool,
+  FileSpreadsheet,
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const services = [
-  { id: "construction", title: "Construction", href: "/construction", icon: Building },
-  { id: "pre-construction", title: "Pre-Construction", href: "/pre_build", icon: ClipboardList },
-  { id: "design-build", title: "Design - Build", href: "/design_build", icon: PenTool },
-  { id: "lump-sum", title: "Lump-Sum Contracting", href: "/lumpsum", icon: FileSpreadsheet },
+  {
+    id: "construction",
+    title: "Construction",
+    href: "/construction",
+    icon: Building,
+  },
+  {
+    id: "pre-construction",
+    title: "Pre-Construction",
+    href: "/pre_build",
+    icon: ClipboardList,
+  },
+  {
+    id: "design-build",
+    title: "Design - Build",
+    href: "/design_build",
+    icon: PenTool,
+  },
+  {
+    id: "lump-sum",
+    title: "Lump-Sum Contracting",
+    href: "/lumpsum",
+    icon: FileSpreadsheet,
+  },
 ];
 
 export default function ServicesSection() {
@@ -23,7 +48,12 @@ export default function ServicesSection() {
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <p className="text-sm tracking-wide text-gray-300 mb-2">
             Services <span className="text-green-400">—</span>
@@ -45,7 +75,12 @@ export default function ServicesSection() {
                 className="border-b border-white/10 pb-6"
                 initial={{ x: 100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+                transition={{
+                  delay: 0.2,
+                  type: "keyframes",
+                  stiffness: 60,
+                  duration: 1,
+                }}
               >
                 <Link
                   href={item.href}
@@ -56,7 +91,10 @@ export default function ServicesSection() {
                   {/* ICON */}
                   <motion.div
                     initial={{ scale: 1, opacity: 0.6 }}
-                    animate={{ scale: hovered === item.id ? 1.1 : 1, opacity: hovered === item.id ? 1 : 0.6 }}
+                    animate={{
+                      scale: hovered === item.id ? 1.1 : 1,
+                      opacity: hovered === item.id ? 1 : 0.6,
+                    }}
                     transition={{ duration: 0.25 }}
                     className="text-green-400 w-10 flex justify-center flex-shrink-0"
                   >
@@ -76,7 +114,10 @@ export default function ServicesSection() {
 
                   <motion.div
                     initial={{ opacity: 0, x: -5 }}
-                    animate={{ opacity: hovered === item.id ? 1 : 0, x: hovered === item.id ? 0 : -5 }}
+                    animate={{
+                      opacity: hovered === item.id ? 1 : 0,
+                      x: hovered === item.id ? 0 : -5,
+                    }}
                     transition={{ duration: 0.25 }}
                     className="text-green-400 ml-auto"
                   >

@@ -29,13 +29,17 @@ export default function SustainabilityScroller() {
   return (
     <section className="w-full bg-white dark:bg-gray-900 py-12 sm:py-16 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid lg:grid-cols-2 gap-12">
-
         {/* Sticky Image (desktop) / stacked on mobile */}
         <motion.div
           className="relative w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[700px] lg:sticky lg:top-24 rounded-xl overflow-hidden"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <Image
             src="/Sustainability/scrolling.jpg"
@@ -52,7 +56,12 @@ export default function SustainabilityScroller() {
           className="space-y-12 sm:space-y-16"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           {items.map((item, index) => (
             <div key={index} className="space-y-4">
@@ -65,7 +74,6 @@ export default function SustainabilityScroller() {
             </div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

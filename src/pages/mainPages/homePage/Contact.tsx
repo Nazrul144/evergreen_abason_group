@@ -1,6 +1,13 @@
 "use client";
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -77,8 +84,11 @@ const Contact = () => {
     <div className="relative lg:px-44 md:px-10 px-6 py-20 dark:bg-gray-900 overflow-hidden">
       {/* Animated Background Gradient Orbs */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-linear-to-r from-green-400/20 to-teal-400/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-linear-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-      
+      <div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-linear-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      ></div>
+
       <div className="relative z-10">
         {/* Header Section */}
         <motion.div
@@ -100,12 +110,16 @@ const Contact = () => {
               >
                 Contact Us
               </h1>
-              <Sparkles className="w-8 h-8 text-blue-400 animate-pulse" style={{ animationDelay: "0.3s" }} />
+              <Sparkles
+                className="w-8 h-8 text-blue-400 animate-pulse"
+                style={{ animationDelay: "0.3s" }}
+              />
             </div>
             <div className="h-1.5 bg-linear-to-r from-transparent via-teal-400 to-transparent rounded-full"></div>
           </div>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+            We&apos;d love to hear from you. Send us a message and we&apos;ll
+            respond as soon as possible.
           </p>
         </motion.div>
 
@@ -158,8 +172,12 @@ const Contact = () => {
                               <option value="Product">Product Inquiry</option>
                               <option value="Service">Service Inquiry</option>
                               <option value="Pricing">Pricing Inquiry</option>
-                              <option value="Support">Support / Technical Inquiry</option>
-                              <option value="Feedback">Feedback / Suggestion</option>
+                              <option value="Support">
+                                Support / Technical Inquiry
+                              </option>
+                              <option value="Feedback">
+                                Feedback / Suggestion
+                              </option>
                               <option value="Complaint">Complaint</option>
                             </select>
                           </FormControl>
@@ -353,8 +371,14 @@ const Contact = () => {
           {/* Decorative Elements */}
           <div className="flex justify-center gap-3 mt-8">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-bounce"></div>
-            <div className="w-2 h-2 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: "0.2s" }}></div>
-            <div className="w-2 h-2 rounded-full bg-blue-500 animate-bounce" style={{ animationDelay: "0.4s" }}></div>
+            <div
+              className="w-2 h-2 rounded-full bg-teal-500 animate-bounce"
+              style={{ animationDelay: "0.2s" }}
+            ></div>
+            <div
+              className="w-2 h-2 rounded-full bg-blue-500 animate-bounce"
+              style={{ animationDelay: "0.4s" }}
+            ></div>
           </div>
         </motion.div>
       </div>

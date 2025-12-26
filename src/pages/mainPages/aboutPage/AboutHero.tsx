@@ -62,7 +62,8 @@ const AboutHero = () => {
             }}
           >
             <p className="text-[#4A5565] dark:text-gray-400 leading-relaxed">
-              From four cities, with a team of industry professionals, we work for <br /> businesses all over the world.
+              From four cities, with a team of industry professionals, we work
+              for <br /> businesses all over the world.
             </p>
           </motion.div>
         </div>
@@ -71,7 +72,7 @@ const AboutHero = () => {
       {/* Banner Image */}
       <motion.div
         className="w-full mt-10"
-        initial={{  opacity: 0 }}
+        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
           delay: 0.6,

@@ -12,7 +12,12 @@ const Sustainability = () => {
           className="w-60 h-60 sm:w-72 sm:h-72 relative max-w-full"
           initial={{ y: -100, x: -100, opacity: 0 }}
           whileInView={{ y: 0, x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <Image
             src="/Sustainability/1.png"
@@ -33,7 +38,12 @@ const Sustainability = () => {
           "
           initial={{ x: 100, y: 100, opacity: 0 }}
           whileInView={{ x: 0, y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <Image
             src="/Sustainability/2.png"
@@ -49,16 +59,27 @@ const Sustainability = () => {
         className="w-full md:w-1/2 mt-24 md:mt-0"
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
       >
-        <p className="text-sm uppercase text-gray-500 dark:text-gray-400 tracking-wide mb-3">Our way</p>
+        <p className="text-sm uppercase text-gray-500 dark:text-gray-400 tracking-wide mb-3">
+          Our way
+        </p>
 
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">Sustainability</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">
+          Sustainability
+        </h2>
 
         <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg leading-relaxed break-words">
-          Our Sustainable Construction Advisors (SCAs) provide sustainable construction expertise to our buildings, civil and
-          industrial project teams. The SCAs work collaboratively with clients to develop cost-effective strategies to reduce the
-          overall environmental impact of their projects.
+          Our Sustainable Construction Advisors (SCAs) provide sustainable
+          construction expertise to our buildings, civil and industrial project
+          teams. The SCAs work collaboratively with clients to develop
+          cost-effective strategies to reduce the overall environmental impact
+          of their projects.
         </p>
 
         <Link href="/sustainability">
@@ -69,7 +90,12 @@ const Sustainability = () => {
             "
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <span
               className="

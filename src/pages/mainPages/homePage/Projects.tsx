@@ -9,21 +9,18 @@ import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
 import { motion } from "framer-motion";
 
-
 interface Project {
   id: number;
   title: string;
   description: string;
-  cover_photo: string;    
-  profile_picture: string    
-  category_name: string;      
+  cover_photo: string;
+  profile_picture: string;
+  category_name: string;
 }
 
 interface WorkProps {
   works: Project[];
 }
-
-
 
 export default function Projects() {
   const context = useContext(ProjectContext);
@@ -38,7 +35,8 @@ export default function Projects() {
 
   // Slider functions
   const nextCard = () => setIndex((prev) => (prev + 1) % projects.length);
-  const prevCard = () => setIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  const prevCard = () =>
+    setIndex((prev) => (prev - 1 + projects.length) % projects.length);
 
   if (loading)
     return (
@@ -64,7 +62,12 @@ export default function Projects() {
           className="text-[#6A7282] dark:text-gray-300"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           Projects
         </motion.h3>
@@ -75,13 +78,21 @@ export default function Projects() {
         className="text-[#0A0A0A] dark:text-gray-100 text-2xl lg:text-5xl mt-6 mb-6 font-bold"
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+        transition={{
+          delay: 0.2,
+          type: "keyframes",
+          stiffness: 60,
+          duration: 1,
+        }}
       >
         Delivering our clients more <br /> project clarity, greater <br />
         insight, and less chaos.
       </motion.h1>
 
-      <Link href="/work" className="flex items-center gap-1 cursor-pointer mb-6 group">
+      <Link
+        href="/work"
+        className="flex items-center gap-1 cursor-pointer mb-6 group"
+      >
         <span
           className="
             flex items-center gap-2 
@@ -123,14 +134,21 @@ export default function Projects() {
                 overflow: "hidden",
                 backgroundColor: "var(--card-bg)",
               }}
-              styles={{ body: { padding: 0, backgroundColor: "var(--card-bg)" } }}
+              styles={{
+                body: { padding: 0, backgroundColor: "var(--card-bg)" },
+              }}
             >
               {/* Image */}
               <motion.div
                 className="relative group w-full h-[500px] overflow-hidden"
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+                transition={{
+                  delay: 0.2,
+                  type: "keyframes",
+                  stiffness: 60,
+                  duration: 1,
+                }}
               >
                 <Image
                   draggable={false}
@@ -138,7 +156,7 @@ export default function Projects() {
                   src={project.profile_picture}
                   width={600}
                   height={400}
-                  unoptimized 
+                  unoptimized
                   className="w-full object-cover transition-all duration-500 group-hover:scale-110"
                 />
 
@@ -229,7 +247,9 @@ export default function Projects() {
                       hover:after:w-full
                     "
                   >
-                    {project.title.length > 20 ? project.title.substring(0, 20) + "..." : project.title}
+                    {project.title.length > 20
+                      ? project.title.substring(0, 20) + "..."
+                      : project.title}
                   </Link>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Anton } from "next/font/google";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -12,10 +12,9 @@ const anton = Anton({
 
 const Hero = () => {
   return (
-    <div className="overflow-x-hidden"> 
-      <div className="px-4 md:px-10 lg:px-44 lg:mt-20 dark:bg-gray-900"> 
+    <div className="overflow-x-hidden">
+      <div className="px-4 md:px-10 lg:px-44 lg:mt-20 dark:bg-gray-900">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-12 md:mb-16">
-          
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -60,16 +59,19 @@ const Hero = () => {
               duration: 1,
             }}
           >
-            Our vision is to lead the way in sustainable innovation, creating solutions that harmonize technology, community, and
-            the environment. We strive to design and build a future where every project contributes to a greener, smarter, and
-            more connected world. Through creativity, collaboration, and unwavering commitment, we turn ambitious ideas into
-            tangible progress, inspiring positive change for generations to come.
+            Our vision is to lead the way in sustainable innovation, creating
+            solutions that harmonize technology, community, and the environment.
+            We strive to design and build a future where every project
+            contributes to a greener, smarter, and more connected world. Through
+            creativity, collaboration, and unwavering commitment, we turn
+            ambitious ideas into tangible progress, inspiring positive change
+            for generations to come.
           </motion.p>
         </div>
       </div>
 
       <motion.div
-        className="relative w-full h-[350px] sm:h-[450px] md:h-[550px]" 
+        className="relative w-full h-[350px] sm:h-[450px] md:h-[550px]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{

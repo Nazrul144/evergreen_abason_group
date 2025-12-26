@@ -14,7 +14,7 @@ interface Project {
 }
 
 interface WorkProps {
-  works?: Project[];  // Made optional
+  works?: Project[]; // Made optional
 }
 
 const Work: React.FC<WorkProps> = ({ works = [] }) => {
@@ -22,9 +22,15 @@ const Work: React.FC<WorkProps> = ({ works = [] }) => {
   const safeWorks = works || [];
 
   // Extract unique categories + "All" — only if there are projects
-  const categories = safeWorks.length > 0
-    ? ["All", ...Array.from(new Set(safeWorks.map((project) => project.category_name)))]
-    : ["All"];
+  const categories =
+    safeWorks.length > 0
+      ? [
+          "All",
+          ...Array.from(
+            new Set(safeWorks.map((project) => project.category_name))
+          ),
+        ]
+      : ["All"];
 
   const items: TabsProps["items"] = categories.map((category, index) => ({
     key: String(index + 1),
@@ -33,7 +39,8 @@ const Work: React.FC<WorkProps> = ({ works = [] }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {safeWorks
           .filter(
-            (project) => category === "All" || project.category_name === category
+            (project) =>
+              category === "All" || project.category_name === category
           )
           .map((project) => (
             <Link key={project.id} href={`/work/${project.id}`}>
@@ -102,7 +109,8 @@ const Work: React.FC<WorkProps> = ({ works = [] }) => {
         </h1>
 
         <p className="text-xl text-[#4A5565] dark:text-gray-300 max-w-3xl">
-          Building the future of the construction industry, one project at a time.
+          Building the future of the construction industry, one project at a
+          time.
         </p>
       </motion.div>
 

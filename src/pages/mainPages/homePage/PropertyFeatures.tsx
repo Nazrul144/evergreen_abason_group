@@ -82,14 +82,13 @@ const PropertyFeatures = () => {
           className="text-center rounded-2xl p-8 md:p-12 min-h-[500px] md:min-h-[600px] relative overflow-hidden border-4 border-white/90 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-3 hover:border-emerald-300/60 flex flex-col justify-center"
           style={{
             backgroundImage: `url('/bike/bike2.webp')`,
-            backgroundSize: "cover", 
-            backgroundPosition: "center center", 
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
             backgroundRepeat: "no-repeat",
           }}
         >
           {/* Dark overlay - covers the FULL card */}
           <div className="absolute inset-0 bg-black/50"></div>{" "}
-         
           <div className="relative z-10">
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">
               Book Your Land Share Now

@@ -7,7 +7,12 @@ const ContactBanner = () => {
   return (
     <section className="relative w-full h-[380px] md:h-[450px] lg:h-[520px] overflow-hidden">
       {/* Background Image */}
-      <Image src="/ContactBanner/banner.jpg" alt="Contact Banner" fill className="object-cover" />
+      <Image
+        src="/ContactBanner/banner.jpg"
+        alt="Contact Banner"
+        fill
+        className="object-cover"
+      />
 
       {/* Overlay */}
       <motion.div

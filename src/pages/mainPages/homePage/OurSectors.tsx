@@ -10,7 +10,12 @@ const OurSectors = () => {
           className="text-2xl lg:text-5xl mb-20 font-semibold text-gray-700 dark:text-gray-200"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           Our sectors
         </motion.h2>
@@ -19,7 +24,12 @@ const OurSectors = () => {
           className="grid md:grid-cols-3 gap-16"
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           {sectors.map((item, index) => (
             <div key={index} className="text-center break-words">

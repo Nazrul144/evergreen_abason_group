@@ -74,7 +74,9 @@ const OurCommitments = () => {
                 }}
               >
                 <div className="mb-2">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
                   {feature.description}
                 </p>

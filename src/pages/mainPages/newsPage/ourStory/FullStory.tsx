@@ -25,7 +25,9 @@ const FullStory = () => {
         </h1>
 
         <p className="mt-6 max-w-3xl mx-auto text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-          A breakthrough project that reinforces Evergreen Abason Group’s commitment to environmental leadership and next-generation construction standards.
+          A breakthrough project that reinforces Evergreen Abason Group’s
+          commitment to environmental leadership and next-generation
+          construction standards.
         </p>
       </motion.div>
 
@@ -94,10 +96,6 @@ const FullStory = () => {
           })}
         </div>
       </div>
-
-
-
-
 
       {/* CTA Button */}
       <motion.div

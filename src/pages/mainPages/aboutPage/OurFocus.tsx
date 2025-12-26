@@ -134,16 +134,16 @@ const OurFocus = () => {
                 We achieve this success without ever compromising our values: by
                 providing quality construction practices, effective
                 communication, and a deep understanding of the building
-                environment. Our long history in New York City and the U.S. puts
+                environment. Our long history in every city and the U.S. puts
                 area insiders in its charged agencies and negotiations with care
-                and to 400,000 square feet law became New York. An established
+                and to 400,000 square feet law became every. An established
                 owner representative developer has operated successfully and
                 responsibly.
               </p>
 
               <p className="text-lg text-[#4A5565] dark:text-gray-400 mt-4 text-justify leading-relaxed">
-                As a commercial construction company, we support New York
-                City&apos;s businessmen today and require what&apos;s yet to
+                As a commercial construction company, we support every
+                city&apos;s businessmen today and require what&apos;s yet to
                 come tomorrow. At Evergreen Abason Group, we help every client
                 see their vision come to life.
               </p>

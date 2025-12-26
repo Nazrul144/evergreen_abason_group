@@ -11,7 +11,12 @@ const ServicesSection = () => {
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
           <p className="text-sm sm:text-base tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
             Our Services
@@ -27,10 +32,17 @@ const ServicesSection = () => {
           className="mt-4 md:mt-0 max-w-md text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
         >
-          Evergreen Abason Group provides reliable construction services with a focus on safety, structural quality, and long-term
-          value. Our team works with precision and dedication to deliver outstanding results across every project we handle.
+          Evergreen Abason Group provides reliable construction services with a
+          focus on safety, structural quality, and long-term value. Our team
+          works with precision and dedication to deliver outstanding results
+          across every project we handle.
         </motion.p>
       </div>
 
@@ -42,16 +54,23 @@ const ServicesSection = () => {
             className="p-6 sm:p-10 lg:p-14"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4, type: "keyframes", stiffness: 60, duration: 1 }}
+            transition={{
+              delay: 0.4,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
               Building Sustainable & Modern Living Spaces for the Future
             </h3>
 
             <p className="mt-3 sm:mt-4 text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
-              From residential buildings to commercial infrastructure, Evergreen Abason Group follows advanced engineering methods
-              and sustainable construction practices. Every project we undertake is designed to provide durability, efficiency,
-              and long-term comfort to our clients.
+              From residential buildings to commercial infrastructure, Evergreen
+              Abason Group follows advanced engineering methods and sustainable
+              construction practices. Every project we undertake is designed to
+              provide durability, efficiency, and long-term comfort to our
+              clients.
             </p>
 
             <Link
@@ -67,7 +86,12 @@ const ServicesSection = () => {
             className="relative h-[250px] sm:h-[300px] lg:h-full"
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4, type: "keyframes", stiffness: 60, duration: 1 }}
+            transition={{
+              delay: 0.4,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <Image
               src="/Service_Images/serviceSideBanner.jpg"

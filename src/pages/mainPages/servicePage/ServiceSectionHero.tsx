@@ -131,7 +131,12 @@ const ServiceSectionCombined: React.FC = () => {
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
           className="mb-6"
         >
           <p className="text-sm tracking-wide font-semibold text-gray-500 dark:text-gray-400 flex items-center gap-2">
@@ -147,7 +152,12 @@ const ServiceSectionCombined: React.FC = () => {
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+          transition={{
+            delay: 0.2,
+            type: "keyframes",
+            stiffness: 60,
+            duration: 1,
+          }}
           className="rounded-sm overflow-hidden shadow-md"
         >
           <Image
@@ -166,7 +176,12 @@ const ServiceSectionCombined: React.FC = () => {
             className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <Image
               src="/Service_Images/construction1.jpg"
@@ -187,20 +202,37 @@ const ServiceSectionCombined: React.FC = () => {
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.2, type: "keyframes", stiffness: 60, duration: 1 }}
+            transition={{
+              delay: 0.2,
+              type: "keyframes",
+              stiffness: 60,
+              duration: 1,
+            }}
           >
             <h3 className="lg:text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-green-400 to-emerald-600">
               Evergreen Abason Service Quality
             </h3>
 
             <p className="mt-4 text-gray-600 dark:text-gray-300 text-base sm:text-lg leading-relaxed">
-              We deliver modern and sustainable construction services ensuring long-lasting structural quality and complete client
-              confidence. Our experienced team focuses on safety, on-time delivery and outstanding workmanship.
+              We deliver modern and sustainable construction services ensuring
+              long-lasting structural quality and complete client confidence.
+              Our experienced team focuses on safety, on-time delivery and
+              outstanding workmanship.
             </p>
 
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <PieChart label="Completion" target={98} color="emerald" size={100} />
-              <PieChart label="Satisfaction" target={95} color="sky" size={100} />
+              <PieChart
+                label="Completion"
+                target={98}
+                color="emerald"
+                size={100}
+              />
+              <PieChart
+                label="Satisfaction"
+                target={95}
+                color="sky"
+                size={100}
+              />
               <PieChart label="Safety" target={99} color="purple" size={100} />
             </div>
           </motion.div>

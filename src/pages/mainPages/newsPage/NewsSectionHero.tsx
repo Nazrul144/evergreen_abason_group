@@ -17,7 +17,8 @@ interface NewsSectionHeroProps {
   news: NewsItem[];
 }
 
-const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news = [] }) => {  // ← Default to empty array
+const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news = [] }) => {
+  // ← Default to empty array
   const [visibleCount, setVisibleCount] = useState(6);
   const [loading, setLoading] = useState(false);
 
@@ -78,8 +79,8 @@ const NewsSectionHero: React.FC<NewsSectionHeroProps> = ({ news = [] }) => {  //
           {/* Left Text Section */}
           <div className="lg:p-14 p-8">
             <h3 className="lg:text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white leading-snug">
-              Winthrop Center Will Be One of the World&apos;s Largest Passive House
-              Buildings
+              Winthrop Center Will Be One of the World&apos;s Largest Passive
+              House Buildings
             </h3>
 
             <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">

@@ -58,10 +58,8 @@ const ImageContentSection = () => {
     <section className="relative bg-white dark:bg-gray-900 dark:text-gray-300 py-14 overflow-x-hidden">
       {/* Mobile padding fix */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-10">
-        
         {/* Left Image Column */}
         <div className="lg:w-1/2 lg:sticky lg:top-24 flex flex-col gap-6">
-          
           {/* Image 1 */}
           <motion.div
             className="relative w-full h-40 sm:h-52 md:h-64 lg:h-56 xl:h-64"

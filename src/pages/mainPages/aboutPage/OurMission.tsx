@@ -45,14 +45,19 @@ const OurMission = () => {
             <AiOutlineSafetyCertificate className="text-9xl dark:text-gray-300" />
           </div>
 
-          <h2 className="text-xl font-medium mb-4 text-center dark:text-gray-300">Safety</h2>
+          <h2 className="text-xl font-medium mb-4 text-center dark:text-gray-300">
+            Safety
+          </h2>
 
           <p className="text-[#4A5565] leading-relaxed text-justify dark:text-gray-400">
-            The health and safety of people and our environment lie at the very heart of what we do at Evergreen Abason Group. In
-            situations that are physically or psychologically unsafe, we refuse to be bystanders. We are changemakers and action
-            takers. This commitment extends to the environment and climate challenges we face today. We advocate for sustainable
-            solutions and operate with the responsibility to support one another—holding ourselves accountable for the legacy we
-            leave for future generations.
+            The health and safety of people and our environment lie at the very
+            heart of what we do at Evergreen Abason Group. In situations that
+            are physically or psychologically unsafe, we refuse to be
+            bystanders. We are changemakers and action takers. This commitment
+            extends to the environment and climate challenges we face today. We
+            advocate for sustainable solutions and operate with the
+            responsibility to support one another—holding ourselves accountable
+            for the legacy we leave for future generations.
           </p>
         </motion.div>
 
@@ -71,13 +76,18 @@ const OurMission = () => {
             <GiStairsGoal className="text-9xl dark:text-gray-300" />
           </div>
 
-          <h2 className="text-xl font-medium mb-4 text-center dark:text-gray-300">Our Purpose</h2>
+          <h2 className="text-xl font-medium mb-4 text-center dark:text-gray-300">
+            Our Purpose
+          </h2>
 
           <p className="text-[#4A5565] leading-relaxed text-justify dark:text-gray-400">
-            Evergreen Abason Group was founded on the belief that every decision we make impacts people and communities.
-            That&apos;s why we place humanity at the center of everything we do. We bring together diverse voices and perspectives
-            to ensure that what we create improves life for everyone. What we build is designed to deliver value to society long
-            after our lifetime and it&apos;s why we never stop thinking about how to reshape the future for the better.
+            Evergreen Abason Group was founded on the belief that every decision
+            we make impacts people and communities. That&apos;s why we place
+            humanity at the center of everything we do. We bring together
+            diverse voices and perspectives to ensure that what we create
+            improves life for everyone. What we build is designed to deliver
+            value to society long after our lifetime and it&apos;s why we never
+            stop thinking about how to reshape the future for the better.
           </p>
         </motion.div>
 
@@ -96,13 +106,18 @@ const OurMission = () => {
             <PiBuildingsLight className="text-9xl dark:text-gray-300" />
           </div>
 
-          <h2 className="text-xl font-medium mb-4 text-center dark:text-gray-300">Our Position</h2>
+          <h2 className="text-xl font-medium mb-4 text-center dark:text-gray-300">
+            Our Position
+          </h2>
 
           <p className="text-[#4A5565] leading-relaxed text-justify dark:text-gray-400">
-            Evergreen Abason Group uses knowledge & foresight to shape the way people live, work, and connect. While continuing to
-            grow year after year, we&apos;s becoming one of the region&apos;s most reliable development and construction
-            companies. Together with our customers and the collective expertise of our dedicated team, we create innovative and
-            sustainable solutions that support healthy living beyond our lifetime.
+            Evergreen Abason Group uses knowledge & foresight to shape the way
+            people live, work, and connect. While continuing to grow year after
+            year, we&apos;s becoming one of the region&apos;s most reliable
+            development and construction companies. Together with our customers
+            and the collective expertise of our dedicated team, we create
+            innovative and sustainable solutions that support healthy living
+            beyond our lifetime.
           </p>
         </motion.div>
       </div>

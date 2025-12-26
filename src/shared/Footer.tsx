@@ -5,25 +5,38 @@ import Link from "next/link";
 
 const Footer = () => {
   const cities = [
-    { city: "Head Office", line1: "4 Darus Salam Road, Mirpur Tower, Level-8", line2: "Mirpur-1, Dhaka-1216" },
-    { city: "Phone", line1: "+8801950 572876", line2: "+8801725 279476", line3: "+8801712 189909" },
-    { city: "Email", line1: "infe@evergreenabason.com"},
-    { city: "Location", line1: "Road-10, Block-C, Section-6, Mirpur, Dhaka (Opposite of Mirpur Bangla School)"},
+    {
+      city: "Head Office",
+      line1: "4 Darus Salam Road, Mirpur Tower, Level-8",
+      line2: "Mirpur-1, Dhaka-1216",
+    },
+    {
+      city: "Phone",
+      line1: "+8801950 572876",
+      line2: "+8801725 279476",
+      line3: "+8801712 189909",
+    },
+    { city: "Email", line1: "infe@evergreenabason.com" },
+    {
+      city: "Location",
+      line1:
+        "Road-10, Block-C, Section-6, Mirpur, Dhaka (Opposite of Mirpur Bangla School)",
+    },
   ];
 
   const navLinks = [
-    {title: "PROJECTS", path: "/project"},
-    {title: "STORY", path: "/story"},
-    {title: "VISION", path: "/learn_more"},
-    {title: "CONSTRUCTION", path: "/construction"},
-    {title: "CAREERS", path: "/build_project"},
+    { title: "PROJECTS", path: "/project" },
+    { title: "STORY", path: "/story" },
+    { title: "VISION", path: "/learn_more" },
+    { title: "CONSTRUCTION", path: "/construction" },
+    { title: "CAREERS", path: "/build_project" },
   ];
   const socialLinks = [
-    {title: "Facebook", path: "#"},
-    {title: "LinkedIn", path: "#"},
-    {title: "Instagram", path: "#"},
-    {title: "Terms and Conditions", path: "/term_conditon"},
-    {title: "Privacy Policy", path: "/policy"},
+    { title: "Facebook", path: "#" },
+    { title: "LinkedIn", path: "#" },
+    { title: "Instagram", path: "#" },
+    { title: "Terms and Conditions", path: "/term_conditon" },
+    { title: "Privacy Policy", path: "/policy" },
   ];
 
   return (
@@ -37,12 +50,19 @@ const Footer = () => {
         {/* Logo & Contact */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-start relative">
           <div className="flex flex-col items-center text-center space-y-3 col-span-1">
-            <Image src="/Navbar_Logo/logo.png" width={60} height={60} alt="Evergreen Abason Group" />
+            <Image
+              src="/Navbar_Logo/logo.png"
+              width={60}
+              height={60}
+              alt="Evergreen Abason Group"
+            />
             <span className="uppercase text-[12px] lg:text-lg leading-tight font-bold whitespace-nowrap">
               {"Evergreen Abason Group".split("").map((char, i) => (
                 <span
                   key={i}
-                  className={`inline-block animate-color-flow ${char === " " ? "mr-1" : ""}`}
+                  className={`inline-block animate-color-flow ${
+                    char === " " ? "mr-1" : ""
+                  }`}
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
                   {char}
@@ -50,16 +70,26 @@ const Footer = () => {
               ))}
             </span>
             <p className="text-lg font-medium lg:mt-16">+8801950 572876</p>
-            <p className="text-lg underline underline-offset-2 lg:mb-8">infe@evergreenabason.com</p>
+            <p className="text-lg underline underline-offset-2 lg:mb-8">
+              infe@evergreenabason.com
+            </p>
           </div>
 
           {/* Cities */}
           {cities.map((item, i) => (
             <div key={i} className="space-y-1 mt-2 ml-0 sm:ml-4">
-              <h3 className="font-semibold text-xl tracking-wide mt-2 mb-2">{item.city}</h3>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">{item.line1}</p>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">{item.line2}</p>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">{item.line3}</p>
+              <h3 className="font-semibold text-xl tracking-wide mt-2 mb-2">
+                {item.city}
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
+                {item.line1}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
+                {item.line2}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
+                {item.line3}
+              </p>
             </div>
           ))}
         </div>
@@ -67,8 +97,8 @@ const Footer = () => {
         {/* Nav Links */}
         <div className="flex flex-wrap gap-6 md:gap-10 mt-6 text-sm font-medium tracking-wide">
           {navLinks.map((navLink) => (
-            <Link key={navLink.path}
-              
+            <Link
+              key={navLink.path}
               href={navLink.path}
               className="relative hover:text-green-600 dark:hover:text-green-400
                 after:absolute after:left-0 after:-bottom-0.5
@@ -77,7 +107,7 @@ const Footer = () => {
                 hover:after:w-full
               "
             >
-            {navLink.title}
+              {navLink.title}
             </Link>
           ))}
         </div>

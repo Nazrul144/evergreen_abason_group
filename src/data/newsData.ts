@@ -37,7 +37,7 @@ export const newsData = [
   },
   {
     id: 7,
-    title: "Major Smart City Project Breaks Ground",
+    title: "Major Smart city Project Breaks Ground",
     shortDescription: "Evergreen Abason Group has officially broken ground on a large-scale smart city project, featuring AI-driven infrastructure, energy-optimized buildings, intelligent transportation networks, and seamless digital connectivity. The city will include solar-powered grids, automated waste management systems, water-efficient utilities, and real-time environmental monitoring to ensure sustainability and high-quality urban living. Designed to enhance efficiency, safety, and comfort, this project represents a bold vision of the future of urban development, providing a technologically advanced, environmentally conscious, and socially inclusive model for smart city innovation worldwide.",
     image: "https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?auto=format&fit=crop&w=1200&q=80"
   },

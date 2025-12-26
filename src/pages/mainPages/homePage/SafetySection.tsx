@@ -43,7 +43,7 @@ export default function SafetySection() {
             }}
           >
             <Image
-              src="/Safety_Image/safety2.jpg"
+              src="/Safety_Image/safety2.png"
               alt="Safety front image"
               width={400}
               height={400}
@@ -65,7 +65,9 @@ export default function SafetySection() {
           }}
         >
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-sm font-medium tracking-wide text-gray-700 dark:text-gray-300">Safety</span>
+            <span className="text-sm font-medium tracking-wide text-gray-700 dark:text-gray-300">
+              Safety
+            </span>
             <span className="h-px w-12 bg-green-500 dark:to-orange-200"></span>
           </div>
 
@@ -78,18 +80,23 @@ export default function SafetySection() {
           </h2>
 
           {/* Description */}
-          <p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed max-w-md break-words">
-            We want every employee and trade partner to feel that they are part of a common good and cohesive team. We help our
-            teams form stronger relationships by emphasizing people and teamwork over processes and checklists.
+          <p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed max-w-md wrap-break-word">
+            We want every employee and trade partner to feel that they are part
+            of a common good and cohesive team. We help our teams form stronger
+            relationships by emphasizing people and teamwork over processes and
+            checklists.
           </p>
 
           {/* Links */}
           <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 text-sm font-semibold">
-            <Link href="/learn_more" className="text-gray-900 dark:text-white font-semibold animate-soft-blink">
+            <Link
+              href="/learn_more"
+              className="text-gray-900 dark:text-white font-semibold animate-soft-blink"
+            >
               LEARN MORE
             </Link>
 
-            <span className="h-4 w-[1px] bg-gray-400 hidden sm:block"></span>
+            <span className="h-4 w-px bg-gray-400 hidden sm:block"></span>
 
             <Link href="build_project" className="">
               CAREERS AT EVERGREEN ABASON GROUP

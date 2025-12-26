@@ -23,7 +23,7 @@ const OurCommitment = () => {
             <span className="w-12 h-px bg-green-500 mt-1"></span>
           </div>
           <h3 className="text-[#0A0A0A] dark:text-gray-300 font-bold text-2xl lg:text-3xl mt-2">
-            We are committed to New York <br /> City
+            We are committed to every <br /> city
           </h3>
         </motion.div>
         <motion.div
@@ -37,10 +37,10 @@ const OurCommitment = () => {
           }}
         >
           <p className="text-[#4A5565] text-sm text-justify">
-            As a commercial construction company, we support New York
-            City&apos;s businessman today <br /> and require what&apos;s yet to
-            come tomorrow. At Evergreen Abason Group, we help every client sees
-            their <br /> vision come to life.
+            As a commercial construction company, we support every city&apos;s
+            businessman today <br /> and require what&apos;s yet to come
+            tomorrow. At Evergreen Abason Group, we help every client sees their{" "}
+            <br /> vision come to life.
           </p>
         </motion.div>
       </div>
@@ -57,7 +57,7 @@ const OurCommitment = () => {
         }}
       >
         <Image
-          src="/AboutBanner/community_banner.jpg"
+          src="/AboutBanner/community_banner.png"
           width={1000}
           height={1000}
           alt="community_image"
