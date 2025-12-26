@@ -9,27 +9,29 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  cover_photo: string;        // <-- from backend
-  category_name: string;      // <-- from backend
+  cover_photo: string;
+  category_name: string;
 }
 
 interface WorkProps {
-  works: Project[];
+  works?: Project[];  // Made optional
 }
 
-const Work: React.FC<WorkProps> = ({ works }) => {
-  // Extract unique categories + "All"
-  const categories = [
-    "All",
-    ...Array.from(new Set(works.map((project) => project.category_name))),
-  ];
+const Work: React.FC<WorkProps> = ({ works = [] }) => {
+  // Safely handle empty or undefined works
+  const safeWorks = works || [];
+
+  // Extract unique categories + "All" — only if there are projects
+  const categories = safeWorks.length > 0
+    ? ["All", ...Array.from(new Set(safeWorks.map((project) => project.category_name)))]
+    : ["All"];
 
   const items: TabsProps["items"] = categories.map((category, index) => ({
     key: String(index + 1),
     label: category,
     children: (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        {works
+        {safeWorks
           .filter(
             (project) => category === "All" || project.category_name === category
           )
@@ -54,10 +56,10 @@ const Work: React.FC<WorkProps> = ({ works }) => {
                     alt={project.title}
                     width={600}
                     height={400}
-                    unoptimized 
+                    unoptimized
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
                 <div className="p-6">
