@@ -102,7 +102,7 @@ const AllProjects = () => {
             <div className="px-4 sm:px-5 py-4 sm:py-6 dark:bg-gray-900">
               <div>
                 <Link
-                  href={`/project/${project.id}`}
+                  href={`/project`}
                   className="
                     text-xs sm:text-sm text-gray-600! relative inline-block mb-1 
                     dark:text-gray-300!
