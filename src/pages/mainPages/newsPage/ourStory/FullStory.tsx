@@ -39,7 +39,7 @@ const FullStory = () => {
         className="relative mt-14 w-full lg:h-[450px] md:h-[500px] rounded-sm overflow-hidden shadow-xl"
       >
         <Image
-          src="/NewsPage/story.jpg"
+          src="/NewsPage/story.png"
           alt="Story Image"
           fill
           className="object-cover brightness-90 hover:scale-105 transition-all duration-700"

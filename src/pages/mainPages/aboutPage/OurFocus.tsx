@@ -134,7 +134,7 @@ const OurFocus = () => {
                 We achieve this success without ever compromising our values: by
                 providing quality construction practices, effective
                 communication, and a deep understanding of the building
-                environment. Our long history in every city and the U.S. puts
+                environment. Our long history in every city. puts
                 area insiders in its charged agencies and negotiations with care
                 and to 400,000 square feet law became every. An established
                 owner representative developer has operated successfully and

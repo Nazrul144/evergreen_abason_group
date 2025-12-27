@@ -56,13 +56,17 @@ const OurCommitment = () => {
           duration: 1,
         }}
       >
-        <Image
-          src="/AboutBanner/community_banner.png"
-          width={1000}
-          height={1000}
-          alt="community_image"
-          className="object-cover w-full"
-        />
+        <div className="w-full h-[500px] md:h-[800px] relative">  
+  <Image
+    src="/AboutBanner/community_banner.png"
+    fill              
+    sizes="100vw"
+    quality={95}
+    className="object-cover"  
+    alt="community_image"
+    priority
+  />
+</div>
       </motion.div>
     </div>
   );
